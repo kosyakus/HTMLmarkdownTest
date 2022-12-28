@@ -9,19 +9,461 @@
 /* Begin PBXBuildFile section */
 		E1B314E9295C35940030F6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314E8295C35940030F6A3 /* AppDelegate.swift */; };
 		E1B314EB295C35940030F6A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314EA295C35940030F6A3 /* SceneDelegate.swift */; };
-		E1B314ED295C35940030F6A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314EC295C35940030F6A3 /* ViewController.swift */; };
+		E1B314ED295C35940030F6A3 /* EditorDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314EC295C35940030F6A3 /* EditorDemoController.swift */; };
 		E1B314F2295C35980030F6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B314F1295C35980030F6A3 /* Assets.xcassets */; };
 		E1B314F5295C35980030F6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */; };
+		E1B314FE295C87900030F6A3 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314FC295C87900030F6A3 /* TextViewController.swift */; };
+		E1B314FF295C87900030F6A3 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B314FD295C87900030F6A3 /* TextViewController.xib */; };
+		E1B31505295C8CE30030F6A3 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31504295C8CE30030F6A3 /* EditorView.swift */; };
+		E1B31508295C8D7D0030F6A3 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31507295C8D7D0030F6A3 /* TextView.swift */; };
+		E1B3150A295C8DC90030F6A3 /* HTMLStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31509295C8DC90030F6A3 /* HTMLStorage.swift */; };
+		E1B3150C295C8E3C0030F6A3 /* ParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3150B295C8E3C0030F6A3 /* ParagraphStyle.swift */; };
+		E1B3150E295C8F770030F6A3 /* TextViewPasteboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3150D295C8F770030F6A3 /* TextViewPasteboardDelegate.swift */; };
+		E1B3152B295C8FAC0030F6A3 /* CodeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31511295C8FAC0030F6A3 /* CodeFormatter.swift */; };
+		E1B3152C295C8FAC0030F6A3 /* LiFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31512295C8FAC0030F6A3 /* LiFormatter.swift */; };
+		E1B3152D295C8FAC0030F6A3 /* PreFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31513295C8FAC0030F6A3 /* PreFormatter.swift */; };
+		E1B3152E295C8FAC0030F6A3 /* FigureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31514295C8FAC0030F6A3 /* FigureFormatter.swift */; };
+		E1B3152F295C8FAC0030F6A3 /* SuperscriptFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31515295C8FAC0030F6A3 /* SuperscriptFormatter.swift */; };
+		E1B31530295C8FAC0030F6A3 /* HTMLDivFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31516295C8FAC0030F6A3 /* HTMLDivFormatter.swift */; };
+		E1B31531295C8FAC0030F6A3 /* BoldFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31517295C8FAC0030F6A3 /* BoldFormatter.swift */; };
+		E1B31532295C8FAC0030F6A3 /* MarkFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31518295C8FAC0030F6A3 /* MarkFormatter.swift */; };
+		E1B31533295C8FAC0030F6A3 /* CiteFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31519295C8FAC0030F6A3 /* CiteFormatter.swift */; };
+		E1B31534295C8FAC0030F6A3 /* ItalicFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3151A295C8FAC0030F6A3 /* ItalicFormatter.swift */; };
+		E1B31535295C8FAC0030F6A3 /* SubscriptFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3151B295C8FAC0030F6A3 /* SubscriptFormatter.swift */; };
+		E1B31536295C8FAC0030F6A3 /* UnderlineFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3151C295C8FAC0030F6A3 /* UnderlineFormatter.swift */; };
+		E1B31537295C8FAC0030F6A3 /* BoldWithShadowForHeadingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3151D295C8FAC0030F6A3 /* BoldWithShadowForHeadingFormatter.swift */; };
+		E1B31538295C8FAC0030F6A3 /* TextListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3151E295C8FAC0030F6A3 /* TextListFormatter.swift */; };
+		E1B31539295C8FAC0030F6A3 /* BlockquoteFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3151F295C8FAC0030F6A3 /* BlockquoteFormatter.swift */; };
+		E1B3153A295C8FAC0030F6A3 /* ColorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31520295C8FAC0030F6A3 /* ColorFormatter.swift */; };
+		E1B3153B295C8FAC0030F6A3 /* StrikethroughFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31521295C8FAC0030F6A3 /* StrikethroughFormatter.swift */; };
+		E1B3153C295C8FAC0030F6A3 /* FigcaptionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31522295C8FAC0030F6A3 /* FigcaptionFormatter.swift */; };
+		E1B3153D295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31523295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift */; };
+		E1B3153E295C8FAC0030F6A3 /* LinkFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31524295C8FAC0030F6A3 /* LinkFormatter.swift */; };
+		E1B3153F295C8FAC0030F6A3 /* HeaderFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31525295C8FAC0030F6A3 /* HeaderFormatter.swift */; };
+		E1B31540295C8FAC0030F6A3 /* AttributeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31527295C8FAC0030F6A3 /* AttributeFormatter.swift */; };
+		E1B31541295C8FAC0030F6A3 /* FontFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31528295C8FAC0030F6A3 /* FontFormatter.swift */; };
+		E1B31542295C8FAC0030F6A3 /* ParagraphAttributeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31529295C8FAC0030F6A3 /* ParagraphAttributeFormatter.swift */; };
+		E1B31543295C8FAC0030F6A3 /* StandardAttributeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3152A295C8FAC0030F6A3 /* StandardAttributeFormatter.swift */; };
+		E1B3154F295C8FB60030F6A3 /* TextList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31545295C8FB60030F6A3 /* TextList.swift */; };
+		E1B31550295C8FB60030F6A3 /* Figcaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31546295C8FB60030F6A3 /* Figcaption.swift */; };
+		E1B31551295C8FB60030F6A3 /* HTMLDiv.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31547295C8FB60030F6A3 /* HTMLDiv.swift */; };
+		E1B31552295C8FB60030F6A3 /* HTMLParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31548295C8FB60030F6A3 /* HTMLParagraph.swift */; };
+		E1B31553295C8FB60030F6A3 /* ParagraphProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31549295C8FB60030F6A3 /* ParagraphProperty.swift */; };
+		E1B31554295C8FB60030F6A3 /* HTMLPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154A295C8FB60030F6A3 /* HTMLPre.swift */; };
+		E1B31555295C8FB60030F6A3 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154B295C8FB60030F6A3 /* Header.swift */; };
+		E1B31556295C8FB60030F6A3 /* HTMLLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154C295C8FB60030F6A3 /* HTMLLi.swift */; };
+		E1B31557295C8FB60030F6A3 /* Blockquote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154D295C8FB60030F6A3 /* Blockquote.swift */; };
+		E1B31558295C8FB60030F6A3 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154E295C8FB60030F6A3 /* Figure.swift */; };
+		E1B31565295C8FCF0030F6A3 /* MediaAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31559295C8FCE0030F6A3 /* MediaAttachment.swift */; };
+		E1B31566295C8FCF0030F6A3 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155A295C8FCE0030F6A3 /* FontProvider.swift */; };
+		E1B31567295C8FCF0030F6A3 /* HTMLAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155B295C8FCE0030F6A3 /* HTMLAttachment.swift */; };
+		E1B31568295C8FCF0030F6A3 /* RenderableAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155C295C8FCE0030F6A3 /* RenderableAttachment.swift */; };
+		E1B31569295C8FCF0030F6A3 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155D295C8FCE0030F6A3 /* TextStorage.swift */; };
+		E1B3156A295C8FCF0030F6A3 /* VideoAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155E295C8FCE0030F6A3 /* VideoAttachment.swift */; };
+		E1B3156B295C8FCF0030F6A3 /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155F295C8FCE0030F6A3 /* ColorProvider.swift */; };
+		E1B3156C295C8FCF0030F6A3 /* LineAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31560295C8FCE0030F6A3 /* LineAttachment.swift */; };
+		E1B3156D295C8FCF0030F6A3 /* CommentAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31561295C8FCE0030F6A3 /* CommentAttachment.swift */; };
+		E1B3156E295C8FCF0030F6A3 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31562295C8FCE0030F6A3 /* ImageAttachment.swift */; };
+		E1B3156F295C8FCF0030F6A3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31563295C8FCE0030F6A3 /* Configuration.swift */; };
+		E1B31570295C8FCF0030F6A3 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31564295C8FCE0030F6A3 /* LayoutManager.swift */; };
+		E1B31576295C90250030F6A3 /* PluginOutputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31572295C90250030F6A3 /* PluginOutputCustomizer.swift */; };
+		E1B31577295C90250030F6A3 /* PluginInputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31573295C90250030F6A3 /* PluginInputCustomizer.swift */; };
+		E1B31578295C90250030F6A3 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31574295C90250030F6A3 /* PluginManager.swift */; };
+		E1B31579295C90250030F6A3 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31575295C90250030F6A3 /* Plugin.swift */; };
+		E1B31581295C905A0030F6A3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3157B295C905A0030F6A3 /* Assets.swift */; };
+		E1B31582295C905A0030F6A3 /* FormatBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3157D295C905A0030F6A3 /* FormatBarDelegate.swift */; };
+		E1B31583295C905A0030F6A3 /* FormatBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3157E295C905A0030F6A3 /* FormatBarItem.swift */; };
+		E1B31584295C905A0030F6A3 /* FormattingIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3157F295C905A0030F6A3 /* FormattingIdentifier.swift */; };
+		E1B31585295C905A0030F6A3 /* FormatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31580295C905A0030F6A3 /* FormatBar.swift */; };
+		E1B315AE295C90740030F6A3 /* String+Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31587295C90740030F6A3 /* String+Paragraph.swift */; };
+		E1B315AF295C90740030F6A3 /* NSMutableAttributedString+ParagraphProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31588295C90740030F6A3 /* NSMutableAttributedString+ParagraphProperty.swift */; };
+		E1B315B0295C90740030F6A3 /* NSAttributedString+FontTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31589295C90740030F6A3 /* NSAttributedString+FontTraits.swift */; };
+		E1B315B1295C90740030F6A3 /* StringUTF16+RangeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3158A295C90740030F6A3 /* StringUTF16+RangeConversion.swift */; };
+		E1B315B2295C90740030F6A3 /* Character+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3158B295C90740030F6A3 /* Character+Name.swift */; };
+		E1B315B3295C90740030F6A3 /* Array+ShortcodeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3158C295C90740030F6A3 /* Array+ShortcodeAttribute.swift */; };
+		E1B315B4295C90740030F6A3 /* NSRange+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3158D295C90740030F6A3 /* NSRange+Helpers.swift */; };
+		E1B315B5295C90740030F6A3 /* NSMutableAttributedString+ReplaceOcurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3158E295C90740030F6A3 /* NSMutableAttributedString+ReplaceOcurrences.swift */; };
+		E1B315B6295C90740030F6A3 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3158F295C90740030F6A3 /* UIImage+Resize.swift */; };
+		E1B315B7295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31590295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift */; };
+		E1B315B8295C90740030F6A3 /* String+CharacterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31591295C90740030F6A3 /* String+CharacterName.swift */; };
+		E1B315B9295C90740030F6A3 /* NSAttributedString+CharacterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31592295C90740030F6A3 /* NSAttributedString+CharacterName.swift */; };
+		E1B315BA295C90740030F6A3 /* UIStackView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31593295C90740030F6A3 /* UIStackView+Helpers.swift */; };
+		E1B315BB295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31594295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift */; };
+		E1B315BC295C90740030F6A3 /* NSAttributedString+Analyzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31595295C90740030F6A3 /* NSAttributedString+Analyzers.swift */; };
+		E1B315BD295C90740030F6A3 /* NSBundle+AztecBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31596295C90740030F6A3 /* NSBundle+AztecBundle.swift */; };
+		E1B315BE295C90740030F6A3 /* NSLayoutManager+Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31597295C90740030F6A3 /* NSLayoutManager+Attachments.swift */; };
+		E1B315BF295C90740030F6A3 /* NSAttributedString+ParagraphRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31598295C90740030F6A3 /* NSAttributedString+ParagraphRange.swift */; };
+		E1B315C0295C90740030F6A3 /* UIColor+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31599295C90740030F6A3 /* UIColor+Parsers.swift */; };
+		E1B315C1295C90740030F6A3 /* UIFont+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3159A295C90740030F6A3 /* UIFont+Emoji.swift */; };
+		E1B315C2295C90740030F6A3 /* Array+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3159B295C90740030F6A3 /* Array+Attribute.swift */; };
+		E1B315C3295C90740030F6A3 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3159C295C90740030F6A3 /* Array+Helpers.swift */; };
+		E1B315C4295C90740030F6A3 /* DocumentReadingOptionKey+Swift4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3159D295C90740030F6A3 /* DocumentReadingOptionKey+Swift4.swift */; };
+		E1B315C5295C90740030F6A3 /* NSAttributedString+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3159E295C90740030F6A3 /* NSAttributedString+Lists.swift */; };
+		E1B315C6295C90740030F6A3 /* UILayoutPriority+Swift4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3159F295C90740030F6A3 /* UILayoutPriority+Swift4.swift */; };
+		E1B315C7295C90740030F6A3 /* NSAttributedStringKey+Aztec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A0295C90740030F6A3 /* NSAttributedStringKey+Aztec.swift */; };
+		E1B315C8295C90740030F6A3 /* UITextView+Undoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A1295C90740030F6A3 /* UITextView+Undoable.swift */; };
+		E1B315C9295C90740030F6A3 /* Dictionary+AttributedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A2295C90740030F6A3 /* Dictionary+AttributedStringKey.swift */; };
+		E1B315CA295C90740030F6A3 /* UITextView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A3295C90740030F6A3 /* UITextView+Delegate.swift */; };
+		E1B315CB295C90740030F6A3 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A4295C90740030F6A3 /* String+HTML.swift */; };
+		E1B315CC295C90740030F6A3 /* DocumentType+Swift4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A5295C90740030F6A3 /* DocumentType+Swift4.swift */; };
+		E1B315CD295C90740030F6A3 /* String+RangeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A6295C90740030F6A3 /* String+RangeConversion.swift */; };
+		E1B315CE295C90740030F6A3 /* String+EndOfLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A7295C90740030F6A3 /* String+EndOfLine.swift */; };
+		E1B315CF295C90740030F6A3 /* NSAttributedString+Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A8295C90740030F6A3 /* NSAttributedString+Attachments.swift */; };
+		E1B315D0295C90740030F6A3 /* NSAttributedString+Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315A9295C90740030F6A3 /* NSAttributedString+Archive.swift */; };
+		E1B315D1295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315AA295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift */; };
+		E1B315D2295C90740030F6A3 /* UIPasteboard+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315AB295C90740030F6A3 /* UIPasteboard+Helpers.swift */; };
+		E1B315D3295C90740030F6A3 /* NSTextingResult+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315AC295C90740030F6A3 /* NSTextingResult+Helpers.swift */; };
+		E1B315D4295C90740030F6A3 /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315AD295C90740030F6A3 /* UIFont+Traits.swift */; };
+		E1B315E8295C90AF0030F6A3 /* VideoAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315D8295C90AE0030F6A3 /* VideoAttachmentToElementConverter.swift */; };
+		E1B315E9295C90AF0030F6A3 /* LineAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315D9295C90AE0030F6A3 /* LineAttachmentToElementConverter.swift */; };
+		E1B315EA295C90AF0030F6A3 /* CommentAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315DA295C90AE0030F6A3 /* CommentAttachmentToElementConverter.swift */; };
+		E1B315EB295C90AF0030F6A3 /* HTMLAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315DB295C90AF0030F6A3 /* HTMLAttachmentToElementConverter.swift */; };
+		E1B315EC295C90AF0030F6A3 /* ImageAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315DC295C90AF0030F6A3 /* ImageAttachmentToElementConverter.swift */; };
+		E1B315ED295C90AF0030F6A3 /* AttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315DE295C90AF0030F6A3 /* AttachmentToElementConverter.swift */; };
+		E1B315EE295C90AF0030F6A3 /* AttributedStringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315DF295C90AF0030F6A3 /* AttributedStringSerializer.swift */; };
+		E1B315EF295C90AF0030F6A3 /* HTMLConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315E0295C90AF0030F6A3 /* HTMLConverter.swift */; };
+		E1B315F0295C90AF0030F6A3 /* ParagraphPropertyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315E3295C90AF0030F6A3 /* ParagraphPropertyConverter.swift */; };
+		E1B315F1295C90AF0030F6A3 /* AttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315E4295C90AF0030F6A3 /* AttributedStringParser.swift */; };
+		E1B315F2295C90AF0030F6A3 /* HTMLRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315E6295C90AF0030F6A3 /* HTMLRepresentation.swift */; };
+		E1B315F3295C90AF0030F6A3 /* UnsupportedHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315E7295C90AF0030F6A3 /* UnsupportedHTML.swift */; };
+		E1B31611295C912A0030F6A3 /* HTMLSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315F7295C912A0030F6A3 /* HTMLSerializer.swift */; };
+		E1B31612295C912A0030F6A3 /* CSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315F9295C912A0030F6A3 /* CSSParser.swift */; };
+		E1B31613295C912A0030F6A3 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315FA295C912A0030F6A3 /* HTMLParser.swift */; };
+		E1B31614295C912A0030F6A3 /* InNodeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315FB295C912A0030F6A3 /* InNodeConverter.swift */; };
+		E1B31615295C912A0030F6A3 /* InAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315FC295C912A0030F6A3 /* InAttributeConverter.swift */; };
+		E1B31616295C912A0030F6A3 /* InNodesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315FD295C912A0030F6A3 /* InNodesConverter.swift */; };
+		E1B31617295C912A0030F6A3 /* InAttributesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B315FE295C912A0030F6A3 /* InAttributesConverter.swift */; };
+		E1B31618295C912A0030F6A3 /* CSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31602295C912A0030F6A3 /* CSSAttributeMatcher.swift */; };
+		E1B31619295C912A0030F6A3 /* UnderlineCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31603295C912A0030F6A3 /* UnderlineCSSAttributeMatcher.swift */; };
+		E1B3161A295C912A0030F6A3 /* ForegroundColorCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31604295C912A0030F6A3 /* ForegroundColorCSSAttributeMatcher.swift */; };
+		E1B3161B295C912A0030F6A3 /* BoldCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31605295C912A0030F6A3 /* BoldCSSAttributeMatcher.swift */; };
+		E1B3161C295C912A0030F6A3 /* ItalicCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31606295C912A0030F6A3 /* ItalicCSSAttributeMatcher.swift */; };
+		E1B3161D295C912A0030F6A3 /* CSSAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31608295C912A0030F6A3 /* CSSAttributeType.swift */; };
+		E1B3161E295C912A0030F6A3 /* CommentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31609295C912A0030F6A3 /* CommentNode.swift */; };
+		E1B3161F295C912A0030F6A3 /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3160A295C912A0030F6A3 /* TextNode.swift */; };
+		E1B31620295C912A0030F6A3 /* CSSAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3160B295C912A0030F6A3 /* CSSAttribute.swift */; };
+		E1B31621295C912A0030F6A3 /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3160C295C912A0030F6A3 /* AttributeType.swift */; };
+		E1B31622295C912A0030F6A3 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3160D295C912A0030F6A3 /* Element.swift */; };
+		E1B31623295C912A0030F6A3 /* ElementNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3160E295C912A0030F6A3 /* ElementNode.swift */; };
+		E1B31624295C912A0030F6A3 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3160F295C912A0030F6A3 /* Node.swift */; };
+		E1B31625295C912A0030F6A3 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31610295C912A0030F6A3 /* Attribute.swift */; };
+		E1B3162F295C916B0030F6A3 /* ShortcodeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31627295C916B0030F6A3 /* ShortcodeAttribute.swift */; };
+		E1B31630295C916B0030F6A3 /* HTMLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31628295C916B0030F6A3 /* HTMLProcessor.swift */; };
+		E1B31631295C916B0030F6A3 /* HTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31629295C916B0030F6A3 /* HTMLTreeProcessor.swift */; };
+		E1B31632295C916B0030F6A3 /* ShortcodeAttributeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3162A295C916B0030F6A3 /* ShortcodeAttributeSerializer.swift */; };
+		E1B31633295C916B0030F6A3 /* RegexProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3162B295C916B0030F6A3 /* RegexProcessor.swift */; };
+		E1B31634295C916B0030F6A3 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3162C295C916B0030F6A3 /* Processor.swift */; };
+		E1B31635295C916B0030F6A3 /* PipelineProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3162D295C916B0030F6A3 /* PipelineProcessor.swift */; };
+		E1B31636295C916B0030F6A3 /* ShortcodeAttributeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3162E295C916B0030F6A3 /* ShortcodeAttributeParser.swift */; };
+		E1B3166C295C91890030F6A3 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31639295C91890030F6A3 /* Converter.swift */; };
+		E1B3166D295C91890030F6A3 /* CLinkedListToArrayConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3163A295C91890030F6A3 /* CLinkedListToArrayConverter.swift */; };
+		E1B3166E295C91890030F6A3 /* UnderlineStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3163D295C91890030F6A3 /* UnderlineStringAttributeConverter.swift */; };
+		E1B3166F295C91890030F6A3 /* ItalicStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3163E295C91890030F6A3 /* ItalicStringAttributeConverter.swift */; };
+		E1B31670295C91890030F6A3 /* BoldStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3163F295C91890030F6A3 /* BoldStringAttributeConverter.swift */; };
+		E1B31671295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31640295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift */; };
+		E1B31672295C91890030F6A3 /* CiteStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31641295C91890030F6A3 /* CiteStringAttributeConverter.swift */; };
+		E1B31673295C91890030F6A3 /* SubscriptStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31642295C91890030F6A3 /* SubscriptStringAttributeConverter.swift */; };
+		E1B31674295C91890030F6A3 /* ConditionalStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31644295C91890030F6A3 /* ConditionalStringAttributeConverter.swift */; };
+		E1B31675295C91890030F6A3 /* StringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31645295C91890030F6A3 /* StringAttributeConverter.swift */; };
+		E1B31676295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31647295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift */; };
+		E1B31677295C91890030F6A3 /* HTMLStyleToggler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31649295C91890030F6A3 /* HTMLStyleToggler.swift */; };
+		E1B31678295C91890030F6A3 /* GenericElementToTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3164C295C91890030F6A3 /* GenericElementToTagConverter.swift */; };
+		E1B31679295C91890030F6A3 /* ElementToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3164E295C91890030F6A3 /* ElementToStringConverter.swift */; };
+		E1B3167A295C91890030F6A3 /* ForegroundColorElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31651295C91890030F6A3 /* ForegroundColorElementAttributeConverter.swift */; };
+		E1B3167B295C91890030F6A3 /* UnderlineElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31652295C91890030F6A3 /* UnderlineElementAttributeConverter.swift */; };
+		E1B3167C295C91890030F6A3 /* BoldElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31653295C91890030F6A3 /* BoldElementAttributeConverter.swift */; };
+		E1B3167D295C91890030F6A3 /* ItalicElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31654295C91890030F6A3 /* ItalicElementAttributeConverter.swift */; };
+		E1B3167E295C91890030F6A3 /* ElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31656295C91890030F6A3 /* ElementAttributeConverter.swift */; };
+		E1B3167F295C91890030F6A3 /* MainAttributesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31657295C91890030F6A3 /* MainAttributesConverter.swift */; };
+		E1B31680295C91890030F6A3 /* ImageElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3165A295C91890030F6A3 /* ImageElementConverter.swift */; };
+		E1B31681295C91890030F6A3 /* CiteElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3165B295C91890030F6A3 /* CiteElementConverter.swift */; };
+		E1B31682295C91890030F6A3 /* FigureElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3165C295C91890030F6A3 /* FigureElementConverter.swift */; };
+		E1B31683295C91890030F6A3 /* FigcaptionElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3165D295C91890030F6A3 /* FigcaptionElementConverter.swift */; };
+		E1B31684295C91890030F6A3 /* VideoElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3165E295C91890030F6A3 /* VideoElementConverter.swift */; };
+		E1B31685295C91890030F6A3 /* GenericElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3165F295C91890030F6A3 /* GenericElementConverter.swift */; };
+		E1B31686295C91890030F6A3 /* LIElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31660295C91890030F6A3 /* LIElementConverter.swift */; };
+		E1B31687295C91890030F6A3 /* HRElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31661295C91890030F6A3 /* HRElementConverter.swift */; };
+		E1B31688295C91890030F6A3 /* BRElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31662295C91890030F6A3 /* BRElementConverter.swift */; };
+		E1B31689295C91890030F6A3 /* FormatterElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31664295C91890030F6A3 /* FormatterElementConverter.swift */; };
+		E1B3168A295C91890030F6A3 /* AttachmentElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31665295C91890030F6A3 /* AttachmentElementConverter.swift */; };
+		E1B3168B295C91890030F6A3 /* ElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31666295C91890030F6A3 /* ElementConverter.swift */; };
+		E1B3168C295C91890030F6A3 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31668295C91890030F6A3 /* Metrics.swift */; };
+		E1B3168D295C91890030F6A3 /* CommentAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */; };
+		E1B3168E295C91890030F6A3 /* HTMLAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */; };
+		E1B31690295C919D0030F6A3 /* html_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = E1B3168F295C919D0030F6A3 /* html_colors.json */; };
+		E1B316C1295C92310030F6A3 /* WordPressOutputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31695295C92310030F6A3 /* WordPressOutputCustomizer.swift */; };
+		E1B316C2295C92310030F6A3 /* WordPressInputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31696295C92310030F6A3 /* WordPressInputCustomizer.swift */; };
+		E1B316C3295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31698295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift */; };
+		E1B316C4295C92310030F6A3 /* GutenblockConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31699295C92310030F6A3 /* GutenblockConverter.swift */; };
+		E1B316C5295C92310030F6A3 /* CommentNode+Gutenberg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169A295C92310030F6A3 /* CommentNode+Gutenberg.swift */; };
+		E1B316C6295C92310030F6A3 /* GutenpackAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169B295C92310030F6A3 /* GutenpackAttachmentRenderer.swift */; };
+		E1B316C7295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169C295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift */; };
+		E1B316C8295C92310030F6A3 /* GutenpackConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169D295C92310030F6A3 /* GutenpackConverter.swift */; };
+		E1B316C9295C92310030F6A3 /* GutenbergAttributeDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169E295C92310030F6A3 /* GutenbergAttributeDecoder.swift */; };
+		E1B316CA295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169F295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift */; };
+		E1B316CB295C92310030F6A3 /* GutenpackAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A0295C92310030F6A3 /* GutenpackAttachment.swift */; };
+		E1B316CC295C92310030F6A3 /* GutenbergAttributeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A1295C92310030F6A3 /* GutenbergAttributeNames.swift */; };
+		E1B316CD295C92310030F6A3 /* Gutenblock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A2295C92310030F6A3 /* Gutenblock.swift */; };
+		E1B316CE295C92310030F6A3 /* GutenbergAttributeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A3295C92310030F6A3 /* GutenbergAttributeEncoder.swift */; };
+		E1B316CF295C92310030F6A3 /* WordPressPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A4295C92310030F6A3 /* WordPressPlugin.swift */; };
+		E1B316D0295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A7295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift */; };
+		E1B316D1295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A8295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift */; };
+		E1B316D2295C92310030F6A3 /* VideoShortcodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AA295C92310030F6A3 /* VideoShortcodeProcessor.swift */; };
+		E1B316D3295C92310030F6A3 /* AutoPProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AC295C92310030F6A3 /* AutoPProcessor.swift */; };
+		E1B316D4295C92310030F6A3 /* RemovePProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AD295C92310030F6A3 /* RemovePProcessor.swift */; };
+		E1B316D5295C92310030F6A3 /* GalleryAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AF295C92310030F6A3 /* GalleryAttachment.swift */; };
+		E1B316D6295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B0295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift */; };
+		E1B316D7295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B1295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift */; };
+		E1B316D8295C92310030F6A3 /* GalleryElementToTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B2295C92310030F6A3 /* GalleryElementToTagConverter.swift */; };
+		E1B316D9295C92310030F6A3 /* GalleryElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B3295C92310030F6A3 /* GalleryElementConverter.swift */; };
+		E1B316DA295C92310030F6A3 /* GallerySupportedAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B4295C92310030F6A3 /* GallerySupportedAttribute.swift */; };
+		E1B316DB295C92310030F6A3 /* WordPressPasteboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B6295C92310030F6A3 /* WordPressPasteboardDelegate.swift */; };
+		E1B316DC295C92310030F6A3 /* VideoAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B8295C92310030F6A3 /* VideoAttachment+WordPress.swift */; };
+		E1B316DD295C92310030F6A3 /* MediaAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B9295C92310030F6A3 /* MediaAttachment+WordPress.swift */; };
+		E1B316DE295C92310030F6A3 /* String+RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BA295C92310030F6A3 /* String+RegEx.swift */; };
+		E1B316DF295C92310030F6A3 /* ImageAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BB295C92310030F6A3 /* ImageAttachment+WordPress.swift */; };
+		E1B316E0295C92310030F6A3 /* EmbedURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BD295C92310030F6A3 /* EmbedURLProcessor.swift */; };
+		E1B316E1295C92310030F6A3 /* ShortcodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BE295C92310030F6A3 /* ShortcodeProcessor.swift */; };
+		E1B316E2295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316C0295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift */; };
+		E1B316E5295C94E50030F6A3 /* MediaInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E4295C94E50030F6A3 /* MediaInserter.swift */; };
+		E1B316E7295C94ED0030F6A3 /* UIImage+SaveTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */; };
+		E1B316E9295C94FF0030F6A3 /* UnknownEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */; };
+		E1B316EB295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */; };
+		E1B316EE295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */; };
+		E1B316EF295C95B50030F6A3 /* AttachmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */; };
+		E1B316F4295C96630030F6A3 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */; };
+		E1B316F5295C96630030F6A3 /* OptionsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E1B314E5295C35940030F6A3 /* HTMLmarkdownTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTMLmarkdownTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B314E8295C35940030F6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B314EA295C35940030F6A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1B314EC295C35940030F6A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1B314EC295C35940030F6A3 /* EditorDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorDemoController.swift; sourceTree = "<group>"; };
 		E1B314F1295C35980030F6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1B314F4295C35980030F6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1B314F6295C35980030F6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B314FC295C87900030F6A3 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		E1B314FD295C87900030F6A3 /* TextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
+		E1B31504295C8CE30030F6A3 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		E1B31507295C8D7D0030F6A3 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		E1B31509295C8DC90030F6A3 /* HTMLStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLStorage.swift; sourceTree = "<group>"; };
+		E1B3150B295C8E3C0030F6A3 /* ParagraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphStyle.swift; sourceTree = "<group>"; };
+		E1B3150D295C8F770030F6A3 /* TextViewPasteboardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewPasteboardDelegate.swift; sourceTree = "<group>"; };
+		E1B31511295C8FAC0030F6A3 /* CodeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeFormatter.swift; sourceTree = "<group>"; };
+		E1B31512295C8FAC0030F6A3 /* LiFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiFormatter.swift; sourceTree = "<group>"; };
+		E1B31513295C8FAC0030F6A3 /* PreFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreFormatter.swift; sourceTree = "<group>"; };
+		E1B31514295C8FAC0030F6A3 /* FigureFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureFormatter.swift; sourceTree = "<group>"; };
+		E1B31515295C8FAC0030F6A3 /* SuperscriptFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperscriptFormatter.swift; sourceTree = "<group>"; };
+		E1B31516295C8FAC0030F6A3 /* HTMLDivFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDivFormatter.swift; sourceTree = "<group>"; };
+		E1B31517295C8FAC0030F6A3 /* BoldFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldFormatter.swift; sourceTree = "<group>"; };
+		E1B31518295C8FAC0030F6A3 /* MarkFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkFormatter.swift; sourceTree = "<group>"; };
+		E1B31519295C8FAC0030F6A3 /* CiteFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiteFormatter.swift; sourceTree = "<group>"; };
+		E1B3151A295C8FAC0030F6A3 /* ItalicFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalicFormatter.swift; sourceTree = "<group>"; };
+		E1B3151B295C8FAC0030F6A3 /* SubscriptFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptFormatter.swift; sourceTree = "<group>"; };
+		E1B3151C295C8FAC0030F6A3 /* UnderlineFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineFormatter.swift; sourceTree = "<group>"; };
+		E1B3151D295C8FAC0030F6A3 /* BoldWithShadowForHeadingFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldWithShadowForHeadingFormatter.swift; sourceTree = "<group>"; };
+		E1B3151E295C8FAC0030F6A3 /* TextListFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextListFormatter.swift; sourceTree = "<group>"; };
+		E1B3151F295C8FAC0030F6A3 /* BlockquoteFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockquoteFormatter.swift; sourceTree = "<group>"; };
+		E1B31520295C8FAC0030F6A3 /* ColorFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFormatter.swift; sourceTree = "<group>"; };
+		E1B31521295C8FAC0030F6A3 /* StrikethroughFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrikethroughFormatter.swift; sourceTree = "<group>"; };
+		E1B31522295C8FAC0030F6A3 /* FigcaptionFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigcaptionFormatter.swift; sourceTree = "<group>"; };
+		E1B31523295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParagraphFormatter.swift; sourceTree = "<group>"; };
+		E1B31524295C8FAC0030F6A3 /* LinkFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkFormatter.swift; sourceTree = "<group>"; };
+		E1B31525295C8FAC0030F6A3 /* HeaderFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFormatter.swift; sourceTree = "<group>"; };
+		E1B31527295C8FAC0030F6A3 /* AttributeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeFormatter.swift; sourceTree = "<group>"; };
+		E1B31528295C8FAC0030F6A3 /* FontFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontFormatter.swift; sourceTree = "<group>"; };
+		E1B31529295C8FAC0030F6A3 /* ParagraphAttributeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphAttributeFormatter.swift; sourceTree = "<group>"; };
+		E1B3152A295C8FAC0030F6A3 /* StandardAttributeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardAttributeFormatter.swift; sourceTree = "<group>"; };
+		E1B31545295C8FB60030F6A3 /* TextList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextList.swift; sourceTree = "<group>"; };
+		E1B31546295C8FB60030F6A3 /* Figcaption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figcaption.swift; sourceTree = "<group>"; };
+		E1B31547295C8FB60030F6A3 /* HTMLDiv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDiv.swift; sourceTree = "<group>"; };
+		E1B31548295C8FB60030F6A3 /* HTMLParagraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParagraph.swift; sourceTree = "<group>"; };
+		E1B31549295C8FB60030F6A3 /* ParagraphProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphProperty.swift; sourceTree = "<group>"; };
+		E1B3154A295C8FB60030F6A3 /* HTMLPre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLPre.swift; sourceTree = "<group>"; };
+		E1B3154B295C8FB60030F6A3 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		E1B3154C295C8FB60030F6A3 /* HTMLLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLLi.swift; sourceTree = "<group>"; };
+		E1B3154D295C8FB60030F6A3 /* Blockquote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockquote.swift; sourceTree = "<group>"; };
+		E1B3154E295C8FB60030F6A3 /* Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
+		E1B31559295C8FCE0030F6A3 /* MediaAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaAttachment.swift; sourceTree = "<group>"; };
+		E1B3155A295C8FCE0030F6A3 /* FontProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		E1B3155B295C8FCE0030F6A3 /* HTMLAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLAttachment.swift; sourceTree = "<group>"; };
+		E1B3155C295C8FCE0030F6A3 /* RenderableAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderableAttachment.swift; sourceTree = "<group>"; };
+		E1B3155D295C8FCE0030F6A3 /* TextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
+		E1B3155E295C8FCE0030F6A3 /* VideoAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAttachment.swift; sourceTree = "<group>"; };
+		E1B3155F295C8FCE0030F6A3 /* ColorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
+		E1B31560295C8FCE0030F6A3 /* LineAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineAttachment.swift; sourceTree = "<group>"; };
+		E1B31561295C8FCE0030F6A3 /* CommentAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAttachment.swift; sourceTree = "<group>"; };
+		E1B31562295C8FCE0030F6A3 /* ImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
+		E1B31563295C8FCE0030F6A3 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E1B31564295C8FCE0030F6A3 /* LayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
+		E1B31572295C90250030F6A3 /* PluginOutputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginOutputCustomizer.swift; sourceTree = "<group>"; };
+		E1B31573295C90250030F6A3 /* PluginInputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginInputCustomizer.swift; sourceTree = "<group>"; };
+		E1B31574295C90250030F6A3 /* PluginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginManager.swift; sourceTree = "<group>"; };
+		E1B31575295C90250030F6A3 /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		E1B3157B295C905A0030F6A3 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E1B3157D295C905A0030F6A3 /* FormatBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatBarDelegate.swift; sourceTree = "<group>"; };
+		E1B3157E295C905A0030F6A3 /* FormatBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatBarItem.swift; sourceTree = "<group>"; };
+		E1B3157F295C905A0030F6A3 /* FormattingIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormattingIdentifier.swift; sourceTree = "<group>"; };
+		E1B31580295C905A0030F6A3 /* FormatBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatBar.swift; sourceTree = "<group>"; };
+		E1B31587295C90740030F6A3 /* String+Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paragraph.swift"; sourceTree = "<group>"; };
+		E1B31588295C90740030F6A3 /* NSMutableAttributedString+ParagraphProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+ParagraphProperty.swift"; sourceTree = "<group>"; };
+		E1B31589295C90740030F6A3 /* NSAttributedString+FontTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+FontTraits.swift"; sourceTree = "<group>"; };
+		E1B3158A295C90740030F6A3 /* StringUTF16+RangeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringUTF16+RangeConversion.swift"; sourceTree = "<group>"; };
+		E1B3158B295C90740030F6A3 /* Character+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+Name.swift"; sourceTree = "<group>"; };
+		E1B3158C295C90740030F6A3 /* Array+ShortcodeAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ShortcodeAttribute.swift"; sourceTree = "<group>"; };
+		E1B3158D295C90740030F6A3 /* NSRange+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+Helpers.swift"; sourceTree = "<group>"; };
+		E1B3158E295C90740030F6A3 /* NSMutableAttributedString+ReplaceOcurrences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+ReplaceOcurrences.swift"; sourceTree = "<group>"; };
+		E1B3158F295C90740030F6A3 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		E1B31590295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+ReplaceAttributes.swift"; sourceTree = "<group>"; };
+		E1B31591295C90740030F6A3 /* String+CharacterName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CharacterName.swift"; sourceTree = "<group>"; };
+		E1B31592295C90740030F6A3 /* NSAttributedString+CharacterName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+CharacterName.swift"; sourceTree = "<group>"; };
+		E1B31593295C90740030F6A3 /* UIStackView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helpers.swift"; sourceTree = "<group>"; };
+		E1B31594295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+ReplaceOcurrences.swift"; sourceTree = "<group>"; };
+		E1B31595295C90740030F6A3 /* NSAttributedString+Analyzers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Analyzers.swift"; sourceTree = "<group>"; };
+		E1B31596295C90740030F6A3 /* NSBundle+AztecBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+AztecBundle.swift"; sourceTree = "<group>"; };
+		E1B31597295C90740030F6A3 /* NSLayoutManager+Attachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutManager+Attachments.swift"; sourceTree = "<group>"; };
+		E1B31598295C90740030F6A3 /* NSAttributedString+ParagraphRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+ParagraphRange.swift"; sourceTree = "<group>"; };
+		E1B31599295C90740030F6A3 /* UIColor+Parsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Parsers.swift"; sourceTree = "<group>"; };
+		E1B3159A295C90740030F6A3 /* UIFont+Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Emoji.swift"; sourceTree = "<group>"; };
+		E1B3159B295C90740030F6A3 /* Array+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Attribute.swift"; sourceTree = "<group>"; };
+		E1B3159C295C90740030F6A3 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		E1B3159D295C90740030F6A3 /* DocumentReadingOptionKey+Swift4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentReadingOptionKey+Swift4.swift"; sourceTree = "<group>"; };
+		E1B3159E295C90740030F6A3 /* NSAttributedString+Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Lists.swift"; sourceTree = "<group>"; };
+		E1B3159F295C90740030F6A3 /* UILayoutPriority+Swift4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+Swift4.swift"; sourceTree = "<group>"; };
+		E1B315A0295C90740030F6A3 /* NSAttributedStringKey+Aztec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedStringKey+Aztec.swift"; sourceTree = "<group>"; };
+		E1B315A1295C90740030F6A3 /* UITextView+Undoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Undoable.swift"; sourceTree = "<group>"; };
+		E1B315A2295C90740030F6A3 /* Dictionary+AttributedStringKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+AttributedStringKey.swift"; sourceTree = "<group>"; };
+		E1B315A3295C90740030F6A3 /* UITextView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Delegate.swift"; sourceTree = "<group>"; };
+		E1B315A4295C90740030F6A3 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		E1B315A5295C90740030F6A3 /* DocumentType+Swift4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentType+Swift4.swift"; sourceTree = "<group>"; };
+		E1B315A6295C90740030F6A3 /* String+RangeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RangeConversion.swift"; sourceTree = "<group>"; };
+		E1B315A7295C90740030F6A3 /* String+EndOfLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EndOfLine.swift"; sourceTree = "<group>"; };
+		E1B315A8295C90740030F6A3 /* NSAttributedString+Attachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Attachments.swift"; sourceTree = "<group>"; };
+		E1B315A9295C90740030F6A3 /* NSAttributedString+Archive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Archive.swift"; sourceTree = "<group>"; };
+		E1B315AA295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedStringKey+Conversion.swift"; sourceTree = "<group>"; };
+		E1B315AB295C90740030F6A3 /* UIPasteboard+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPasteboard+Helpers.swift"; sourceTree = "<group>"; };
+		E1B315AC295C90740030F6A3 /* NSTextingResult+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextingResult+Helpers.swift"; sourceTree = "<group>"; };
+		E1B315AD295C90740030F6A3 /* UIFont+Traits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Traits.swift"; sourceTree = "<group>"; };
+		E1B315D8295C90AE0030F6A3 /* VideoAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B315D9295C90AE0030F6A3 /* LineAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B315DA295C90AE0030F6A3 /* CommentAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B315DB295C90AF0030F6A3 /* HTMLAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B315DC295C90AF0030F6A3 /* ImageAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B315DE295C90AF0030F6A3 /* AttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B315DF295C90AF0030F6A3 /* AttributedStringSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringSerializer.swift; sourceTree = "<group>"; };
+		E1B315E0295C90AF0030F6A3 /* HTMLConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLConverter.swift; sourceTree = "<group>"; };
+		E1B315E3295C90AF0030F6A3 /* ParagraphPropertyConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphPropertyConverter.swift; sourceTree = "<group>"; };
+		E1B315E4295C90AF0030F6A3 /* AttributedStringParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringParser.swift; sourceTree = "<group>"; };
+		E1B315E6295C90AF0030F6A3 /* HTMLRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLRepresentation.swift; sourceTree = "<group>"; };
+		E1B315E7295C90AF0030F6A3 /* UnsupportedHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsupportedHTML.swift; sourceTree = "<group>"; };
+		E1B315F7295C912A0030F6A3 /* HTMLSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLSerializer.swift; sourceTree = "<group>"; };
+		E1B315F9295C912A0030F6A3 /* CSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSParser.swift; sourceTree = "<group>"; };
+		E1B315FA295C912A0030F6A3 /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		E1B315FB295C912A0030F6A3 /* InNodeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InNodeConverter.swift; sourceTree = "<group>"; };
+		E1B315FC295C912A0030F6A3 /* InAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B315FD295C912A0030F6A3 /* InNodesConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InNodesConverter.swift; sourceTree = "<group>"; };
+		E1B315FE295C912A0030F6A3 /* InAttributesConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAttributesConverter.swift; sourceTree = "<group>"; };
+		E1B31602295C912A0030F6A3 /* CSSAttributeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		E1B31603295C912A0030F6A3 /* UnderlineCSSAttributeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		E1B31604295C912A0030F6A3 /* ForegroundColorCSSAttributeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForegroundColorCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		E1B31605295C912A0030F6A3 /* BoldCSSAttributeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		E1B31606295C912A0030F6A3 /* ItalicCSSAttributeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalicCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		E1B31608295C912A0030F6A3 /* CSSAttributeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSAttributeType.swift; sourceTree = "<group>"; };
+		E1B31609295C912A0030F6A3 /* CommentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentNode.swift; sourceTree = "<group>"; };
+		E1B3160A295C912A0030F6A3 /* TextNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNode.swift; sourceTree = "<group>"; };
+		E1B3160B295C912A0030F6A3 /* CSSAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSAttribute.swift; sourceTree = "<group>"; };
+		E1B3160C295C912A0030F6A3 /* AttributeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
+		E1B3160D295C912A0030F6A3 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		E1B3160E295C912A0030F6A3 /* ElementNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNode.swift; sourceTree = "<group>"; };
+		E1B3160F295C912A0030F6A3 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		E1B31610295C912A0030F6A3 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		E1B31627295C916B0030F6A3 /* ShortcodeAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcodeAttribute.swift; sourceTree = "<group>"; };
+		E1B31628295C916B0030F6A3 /* HTMLProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLProcessor.swift; sourceTree = "<group>"; };
+		E1B31629295C916B0030F6A3 /* HTMLTreeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLTreeProcessor.swift; sourceTree = "<group>"; };
+		E1B3162A295C916B0030F6A3 /* ShortcodeAttributeSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcodeAttributeSerializer.swift; sourceTree = "<group>"; };
+		E1B3162B295C916B0030F6A3 /* RegexProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexProcessor.swift; sourceTree = "<group>"; };
+		E1B3162C295C916B0030F6A3 /* Processor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
+		E1B3162D295C916B0030F6A3 /* PipelineProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipelineProcessor.swift; sourceTree = "<group>"; };
+		E1B3162E295C916B0030F6A3 /* ShortcodeAttributeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcodeAttributeParser.swift; sourceTree = "<group>"; };
+		E1B31639295C91890030F6A3 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		E1B3163A295C91890030F6A3 /* CLinkedListToArrayConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLinkedListToArrayConverter.swift; sourceTree = "<group>"; };
+		E1B3163D295C91890030F6A3 /* UnderlineStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B3163E295C91890030F6A3 /* ItalicStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalicStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B3163F295C91890030F6A3 /* BoldStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31640295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperscriptStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31641295C91890030F6A3 /* CiteStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiteStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31642295C91890030F6A3 /* SubscriptStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31644295C91890030F6A3 /* ConditionalStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31645295C91890030F6A3 /* StringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31647295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalItalicStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31649295C91890030F6A3 /* HTMLStyleToggler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLStyleToggler.swift; sourceTree = "<group>"; };
+		E1B3164C295C91890030F6A3 /* GenericElementToTagConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericElementToTagConverter.swift; sourceTree = "<group>"; };
+		E1B3164E295C91890030F6A3 /* ElementToStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementToStringConverter.swift; sourceTree = "<group>"; };
+		E1B31651295C91890030F6A3 /* ForegroundColorElementAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForegroundColorElementAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31652295C91890030F6A3 /* UnderlineElementAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineElementAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31653295C91890030F6A3 /* BoldElementAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldElementAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31654295C91890030F6A3 /* ItalicElementAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalicElementAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31656295C91890030F6A3 /* ElementAttributeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementAttributeConverter.swift; sourceTree = "<group>"; };
+		E1B31657295C91890030F6A3 /* MainAttributesConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAttributesConverter.swift; sourceTree = "<group>"; };
+		E1B3165A295C91890030F6A3 /* ImageElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageElementConverter.swift; sourceTree = "<group>"; };
+		E1B3165B295C91890030F6A3 /* CiteElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiteElementConverter.swift; sourceTree = "<group>"; };
+		E1B3165C295C91890030F6A3 /* FigureElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureElementConverter.swift; sourceTree = "<group>"; };
+		E1B3165D295C91890030F6A3 /* FigcaptionElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigcaptionElementConverter.swift; sourceTree = "<group>"; };
+		E1B3165E295C91890030F6A3 /* VideoElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoElementConverter.swift; sourceTree = "<group>"; };
+		E1B3165F295C91890030F6A3 /* GenericElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericElementConverter.swift; sourceTree = "<group>"; };
+		E1B31660295C91890030F6A3 /* LIElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIElementConverter.swift; sourceTree = "<group>"; };
+		E1B31661295C91890030F6A3 /* HRElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRElementConverter.swift; sourceTree = "<group>"; };
+		E1B31662295C91890030F6A3 /* BRElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRElementConverter.swift; sourceTree = "<group>"; };
+		E1B31664295C91890030F6A3 /* FormatterElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterElementConverter.swift; sourceTree = "<group>"; };
+		E1B31665295C91890030F6A3 /* AttachmentElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentElementConverter.swift; sourceTree = "<group>"; };
+		E1B31666295C91890030F6A3 /* ElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementConverter.swift; sourceTree = "<group>"; };
+		E1B31668295C91890030F6A3 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAttachmentRenderer.swift; sourceTree = "<group>"; };
+		E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLAttachmentRenderer.swift; sourceTree = "<group>"; };
+		E1B3168F295C919D0030F6A3 /* html_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = html_colors.json; sourceTree = "<group>"; };
+		E1B31695295C92310030F6A3 /* WordPressOutputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressOutputCustomizer.swift; sourceTree = "<group>"; };
+		E1B31696295C92310030F6A3 /* WordPressInputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressInputCustomizer.swift; sourceTree = "<group>"; };
+		E1B31698295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergOutputHTMLTreeProcessor.swift; sourceTree = "<group>"; };
+		E1B31699295C92310030F6A3 /* GutenblockConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenblockConverter.swift; sourceTree = "<group>"; };
+		E1B3169A295C92310030F6A3 /* CommentNode+Gutenberg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommentNode+Gutenberg.swift"; sourceTree = "<group>"; };
+		E1B3169B295C92310030F6A3 /* GutenpackAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackAttachmentRenderer.swift; sourceTree = "<group>"; };
+		E1B3169C295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B3169D295C92310030F6A3 /* GutenpackConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackConverter.swift; sourceTree = "<group>"; };
+		E1B3169E295C92310030F6A3 /* GutenbergAttributeDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergAttributeDecoder.swift; sourceTree = "<group>"; };
+		E1B3169F295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergInputHTMLTreeProcessor.swift; sourceTree = "<group>"; };
+		E1B316A0295C92310030F6A3 /* GutenpackAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackAttachment.swift; sourceTree = "<group>"; };
+		E1B316A1295C92310030F6A3 /* GutenbergAttributeNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergAttributeNames.swift; sourceTree = "<group>"; };
+		E1B316A2295C92310030F6A3 /* Gutenblock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gutenblock.swift; sourceTree = "<group>"; };
+		E1B316A3295C92310030F6A3 /* GutenbergAttributeEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergAttributeEncoder.swift; sourceTree = "<group>"; };
+		E1B316A4295C92310030F6A3 /* WordPressPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressPlugin.swift; sourceTree = "<group>"; };
+		E1B316A7295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionShortcodeOutputProcessor.swift; sourceTree = "<group>"; };
+		E1B316A8295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionShortcodeInputProcessor.swift; sourceTree = "<group>"; };
+		E1B316AA295C92310030F6A3 /* VideoShortcodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortcodeProcessor.swift; sourceTree = "<group>"; };
+		E1B316AC295C92310030F6A3 /* AutoPProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoPProcessor.swift; sourceTree = "<group>"; };
+		E1B316AD295C92310030F6A3 /* RemovePProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemovePProcessor.swift; sourceTree = "<group>"; };
+		E1B316AF295C92310030F6A3 /* GalleryAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryAttachment.swift; sourceTree = "<group>"; };
+		E1B316B0295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		E1B316B1295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryShortcodeInputProcessor.swift; sourceTree = "<group>"; };
+		E1B316B2295C92310030F6A3 /* GalleryElementToTagConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryElementToTagConverter.swift; sourceTree = "<group>"; };
+		E1B316B3295C92310030F6A3 /* GalleryElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryElementConverter.swift; sourceTree = "<group>"; };
+		E1B316B4295C92310030F6A3 /* GallerySupportedAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GallerySupportedAttribute.swift; sourceTree = "<group>"; };
+		E1B316B6295C92310030F6A3 /* WordPressPasteboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressPasteboardDelegate.swift; sourceTree = "<group>"; };
+		E1B316B8295C92310030F6A3 /* VideoAttachment+WordPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VideoAttachment+WordPress.swift"; sourceTree = "<group>"; };
+		E1B316B9295C92310030F6A3 /* MediaAttachment+WordPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MediaAttachment+WordPress.swift"; sourceTree = "<group>"; };
+		E1B316BA295C92310030F6A3 /* String+RegEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RegEx.swift"; sourceTree = "<group>"; };
+		E1B316BB295C92310030F6A3 /* ImageAttachment+WordPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageAttachment+WordPress.swift"; sourceTree = "<group>"; };
+		E1B316BD295C92310030F6A3 /* EmbedURLProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedURLProcessor.swift; sourceTree = "<group>"; };
+		E1B316BE295C92310030F6A3 /* ShortcodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcodeProcessor.swift; sourceTree = "<group>"; };
+		E1B316C0295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialTagAttachmentRenderer.swift; sourceTree = "<group>"; };
+		E1B316E4295C94E50030F6A3 /* MediaInserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInserter.swift; sourceTree = "<group>"; };
+		E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SaveTo.swift"; sourceTree = "<group>"; };
+		E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownEditorViewController.swift; sourceTree = "<group>"; };
+		E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewAttachmentDelegateProvider.swift; sourceTree = "<group>"; };
+		E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AttachmentDetailsViewController.storyboard; sourceTree = "<group>"; };
+		E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentDetailsViewController.swift; sourceTree = "<group>"; };
+		E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTablePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +498,721 @@
 			children = (
 				E1B314E8295C35940030F6A3 /* AppDelegate.swift */,
 				E1B314EA295C35940030F6A3 /* SceneDelegate.swift */,
-				E1B314EC295C35940030F6A3 /* ViewController.swift */,
+				E1B314FC295C87900030F6A3 /* TextViewController.swift */,
+				E1B314FD295C87900030F6A3 /* TextViewController.xib */,
+				E1B31692295C921B0030F6A3 /* WordPressEditor */,
+				E1B31691295C91F70030F6A3 /* Aztec */,
+				E1B314EC295C35940030F6A3 /* EditorDemoController.swift */,
+				E1B316E3295C94C20030F6A3 /* AdditionalFiles */,
 				E1B314F1295C35980030F6A3 /* Assets.xcassets */,
+				E1B3168F295C919D0030F6A3 /* html_colors.json */,
 				E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */,
 				E1B314F6295C35980030F6A3 /* Info.plist */,
 			);
 			path = HTMLmarkdownTest;
+			sourceTree = "<group>";
+		};
+		E1B31503295C8CC40030F6A3 /* EditorView */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31504295C8CE30030F6A3 /* EditorView.swift */,
+			);
+			path = EditorView;
+			sourceTree = "<group>";
+		};
+		E1B31506295C8D3E0030F6A3 /* TextKit */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31544295C8FB60030F6A3 /* ParagraphProperty */,
+				E1B31507295C8D7D0030F6A3 /* TextView.swift */,
+				E1B31509295C8DC90030F6A3 /* HTMLStorage.swift */,
+				E1B3150B295C8E3C0030F6A3 /* ParagraphStyle.swift */,
+				E1B3150D295C8F770030F6A3 /* TextViewPasteboardDelegate.swift */,
+				E1B3155F295C8FCE0030F6A3 /* ColorProvider.swift */,
+				E1B31561295C8FCE0030F6A3 /* CommentAttachment.swift */,
+				E1B31563295C8FCE0030F6A3 /* Configuration.swift */,
+				E1B3155A295C8FCE0030F6A3 /* FontProvider.swift */,
+				E1B3155B295C8FCE0030F6A3 /* HTMLAttachment.swift */,
+				E1B31562295C8FCE0030F6A3 /* ImageAttachment.swift */,
+				E1B31564295C8FCE0030F6A3 /* LayoutManager.swift */,
+				E1B31560295C8FCE0030F6A3 /* LineAttachment.swift */,
+				E1B31559295C8FCE0030F6A3 /* MediaAttachment.swift */,
+				E1B3155C295C8FCE0030F6A3 /* RenderableAttachment.swift */,
+				E1B3155D295C8FCE0030F6A3 /* TextStorage.swift */,
+				E1B3155E295C8FCE0030F6A3 /* VideoAttachment.swift */,
+			);
+			path = TextKit;
+			sourceTree = "<group>";
+		};
+		E1B3150F295C8FAC0030F6A3 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31510295C8FAC0030F6A3 /* Implementations */,
+				E1B31526295C8FAC0030F6A3 /* Base */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		E1B31510295C8FAC0030F6A3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31511295C8FAC0030F6A3 /* CodeFormatter.swift */,
+				E1B31512295C8FAC0030F6A3 /* LiFormatter.swift */,
+				E1B31513295C8FAC0030F6A3 /* PreFormatter.swift */,
+				E1B31514295C8FAC0030F6A3 /* FigureFormatter.swift */,
+				E1B31515295C8FAC0030F6A3 /* SuperscriptFormatter.swift */,
+				E1B31516295C8FAC0030F6A3 /* HTMLDivFormatter.swift */,
+				E1B31517295C8FAC0030F6A3 /* BoldFormatter.swift */,
+				E1B31518295C8FAC0030F6A3 /* MarkFormatter.swift */,
+				E1B31519295C8FAC0030F6A3 /* CiteFormatter.swift */,
+				E1B3151A295C8FAC0030F6A3 /* ItalicFormatter.swift */,
+				E1B3151B295C8FAC0030F6A3 /* SubscriptFormatter.swift */,
+				E1B3151C295C8FAC0030F6A3 /* UnderlineFormatter.swift */,
+				E1B3151D295C8FAC0030F6A3 /* BoldWithShadowForHeadingFormatter.swift */,
+				E1B3151E295C8FAC0030F6A3 /* TextListFormatter.swift */,
+				E1B3151F295C8FAC0030F6A3 /* BlockquoteFormatter.swift */,
+				E1B31520295C8FAC0030F6A3 /* ColorFormatter.swift */,
+				E1B31521295C8FAC0030F6A3 /* StrikethroughFormatter.swift */,
+				E1B31522295C8FAC0030F6A3 /* FigcaptionFormatter.swift */,
+				E1B31523295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift */,
+				E1B31524295C8FAC0030F6A3 /* LinkFormatter.swift */,
+				E1B31525295C8FAC0030F6A3 /* HeaderFormatter.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		E1B31526295C8FAC0030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31527295C8FAC0030F6A3 /* AttributeFormatter.swift */,
+				E1B31528295C8FAC0030F6A3 /* FontFormatter.swift */,
+				E1B31529295C8FAC0030F6A3 /* ParagraphAttributeFormatter.swift */,
+				E1B3152A295C8FAC0030F6A3 /* StandardAttributeFormatter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B31544295C8FB60030F6A3 /* ParagraphProperty */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31545295C8FB60030F6A3 /* TextList.swift */,
+				E1B31546295C8FB60030F6A3 /* Figcaption.swift */,
+				E1B31547295C8FB60030F6A3 /* HTMLDiv.swift */,
+				E1B31548295C8FB60030F6A3 /* HTMLParagraph.swift */,
+				E1B31549295C8FB60030F6A3 /* ParagraphProperty.swift */,
+				E1B3154A295C8FB60030F6A3 /* HTMLPre.swift */,
+				E1B3154B295C8FB60030F6A3 /* Header.swift */,
+				E1B3154C295C8FB60030F6A3 /* HTMLLi.swift */,
+				E1B3154D295C8FB60030F6A3 /* Blockquote.swift */,
+				E1B3154E295C8FB60030F6A3 /* Figure.swift */,
+			);
+			path = ParagraphProperty;
+			sourceTree = "<group>";
+		};
+		E1B31571295C90250030F6A3 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31572295C90250030F6A3 /* PluginOutputCustomizer.swift */,
+				E1B31573295C90250030F6A3 /* PluginInputCustomizer.swift */,
+				E1B31574295C90250030F6A3 /* PluginManager.swift */,
+				E1B31575295C90250030F6A3 /* Plugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		E1B3157A295C905A0030F6A3 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3157B295C905A0030F6A3 /* Assets.swift */,
+				E1B3157C295C905A0030F6A3 /* FormatBar */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		E1B3157C295C905A0030F6A3 /* FormatBar */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3157D295C905A0030F6A3 /* FormatBarDelegate.swift */,
+				E1B3157E295C905A0030F6A3 /* FormatBarItem.swift */,
+				E1B3157F295C905A0030F6A3 /* FormattingIdentifier.swift */,
+				E1B31580295C905A0030F6A3 /* FormatBar.swift */,
+			);
+			path = FormatBar;
+			sourceTree = "<group>";
+		};
+		E1B31586295C90740030F6A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31587295C90740030F6A3 /* String+Paragraph.swift */,
+				E1B31588295C90740030F6A3 /* NSMutableAttributedString+ParagraphProperty.swift */,
+				E1B31589295C90740030F6A3 /* NSAttributedString+FontTraits.swift */,
+				E1B3158A295C90740030F6A3 /* StringUTF16+RangeConversion.swift */,
+				E1B3158B295C90740030F6A3 /* Character+Name.swift */,
+				E1B3158C295C90740030F6A3 /* Array+ShortcodeAttribute.swift */,
+				E1B3158D295C90740030F6A3 /* NSRange+Helpers.swift */,
+				E1B3158E295C90740030F6A3 /* NSMutableAttributedString+ReplaceOcurrences.swift */,
+				E1B3158F295C90740030F6A3 /* UIImage+Resize.swift */,
+				E1B31590295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift */,
+				E1B31591295C90740030F6A3 /* String+CharacterName.swift */,
+				E1B31592295C90740030F6A3 /* NSAttributedString+CharacterName.swift */,
+				E1B31593295C90740030F6A3 /* UIStackView+Helpers.swift */,
+				E1B31594295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift */,
+				E1B31595295C90740030F6A3 /* NSAttributedString+Analyzers.swift */,
+				E1B31596295C90740030F6A3 /* NSBundle+AztecBundle.swift */,
+				E1B31597295C90740030F6A3 /* NSLayoutManager+Attachments.swift */,
+				E1B31598295C90740030F6A3 /* NSAttributedString+ParagraphRange.swift */,
+				E1B31599295C90740030F6A3 /* UIColor+Parsers.swift */,
+				E1B3159A295C90740030F6A3 /* UIFont+Emoji.swift */,
+				E1B3159B295C90740030F6A3 /* Array+Attribute.swift */,
+				E1B3159C295C90740030F6A3 /* Array+Helpers.swift */,
+				E1B3159D295C90740030F6A3 /* DocumentReadingOptionKey+Swift4.swift */,
+				E1B3159E295C90740030F6A3 /* NSAttributedString+Lists.swift */,
+				E1B3159F295C90740030F6A3 /* UILayoutPriority+Swift4.swift */,
+				E1B315A0295C90740030F6A3 /* NSAttributedStringKey+Aztec.swift */,
+				E1B315A1295C90740030F6A3 /* UITextView+Undoable.swift */,
+				E1B315A2295C90740030F6A3 /* Dictionary+AttributedStringKey.swift */,
+				E1B315A3295C90740030F6A3 /* UITextView+Delegate.swift */,
+				E1B315A4295C90740030F6A3 /* String+HTML.swift */,
+				E1B315A5295C90740030F6A3 /* DocumentType+Swift4.swift */,
+				E1B315A6295C90740030F6A3 /* String+RangeConversion.swift */,
+				E1B315A7295C90740030F6A3 /* String+EndOfLine.swift */,
+				E1B315A8295C90740030F6A3 /* NSAttributedString+Attachments.swift */,
+				E1B315A9295C90740030F6A3 /* NSAttributedString+Archive.swift */,
+				E1B315AA295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift */,
+				E1B315AB295C90740030F6A3 /* UIPasteboard+Helpers.swift */,
+				E1B315AC295C90740030F6A3 /* NSTextingResult+Helpers.swift */,
+				E1B315AD295C90740030F6A3 /* UIFont+Traits.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E1B315D5295C90AE0030F6A3 /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315D6295C90AE0030F6A3 /* Conversions */,
+				E1B315E5295C90AF0030F6A3 /* Attributes */,
+			);
+			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
+		E1B315D6295C90AE0030F6A3 /* Conversions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315D7295C90AE0030F6A3 /* AttachmentToElementConverter */,
+				E1B315DF295C90AF0030F6A3 /* AttributedStringSerializer.swift */,
+				E1B315E0295C90AF0030F6A3 /* HTMLConverter.swift */,
+				E1B315E1295C90AF0030F6A3 /* ParagraphPropertyConverters */,
+				E1B315E4295C90AF0030F6A3 /* AttributedStringParser.swift */,
+			);
+			path = Conversions;
+			sourceTree = "<group>";
+		};
+		E1B315D7295C90AE0030F6A3 /* AttachmentToElementConverter */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315D8295C90AE0030F6A3 /* VideoAttachmentToElementConverter.swift */,
+				E1B315D9295C90AE0030F6A3 /* LineAttachmentToElementConverter.swift */,
+				E1B315DA295C90AE0030F6A3 /* CommentAttachmentToElementConverter.swift */,
+				E1B315DB295C90AF0030F6A3 /* HTMLAttachmentToElementConverter.swift */,
+				E1B315DC295C90AF0030F6A3 /* ImageAttachmentToElementConverter.swift */,
+				E1B315DD295C90AF0030F6A3 /* Base */,
+			);
+			path = AttachmentToElementConverter;
+			sourceTree = "<group>";
+		};
+		E1B315DD295C90AF0030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315DE295C90AF0030F6A3 /* AttachmentToElementConverter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B315E1295C90AF0030F6A3 /* ParagraphPropertyConverters */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315E2295C90AF0030F6A3 /* Base */,
+			);
+			path = ParagraphPropertyConverters;
+			sourceTree = "<group>";
+		};
+		E1B315E2295C90AF0030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315E3295C90AF0030F6A3 /* ParagraphPropertyConverter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B315E5295C90AF0030F6A3 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315E6295C90AF0030F6A3 /* HTMLRepresentation.swift */,
+				E1B315E7295C90AF0030F6A3 /* UnsupportedHTML.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		E1B315F4295C912A0030F6A3 /* Libxml2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315F5295C912A0030F6A3 /* Converters */,
+				E1B315FF295C912A0030F6A3 /* DOM */,
+			);
+			path = Libxml2;
+			sourceTree = "<group>";
+		};
+		E1B315F5295C912A0030F6A3 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315F6295C912A0030F6A3 /* Out */,
+				E1B315F8295C912A0030F6A3 /* In */,
+			);
+			path = Converters;
+			sourceTree = "<group>";
+		};
+		E1B315F6295C912A0030F6A3 /* Out */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315F7295C912A0030F6A3 /* HTMLSerializer.swift */,
+			);
+			path = Out;
+			sourceTree = "<group>";
+		};
+		E1B315F8295C912A0030F6A3 /* In */ = {
+			isa = PBXGroup;
+			children = (
+				E1B315F9295C912A0030F6A3 /* CSSParser.swift */,
+				E1B315FA295C912A0030F6A3 /* HTMLParser.swift */,
+				E1B315FB295C912A0030F6A3 /* InNodeConverter.swift */,
+				E1B315FC295C912A0030F6A3 /* InAttributeConverter.swift */,
+				E1B315FD295C912A0030F6A3 /* InNodesConverter.swift */,
+				E1B315FE295C912A0030F6A3 /* InAttributesConverter.swift */,
+			);
+			path = In;
+			sourceTree = "<group>";
+		};
+		E1B315FF295C912A0030F6A3 /* DOM */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31600295C912A0030F6A3 /* Logic */,
+				E1B31607295C912A0030F6A3 /* Data */,
+			);
+			path = DOM;
+			sourceTree = "<group>";
+		};
+		E1B31600295C912A0030F6A3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31601295C912A0030F6A3 /* CSS */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		E1B31601295C912A0030F6A3 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31602295C912A0030F6A3 /* CSSAttributeMatcher.swift */,
+				E1B31603295C912A0030F6A3 /* UnderlineCSSAttributeMatcher.swift */,
+				E1B31604295C912A0030F6A3 /* ForegroundColorCSSAttributeMatcher.swift */,
+				E1B31605295C912A0030F6A3 /* BoldCSSAttributeMatcher.swift */,
+				E1B31606295C912A0030F6A3 /* ItalicCSSAttributeMatcher.swift */,
+			);
+			path = CSS;
+			sourceTree = "<group>";
+		};
+		E1B31607295C912A0030F6A3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31608295C912A0030F6A3 /* CSSAttributeType.swift */,
+				E1B31609295C912A0030F6A3 /* CommentNode.swift */,
+				E1B3160A295C912A0030F6A3 /* TextNode.swift */,
+				E1B3160B295C912A0030F6A3 /* CSSAttribute.swift */,
+				E1B3160C295C912A0030F6A3 /* AttributeType.swift */,
+				E1B3160D295C912A0030F6A3 /* Element.swift */,
+				E1B3160E295C912A0030F6A3 /* ElementNode.swift */,
+				E1B3160F295C912A0030F6A3 /* Node.swift */,
+				E1B31610295C912A0030F6A3 /* Attribute.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E1B31626295C916B0030F6A3 /* Processor */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31627295C916B0030F6A3 /* ShortcodeAttribute.swift */,
+				E1B31628295C916B0030F6A3 /* HTMLProcessor.swift */,
+				E1B31629295C916B0030F6A3 /* HTMLTreeProcessor.swift */,
+				E1B3162A295C916B0030F6A3 /* ShortcodeAttributeSerializer.swift */,
+				E1B3162B295C916B0030F6A3 /* RegexProcessor.swift */,
+				E1B3162C295C916B0030F6A3 /* Processor.swift */,
+				E1B3162D295C916B0030F6A3 /* PipelineProcessor.swift */,
+				E1B3162E295C916B0030F6A3 /* ShortcodeAttributeParser.swift */,
+			);
+			path = Processor;
+			sourceTree = "<group>";
+		};
+		E1B31637295C91890030F6A3 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31638295C91890030F6A3 /* HTMLToElements */,
+				E1B3163B295C91890030F6A3 /* StringAttributesToAttributes */,
+				E1B3164A295C91890030F6A3 /* ElementsToHTML */,
+				E1B3164F295C91890030F6A3 /* AttributesToStringAttributes */,
+				E1B31658295C91890030F6A3 /* ElementsToAttributedString */,
+			);
+			path = Converters;
+			sourceTree = "<group>";
+		};
+		E1B31638295C91890030F6A3 /* HTMLToElements */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31639295C91890030F6A3 /* Converter.swift */,
+				E1B3163A295C91890030F6A3 /* CLinkedListToArrayConverter.swift */,
+			);
+			path = HTMLToElements;
+			sourceTree = "<group>";
+		};
+		E1B3163B295C91890030F6A3 /* StringAttributesToAttributes */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3163C295C91890030F6A3 /* Implementations */,
+				E1B31643295C91890030F6A3 /* Base */,
+				E1B31646295C91890030F6A3 /* ConditionalConverters */,
+				E1B31648295C91890030F6A3 /* Utility */,
+			);
+			path = StringAttributesToAttributes;
+			sourceTree = "<group>";
+		};
+		E1B3163C295C91890030F6A3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3163D295C91890030F6A3 /* UnderlineStringAttributeConverter.swift */,
+				E1B3163E295C91890030F6A3 /* ItalicStringAttributeConverter.swift */,
+				E1B3163F295C91890030F6A3 /* BoldStringAttributeConverter.swift */,
+				E1B31640295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift */,
+				E1B31641295C91890030F6A3 /* CiteStringAttributeConverter.swift */,
+				E1B31642295C91890030F6A3 /* SubscriptStringAttributeConverter.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		E1B31643295C91890030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31644295C91890030F6A3 /* ConditionalStringAttributeConverter.swift */,
+				E1B31645295C91890030F6A3 /* StringAttributeConverter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B31646295C91890030F6A3 /* ConditionalConverters */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31647295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift */,
+			);
+			path = ConditionalConverters;
+			sourceTree = "<group>";
+		};
+		E1B31648295C91890030F6A3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31649295C91890030F6A3 /* HTMLStyleToggler.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		E1B3164A295C91890030F6A3 /* ElementsToHTML */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3164B295C91890030F6A3 /* Implementations */,
+				E1B3164D295C91890030F6A3 /* Base */,
+			);
+			path = ElementsToHTML;
+			sourceTree = "<group>";
+		};
+		E1B3164B295C91890030F6A3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3164C295C91890030F6A3 /* GenericElementToTagConverter.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		E1B3164D295C91890030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3164E295C91890030F6A3 /* ElementToStringConverter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B3164F295C91890030F6A3 /* AttributesToStringAttributes */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31650295C91890030F6A3 /* Implementations */,
+				E1B31655295C91890030F6A3 /* Base */,
+			);
+			path = AttributesToStringAttributes;
+			sourceTree = "<group>";
+		};
+		E1B31650295C91890030F6A3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31651295C91890030F6A3 /* ForegroundColorElementAttributeConverter.swift */,
+				E1B31652295C91890030F6A3 /* UnderlineElementAttributeConverter.swift */,
+				E1B31653295C91890030F6A3 /* BoldElementAttributeConverter.swift */,
+				E1B31654295C91890030F6A3 /* ItalicElementAttributeConverter.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		E1B31655295C91890030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31656295C91890030F6A3 /* ElementAttributeConverter.swift */,
+				E1B31657295C91890030F6A3 /* MainAttributesConverter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B31658295C91890030F6A3 /* ElementsToAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31659295C91890030F6A3 /* Implementations */,
+				E1B31663295C91890030F6A3 /* Base */,
+			);
+			path = ElementsToAttributedString;
+			sourceTree = "<group>";
+		};
+		E1B31659295C91890030F6A3 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3165A295C91890030F6A3 /* ImageElementConverter.swift */,
+				E1B3165B295C91890030F6A3 /* CiteElementConverter.swift */,
+				E1B3165C295C91890030F6A3 /* FigureElementConverter.swift */,
+				E1B3165D295C91890030F6A3 /* FigcaptionElementConverter.swift */,
+				E1B3165E295C91890030F6A3 /* VideoElementConverter.swift */,
+				E1B3165F295C91890030F6A3 /* GenericElementConverter.swift */,
+				E1B31660295C91890030F6A3 /* LIElementConverter.swift */,
+				E1B31661295C91890030F6A3 /* HRElementConverter.swift */,
+				E1B31662295C91890030F6A3 /* BRElementConverter.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		E1B31663295C91890030F6A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31664295C91890030F6A3 /* FormatterElementConverter.swift */,
+				E1B31665295C91890030F6A3 /* AttachmentElementConverter.swift */,
+				E1B31666295C91890030F6A3 /* ElementConverter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E1B31667295C91890030F6A3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31668295C91890030F6A3 /* Metrics.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		E1B31669295C91890030F6A3 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */,
+				E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		E1B31691295C91F70030F6A3 /* Aztec */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31667295C91890030F6A3 /* Constants */,
+				E1B31637295C91890030F6A3 /* Converters */,
+				E1B31669295C91890030F6A3 /* Renderers */,
+				E1B31626295C916B0030F6A3 /* Processor */,
+				E1B315F4295C912A0030F6A3 /* Libxml2 */,
+				E1B315D5295C90AE0030F6A3 /* NSAttributedString */,
+				E1B31586295C90740030F6A3 /* Extensions */,
+				E1B3157A295C905A0030F6A3 /* GUI */,
+				E1B31571295C90250030F6A3 /* Plugin */,
+				E1B3150F295C8FAC0030F6A3 /* Formatters */,
+				E1B31506295C8D3E0030F6A3 /* TextKit */,
+				E1B31503295C8CC40030F6A3 /* EditorView */,
+			);
+			path = Aztec;
+			sourceTree = "<group>";
+		};
+		E1B31692295C921B0030F6A3 /* WordPressEditor */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316F0295C96630030F6A3 /* ViewControllers */,
+				E1B316B7295C92310030F6A3 /* Extensions */,
+				E1B31693295C92310030F6A3 /* Plugins */,
+				E1B316BC295C92310030F6A3 /* Processors */,
+				E1B316BF295C92310030F6A3 /* Renderers */,
+			);
+			path = WordPressEditor;
+			sourceTree = "<group>";
+		};
+		E1B31693295C92310030F6A3 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31694295C92310030F6A3 /* WordPressPlugin */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		E1B31694295C92310030F6A3 /* WordPressPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31695295C92310030F6A3 /* WordPressOutputCustomizer.swift */,
+				E1B31696295C92310030F6A3 /* WordPressInputCustomizer.swift */,
+				E1B31697295C92310030F6A3 /* Gutenberg */,
+				E1B316A4295C92310030F6A3 /* WordPressPlugin.swift */,
+				E1B316A5295C92310030F6A3 /* Calypso */,
+			);
+			path = WordPressPlugin;
+			sourceTree = "<group>";
+		};
+		E1B31697295C92310030F6A3 /* Gutenberg */ = {
+			isa = PBXGroup;
+			children = (
+				E1B31698295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift */,
+				E1B31699295C92310030F6A3 /* GutenblockConverter.swift */,
+				E1B3169A295C92310030F6A3 /* CommentNode+Gutenberg.swift */,
+				E1B3169B295C92310030F6A3 /* GutenpackAttachmentRenderer.swift */,
+				E1B3169C295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift */,
+				E1B3169D295C92310030F6A3 /* GutenpackConverter.swift */,
+				E1B3169E295C92310030F6A3 /* GutenbergAttributeDecoder.swift */,
+				E1B3169F295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift */,
+				E1B316A0295C92310030F6A3 /* GutenpackAttachment.swift */,
+				E1B316A1295C92310030F6A3 /* GutenbergAttributeNames.swift */,
+				E1B316A2295C92310030F6A3 /* Gutenblock.swift */,
+				E1B316A3295C92310030F6A3 /* GutenbergAttributeEncoder.swift */,
+			);
+			path = Gutenberg;
+			sourceTree = "<group>";
+		};
+		E1B316A5295C92310030F6A3 /* Calypso */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316A6295C92310030F6A3 /* CaptionShortcode */,
+				E1B316A9295C92310030F6A3 /* VideoShortcode */,
+				E1B316AB295C92310030F6A3 /* AutopRemovep */,
+				E1B316AE295C92310030F6A3 /* GalleryShortcode */,
+				E1B316B5295C92310030F6A3 /* Embeds */,
+			);
+			path = Calypso;
+			sourceTree = "<group>";
+		};
+		E1B316A6295C92310030F6A3 /* CaptionShortcode */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316A7295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift */,
+				E1B316A8295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift */,
+			);
+			path = CaptionShortcode;
+			sourceTree = "<group>";
+		};
+		E1B316A9295C92310030F6A3 /* VideoShortcode */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316AA295C92310030F6A3 /* VideoShortcodeProcessor.swift */,
+			);
+			path = VideoShortcode;
+			sourceTree = "<group>";
+		};
+		E1B316AB295C92310030F6A3 /* AutopRemovep */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316AC295C92310030F6A3 /* AutoPProcessor.swift */,
+				E1B316AD295C92310030F6A3 /* RemovePProcessor.swift */,
+			);
+			path = AutopRemovep;
+			sourceTree = "<group>";
+		};
+		E1B316AE295C92310030F6A3 /* GalleryShortcode */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316AF295C92310030F6A3 /* GalleryAttachment.swift */,
+				E1B316B0295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift */,
+				E1B316B1295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift */,
+				E1B316B2295C92310030F6A3 /* GalleryElementToTagConverter.swift */,
+				E1B316B3295C92310030F6A3 /* GalleryElementConverter.swift */,
+				E1B316B4295C92310030F6A3 /* GallerySupportedAttribute.swift */,
+			);
+			path = GalleryShortcode;
+			sourceTree = "<group>";
+		};
+		E1B316B5295C92310030F6A3 /* Embeds */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316B6295C92310030F6A3 /* WordPressPasteboardDelegate.swift */,
+			);
+			path = Embeds;
+			sourceTree = "<group>";
+		};
+		E1B316B7295C92310030F6A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316B8295C92310030F6A3 /* VideoAttachment+WordPress.swift */,
+				E1B316B9295C92310030F6A3 /* MediaAttachment+WordPress.swift */,
+				E1B316BA295C92310030F6A3 /* String+RegEx.swift */,
+				E1B316BB295C92310030F6A3 /* ImageAttachment+WordPress.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E1B316BC295C92310030F6A3 /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316BD295C92310030F6A3 /* EmbedURLProcessor.swift */,
+				E1B316BE295C92310030F6A3 /* ShortcodeProcessor.swift */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		E1B316BF295C92310030F6A3 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316C0295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		E1B316E3295C94C20030F6A3 /* AdditionalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */,
+				E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */,
+				E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */,
+				E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */,
+				E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */,
+				E1B316E4295C94E50030F6A3 /* MediaInserter.swift */,
+			);
+			path = AdditionalFiles;
+			sourceTree = "<group>";
+		};
+		E1B316F0295C96630030F6A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316F1295C96630030F6A3 /* OptionsTableViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E1B316F1295C96630030F6A3 /* OptionsTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */,
+				E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */,
+			);
+			path = OptionsTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,7 +1273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B314FF295C87900030F6A3 /* TextViewController.xib in Resources */,
 				E1B314F5295C35980030F6A3 /* LaunchScreen.storyboard in Resources */,
+				E1B316EE295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard in Resources */,
+				E1B31690295C919D0030F6A3 /* html_colors.json in Resources */,
 				E1B314F2295C35980030F6A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,9 +1288,227 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B314ED295C35940030F6A3 /* ViewController.swift in Sources */,
+				E1B31679295C91890030F6A3 /* ElementToStringConverter.swift in Sources */,
+				E1B31565295C8FCF0030F6A3 /* MediaAttachment.swift in Sources */,
+				E1B315BD295C90740030F6A3 /* NSBundle+AztecBundle.swift in Sources */,
+				E1B31530295C8FAC0030F6A3 /* HTMLDivFormatter.swift in Sources */,
+				E1B31568295C8FCF0030F6A3 /* RenderableAttachment.swift in Sources */,
+				E1B315B1295C90740030F6A3 /* StringUTF16+RangeConversion.swift in Sources */,
+				E1B314ED295C35940030F6A3 /* EditorDemoController.swift in Sources */,
+				E1B3154F295C8FB60030F6A3 /* TextList.swift in Sources */,
+				E1B316C5295C92310030F6A3 /* CommentNode+Gutenberg.swift in Sources */,
+				E1B315C3295C90740030F6A3 /* Array+Helpers.swift in Sources */,
+				E1B316C2295C92310030F6A3 /* WordPressInputCustomizer.swift in Sources */,
+				E1B316DD295C92310030F6A3 /* MediaAttachment+WordPress.swift in Sources */,
+				E1B3152F295C8FAC0030F6A3 /* SuperscriptFormatter.swift in Sources */,
+				E1B315C5295C90740030F6A3 /* NSAttributedString+Lists.swift in Sources */,
+				E1B316E0295C92310030F6A3 /* EmbedURLProcessor.swift in Sources */,
+				E1B31538295C8FAC0030F6A3 /* TextListFormatter.swift in Sources */,
+				E1B31558295C8FB60030F6A3 /* Figure.swift in Sources */,
+				E1B3166D295C91890030F6A3 /* CLinkedListToArrayConverter.swift in Sources */,
+				E1B315EB295C90AF0030F6A3 /* HTMLAttachmentToElementConverter.swift in Sources */,
+				E1B31630295C916B0030F6A3 /* HTMLProcessor.swift in Sources */,
+				E1B31569295C8FCF0030F6A3 /* TextStorage.swift in Sources */,
+				E1B3156B295C8FCF0030F6A3 /* ColorProvider.swift in Sources */,
+				E1B31531295C8FAC0030F6A3 /* BoldFormatter.swift in Sources */,
+				E1B316C8295C92310030F6A3 /* GutenpackConverter.swift in Sources */,
+				E1B31682295C91890030F6A3 /* FigureElementConverter.swift in Sources */,
 				E1B314E9295C35940030F6A3 /* AppDelegate.swift in Sources */,
+				E1B31552295C8FB60030F6A3 /* HTMLParagraph.swift in Sources */,
+				E1B316CE295C92310030F6A3 /* GutenbergAttributeEncoder.swift in Sources */,
+				E1B3167F295C91890030F6A3 /* MainAttributesConverter.swift in Sources */,
+				E1B31620295C912A0030F6A3 /* CSSAttribute.swift in Sources */,
+				E1B316EB295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift in Sources */,
+				E1B3166C295C91890030F6A3 /* Converter.swift in Sources */,
+				E1B3156A295C8FCF0030F6A3 /* VideoAttachment.swift in Sources */,
+				E1B316DC295C92310030F6A3 /* VideoAttachment+WordPress.swift in Sources */,
+				E1B31551295C8FB60030F6A3 /* HTMLDiv.swift in Sources */,
+				E1B315BB295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift in Sources */,
+				E1B31672295C91890030F6A3 /* CiteStringAttributeConverter.swift in Sources */,
+				E1B31570295C8FCF0030F6A3 /* LayoutManager.swift in Sources */,
+				E1B31680295C91890030F6A3 /* ImageElementConverter.swift in Sources */,
+				E1B31556295C8FB60030F6A3 /* HTMLLi.swift in Sources */,
+				E1B3150E295C8F770030F6A3 /* TextViewPasteboardDelegate.swift in Sources */,
+				E1B31579295C90250030F6A3 /* Plugin.swift in Sources */,
+				E1B31623295C912A0030F6A3 /* ElementNode.swift in Sources */,
+				E1B31624295C912A0030F6A3 /* Node.swift in Sources */,
+				E1B31677295C91890030F6A3 /* HTMLStyleToggler.swift in Sources */,
+				E1B31687295C91890030F6A3 /* HRElementConverter.swift in Sources */,
+				E1B3161E295C912A0030F6A3 /* CommentNode.swift in Sources */,
+				E1B315B0295C90740030F6A3 /* NSAttributedString+FontTraits.swift in Sources */,
+				E1B31584295C905A0030F6A3 /* FormattingIdentifier.swift in Sources */,
+				E1B315C0295C90740030F6A3 /* UIColor+Parsers.swift in Sources */,
+				E1B31612295C912A0030F6A3 /* CSSParser.swift in Sources */,
+				E1B315C8295C90740030F6A3 /* UITextView+Undoable.swift in Sources */,
+				E1B315B5295C90740030F6A3 /* NSMutableAttributedString+ReplaceOcurrences.swift in Sources */,
+				E1B31581295C905A0030F6A3 /* Assets.swift in Sources */,
+				E1B31567295C8FCF0030F6A3 /* HTMLAttachment.swift in Sources */,
+				E1B3156E295C8FCF0030F6A3 /* ImageAttachment.swift in Sources */,
+				E1B315F1295C90AF0030F6A3 /* AttributedStringParser.swift in Sources */,
+				E1B31676295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift in Sources */,
+				E1B3167B295C91890030F6A3 /* UnderlineElementAttributeConverter.swift in Sources */,
+				E1B31633295C916B0030F6A3 /* RegexProcessor.swift in Sources */,
+				E1B316CB295C92310030F6A3 /* GutenpackAttachment.swift in Sources */,
+				E1B315F0295C90AF0030F6A3 /* ParagraphPropertyConverter.swift in Sources */,
+				E1B315D0295C90740030F6A3 /* NSAttributedString+Archive.swift in Sources */,
+				E1B31540295C8FAC0030F6A3 /* AttributeFormatter.swift in Sources */,
+				E1B315C1295C90740030F6A3 /* UIFont+Emoji.swift in Sources */,
+				E1B3166E295C91890030F6A3 /* UnderlineStringAttributeConverter.swift in Sources */,
+				E1B315C9295C90740030F6A3 /* Dictionary+AttributedStringKey.swift in Sources */,
+				E1B316D1295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift in Sources */,
+				E1B315B2295C90740030F6A3 /* Character+Name.swift in Sources */,
+				E1B315D3295C90740030F6A3 /* NSTextingResult+Helpers.swift in Sources */,
+				E1B316D5295C92310030F6A3 /* GalleryAttachment.swift in Sources */,
 				E1B314EB295C35940030F6A3 /* SceneDelegate.swift in Sources */,
+				E1B316DA295C92310030F6A3 /* GallerySupportedAttribute.swift in Sources */,
+				E1B315EC295C90AF0030F6A3 /* ImageAttachmentToElementConverter.swift in Sources */,
+				E1B3156F295C8FCF0030F6A3 /* Configuration.swift in Sources */,
+				E1B316CC295C92310030F6A3 /* GutenbergAttributeNames.swift in Sources */,
+				E1B3152D295C8FAC0030F6A3 /* PreFormatter.swift in Sources */,
+				E1B3153A295C8FAC0030F6A3 /* ColorFormatter.swift in Sources */,
+				E1B316E7295C94ED0030F6A3 /* UIImage+SaveTo.swift in Sources */,
+				E1B31508295C8D7D0030F6A3 /* TextView.swift in Sources */,
+				E1B31673295C91890030F6A3 /* SubscriptStringAttributeConverter.swift in Sources */,
+				E1B316D7295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift in Sources */,
+				E1B315B6295C90740030F6A3 /* UIImage+Resize.swift in Sources */,
+				E1B316D0295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift in Sources */,
+				E1B316D3295C92310030F6A3 /* AutoPProcessor.swift in Sources */,
+				E1B3161C295C912A0030F6A3 /* ItalicCSSAttributeMatcher.swift in Sources */,
+				E1B316C1295C92310030F6A3 /* WordPressOutputCustomizer.swift in Sources */,
+				E1B31683295C91890030F6A3 /* FigcaptionElementConverter.swift in Sources */,
+				E1B31635295C916B0030F6A3 /* PipelineProcessor.swift in Sources */,
+				E1B31686295C91890030F6A3 /* LIElementConverter.swift in Sources */,
+				E1B31625295C912A0030F6A3 /* Attribute.swift in Sources */,
+				E1B315C4295C90740030F6A3 /* DocumentReadingOptionKey+Swift4.swift in Sources */,
+				E1B3166F295C91890030F6A3 /* ItalicStringAttributeConverter.swift in Sources */,
+				E1B3161B295C912A0030F6A3 /* BoldCSSAttributeMatcher.swift in Sources */,
+				E1B315AE295C90740030F6A3 /* String+Paragraph.swift in Sources */,
+				E1B31576295C90250030F6A3 /* PluginOutputCustomizer.swift in Sources */,
+				E1B31542295C8FAC0030F6A3 /* ParagraphAttributeFormatter.swift in Sources */,
+				E1B31613295C912A0030F6A3 /* HTMLParser.swift in Sources */,
+				E1B3167D295C91890030F6A3 /* ItalicElementAttributeConverter.swift in Sources */,
+				E1B31684295C91890030F6A3 /* VideoElementConverter.swift in Sources */,
+				E1B31585295C905A0030F6A3 /* FormatBar.swift in Sources */,
+				E1B316D6295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift in Sources */,
+				E1B316EF295C95B50030F6A3 /* AttachmentDetailsViewController.swift in Sources */,
+				E1B31566295C8FCF0030F6A3 /* FontProvider.swift in Sources */,
+				E1B315BA295C90740030F6A3 /* UIStackView+Helpers.swift in Sources */,
+				E1B31688295C91890030F6A3 /* BRElementConverter.swift in Sources */,
+				E1B3167C295C91890030F6A3 /* BoldElementAttributeConverter.swift in Sources */,
+				E1B3152B295C8FAC0030F6A3 /* CodeFormatter.swift in Sources */,
+				E1B31550295C8FB60030F6A3 /* Figcaption.swift in Sources */,
+				E1B315D2295C90740030F6A3 /* UIPasteboard+Helpers.swift in Sources */,
+				E1B316C7295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift in Sources */,
+				E1B315CF295C90740030F6A3 /* NSAttributedString+Attachments.swift in Sources */,
+				E1B316E1295C92310030F6A3 /* ShortcodeProcessor.swift in Sources */,
+				E1B3153B295C8FAC0030F6A3 /* StrikethroughFormatter.swift in Sources */,
+				E1B3168A295C91890030F6A3 /* AttachmentElementConverter.swift in Sources */,
+				E1B315BF295C90740030F6A3 /* NSAttributedString+ParagraphRange.swift in Sources */,
+				E1B316F5295C96630030F6A3 /* OptionsTablePresenter.swift in Sources */,
+				E1B31619295C912A0030F6A3 /* UnderlineCSSAttributeMatcher.swift in Sources */,
+				E1B3153E295C8FAC0030F6A3 /* LinkFormatter.swift in Sources */,
+				E1B315F3295C90AF0030F6A3 /* UnsupportedHTML.swift in Sources */,
+				E1B316C6295C92310030F6A3 /* GutenpackAttachmentRenderer.swift in Sources */,
+				E1B316F4295C96630030F6A3 /* OptionsTableViewController.swift in Sources */,
+				E1B316C3295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift in Sources */,
+				E1B3167E295C91890030F6A3 /* ElementAttributeConverter.swift in Sources */,
+				E1B315CA295C90740030F6A3 /* UITextView+Delegate.swift in Sources */,
+				E1B3152C295C8FAC0030F6A3 /* LiFormatter.swift in Sources */,
+				E1B31616295C912A0030F6A3 /* InNodesConverter.swift in Sources */,
+				E1B3153D295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift in Sources */,
+				E1B3167A295C91890030F6A3 /* ForegroundColorElementAttributeConverter.swift in Sources */,
+				E1B316C4295C92310030F6A3 /* GutenblockConverter.swift in Sources */,
+				E1B31615295C912A0030F6A3 /* InAttributeConverter.swift in Sources */,
+				E1B315B3295C90740030F6A3 /* Array+ShortcodeAttribute.swift in Sources */,
+				E1B316D4295C92310030F6A3 /* RemovePProcessor.swift in Sources */,
+				E1B316CD295C92310030F6A3 /* Gutenblock.swift in Sources */,
+				E1B315B4295C90740030F6A3 /* NSRange+Helpers.swift in Sources */,
+				E1B315C6295C90740030F6A3 /* UILayoutPriority+Swift4.swift in Sources */,
+				E1B31557295C8FB60030F6A3 /* Blockquote.swift in Sources */,
+				E1B315CE295C90740030F6A3 /* String+EndOfLine.swift in Sources */,
+				E1B3161D295C912A0030F6A3 /* CSSAttributeType.swift in Sources */,
+				E1B3150A295C8DC90030F6A3 /* HTMLStorage.swift in Sources */,
+				E1B3152E295C8FAC0030F6A3 /* FigureFormatter.swift in Sources */,
+				E1B316CA295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift in Sources */,
+				E1B31678295C91890030F6A3 /* GenericElementToTagConverter.swift in Sources */,
+				E1B315D1295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift in Sources */,
+				E1B3168D295C91890030F6A3 /* CommentAttachmentRenderer.swift in Sources */,
+				E1B315E9295C90AF0030F6A3 /* LineAttachmentToElementConverter.swift in Sources */,
+				E1B316E5295C94E50030F6A3 /* MediaInserter.swift in Sources */,
+				E1B314FE295C87900030F6A3 /* TextViewController.swift in Sources */,
+				E1B315BC295C90740030F6A3 /* NSAttributedString+Analyzers.swift in Sources */,
+				E1B3161F295C912A0030F6A3 /* TextNode.swift in Sources */,
+				E1B31618295C912A0030F6A3 /* CSSAttributeMatcher.swift in Sources */,
+				E1B316E9295C94FF0030F6A3 /* UnknownEditorViewController.swift in Sources */,
+				E1B31670295C91890030F6A3 /* BoldStringAttributeConverter.swift in Sources */,
+				E1B315CC295C90740030F6A3 /* DocumentType+Swift4.swift in Sources */,
+				E1B315EE295C90AF0030F6A3 /* AttributedStringSerializer.swift in Sources */,
+				E1B316E2295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift in Sources */,
+				E1B315B9295C90740030F6A3 /* NSAttributedString+CharacterName.swift in Sources */,
+				E1B3168E295C91890030F6A3 /* HTMLAttachmentRenderer.swift in Sources */,
+				E1B315CB295C90740030F6A3 /* String+HTML.swift in Sources */,
+				E1B315EA295C90AF0030F6A3 /* CommentAttachmentToElementConverter.swift in Sources */,
+				E1B31553295C8FB60030F6A3 /* ParagraphProperty.swift in Sources */,
+				E1B315AF295C90740030F6A3 /* NSMutableAttributedString+ParagraphProperty.swift in Sources */,
+				E1B31555295C8FB60030F6A3 /* Header.swift in Sources */,
+				E1B315E8295C90AF0030F6A3 /* VideoAttachmentToElementConverter.swift in Sources */,
+				E1B3153F295C8FAC0030F6A3 /* HeaderFormatter.swift in Sources */,
+				E1B31543295C8FAC0030F6A3 /* StandardAttributeFormatter.swift in Sources */,
+				E1B315F2295C90AF0030F6A3 /* HTMLRepresentation.swift in Sources */,
+				E1B31582295C905A0030F6A3 /* FormatBarDelegate.swift in Sources */,
+				E1B31554295C8FB60030F6A3 /* HTMLPre.swift in Sources */,
+				E1B31632295C916B0030F6A3 /* ShortcodeAttributeSerializer.swift in Sources */,
+				E1B316D2295C92310030F6A3 /* VideoShortcodeProcessor.swift in Sources */,
+				E1B316D8295C92310030F6A3 /* GalleryElementToTagConverter.swift in Sources */,
+				E1B31685295C91890030F6A3 /* GenericElementConverter.swift in Sources */,
+				E1B3162F295C916B0030F6A3 /* ShortcodeAttribute.swift in Sources */,
+				E1B315C7295C90740030F6A3 /* NSAttributedStringKey+Aztec.swift in Sources */,
+				E1B3156C295C8FCF0030F6A3 /* LineAttachment.swift in Sources */,
+				E1B315CD295C90740030F6A3 /* String+RangeConversion.swift in Sources */,
+				E1B31631295C916B0030F6A3 /* HTMLTreeProcessor.swift in Sources */,
+				E1B3161A295C912A0030F6A3 /* ForegroundColorCSSAttributeMatcher.swift in Sources */,
+				E1B31537295C8FAC0030F6A3 /* BoldWithShadowForHeadingFormatter.swift in Sources */,
+				E1B31583295C905A0030F6A3 /* FormatBarItem.swift in Sources */,
+				E1B315B8295C90740030F6A3 /* String+CharacterName.swift in Sources */,
+				E1B316DE295C92310030F6A3 /* String+RegEx.swift in Sources */,
+				E1B31617295C912A0030F6A3 /* InAttributesConverter.swift in Sources */,
+				E1B31675295C91890030F6A3 /* StringAttributeConverter.swift in Sources */,
+				E1B31535295C8FAC0030F6A3 /* SubscriptFormatter.swift in Sources */,
+				E1B31578295C90250030F6A3 /* PluginManager.swift in Sources */,
+				E1B3168B295C91890030F6A3 /* ElementConverter.swift in Sources */,
+				E1B31614295C912A0030F6A3 /* InNodeConverter.swift in Sources */,
+				E1B315B7295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift in Sources */,
+				E1B3153C295C8FAC0030F6A3 /* FigcaptionFormatter.swift in Sources */,
+				E1B316DB295C92310030F6A3 /* WordPressPasteboardDelegate.swift in Sources */,
+				E1B31539295C8FAC0030F6A3 /* BlockquoteFormatter.swift in Sources */,
+				E1B31541295C8FAC0030F6A3 /* FontFormatter.swift in Sources */,
+				E1B3156D295C8FCF0030F6A3 /* CommentAttachment.swift in Sources */,
+				E1B31621295C912A0030F6A3 /* AttributeType.swift in Sources */,
+				E1B316CF295C92310030F6A3 /* WordPressPlugin.swift in Sources */,
+				E1B316DF295C92310030F6A3 /* ImageAttachment+WordPress.swift in Sources */,
+				E1B315ED295C90AF0030F6A3 /* AttachmentToElementConverter.swift in Sources */,
+				E1B31681295C91890030F6A3 /* CiteElementConverter.swift in Sources */,
+				E1B31674295C91890030F6A3 /* ConditionalStringAttributeConverter.swift in Sources */,
+				E1B3150C295C8E3C0030F6A3 /* ParagraphStyle.swift in Sources */,
+				E1B316C9295C92310030F6A3 /* GutenbergAttributeDecoder.swift in Sources */,
+				E1B3168C295C91890030F6A3 /* Metrics.swift in Sources */,
+				E1B315C2295C90740030F6A3 /* Array+Attribute.swift in Sources */,
+				E1B315BE295C90740030F6A3 /* NSLayoutManager+Attachments.swift in Sources */,
+				E1B31611295C912A0030F6A3 /* HTMLSerializer.swift in Sources */,
+				E1B316D9295C92310030F6A3 /* GalleryElementConverter.swift in Sources */,
+				E1B31534295C8FAC0030F6A3 /* ItalicFormatter.swift in Sources */,
+				E1B31634295C916B0030F6A3 /* Processor.swift in Sources */,
+				E1B31671295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift in Sources */,
+				E1B31532295C8FAC0030F6A3 /* MarkFormatter.swift in Sources */,
+				E1B31577295C90250030F6A3 /* PluginInputCustomizer.swift in Sources */,
+				E1B315EF295C90AF0030F6A3 /* HTMLConverter.swift in Sources */,
+				E1B31636295C916B0030F6A3 /* ShortcodeAttributeParser.swift in Sources */,
+				E1B31505295C8CE30030F6A3 /* EditorView.swift in Sources */,
+				E1B31622295C912A0030F6A3 /* Element.swift in Sources */,
+				E1B315D4295C90740030F6A3 /* UIFont+Traits.swift in Sources */,
+				E1B31689295C91890030F6A3 /* FormatterElementConverter.swift in Sources */,
+				E1B31533295C8FAC0030F6A3 /* CiteFormatter.swift in Sources */,
+				E1B31536295C8FAC0030F6A3 /* UnderlineFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
