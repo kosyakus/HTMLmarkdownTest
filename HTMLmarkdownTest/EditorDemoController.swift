@@ -28,13 +28,13 @@ class EditorDemoController: UIViewController {
         }
     }
 
-    fileprivate(set) lazy var mediaInserter: MediaInserter = {
-        return MediaInserter(textView: self.richTextView, attachmentTextAttributes: Constants.mediaMessageAttributes)
-    }()
-
-    fileprivate(set) lazy var textViewAttachmentDelegate: TextViewAttachmentDelegate = {
-        return TextViewAttachmentDelegateProvider(baseController: self, attachmentTextAttributes: Constants.mediaMessageAttributes)
-    }()
+//    fileprivate(set) lazy var mediaInserter: MediaInserter = {
+//        return MediaInserter(textView: self.richTextView, attachmentTextAttributes: Constants.mediaMessageAttributes)
+//    }()
+//
+//    fileprivate(set) lazy var textViewAttachmentDelegate: TextViewAttachmentDelegate = {
+//        return TextViewAttachmentDelegateProvider(baseController: self, attachmentTextAttributes: Constants.mediaMessageAttributes)
+//    }()
     
     fileprivate(set) lazy var editorView: EditorView = {
         let defaultHTMLFont: UIFont
@@ -64,7 +64,7 @@ class EditorDemoController: UIViewController {
         
         textView.delegate = self
         textView.formattingDelegate = self
-        textView.textAttachmentDelegate = self.textViewAttachmentDelegate
+//        textView.textAttachmentDelegate = self.textViewAttachmentDelegate
         textView.accessibilityIdentifier = "richContentView"
         textView.clipsToBounds = false
         textView.smartDashesType = .no
@@ -87,51 +87,51 @@ class EditorDemoController: UIViewController {
         textView.smartQuotesType = .no
     }
 
-    fileprivate(set) lazy var titleTextView: UITextView = {
-        let textView = UITextView()
-        
-        textView.accessibilityLabel = NSLocalizedString("Title", comment: "Post title")
-        textView.delegate = self
-        textView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        textView.returnKeyType = .next
-        textView.textColor = .darkText
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .clear
-        textView.textAlignment = .natural
-        textView.isScrollEnabled = false
-
-        return textView
-    }()
+//    fileprivate(set) lazy var titleTextView: UITextView = {
+//        let textView = UITextView()
+//
+//        textView.accessibilityLabel = NSLocalizedString("Title", comment: "Post title")
+//        textView.delegate = self
+//        textView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+//        textView.returnKeyType = .next
+//        textView.textColor = .darkText
+//        textView.translatesAutoresizingMaskIntoConstraints = false
+//        textView.backgroundColor = .clear
+//        textView.textAlignment = .natural
+//        textView.isScrollEnabled = false
+//
+//        return textView
+//    }()
 
     /// Placeholder Label
     ///
-    fileprivate(set) lazy var titlePlaceholderLabel: UILabel = {
-        let placeholderText = NSLocalizedString("Enter title here", comment: "Post title placeholder")
-        let titlePlaceholderLabel = UILabel()
+//    fileprivate(set) lazy var titlePlaceholderLabel: UILabel = {
+//        let placeholderText = NSLocalizedString("Enter title here", comment: "Post title placeholder")
+//        let titlePlaceholderLabel = UILabel()
+//
+//        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.lightGray, .font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)]
+//
+//        titlePlaceholderLabel.attributedText = NSAttributedString(string: placeholderText, attributes: attributes)
+//        titlePlaceholderLabel.sizeToFit()
+//        titlePlaceholderLabel.translatesAutoresizingMaskIntoConstraints = false
+//        titlePlaceholderLabel.textAlignment = .natural
+//
+//        return titlePlaceholderLabel
+//    }()
 
-        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.lightGray, .font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)]
+//    fileprivate var titleHeightConstraint: NSLayoutConstraint!
+//    fileprivate var titleTopConstraint: NSLayoutConstraint!
+//    fileprivate var titlePlaceholderTopConstraint: NSLayoutConstraint!
+//    fileprivate var titlePlaceholderLeadingConstraint: NSLayoutConstraint!
 
-        titlePlaceholderLabel.attributedText = NSAttributedString(string: placeholderText, attributes: attributes)
-        titlePlaceholderLabel.sizeToFit()
-        titlePlaceholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        titlePlaceholderLabel.textAlignment = .natural
-
-        return titlePlaceholderLabel
-    }()
-
-    fileprivate var titleHeightConstraint: NSLayoutConstraint!
-    fileprivate var titleTopConstraint: NSLayoutConstraint!
-    fileprivate var titlePlaceholderTopConstraint: NSLayoutConstraint!
-    fileprivate var titlePlaceholderLeadingConstraint: NSLayoutConstraint!
-
-    fileprivate(set) lazy var separatorView: UIView = {
-        let separatorView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 1))
-
-        separatorView.backgroundColor = UIColor.darkText
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
-
-        return separatorView
-    }()
+//    fileprivate(set) lazy var separatorView: UIView = {
+//        let separatorView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 1))
+//
+//        separatorView.backgroundColor = UIColor.darkText
+//        separatorView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        return separatorView
+//    }()
 
     let sampleHTML: String?
     let wordPressMode: Bool
@@ -163,26 +163,26 @@ class EditorDemoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        MediaAttachment.defaultAppearance.progressColor = UIColor.blue
-        MediaAttachment.defaultAppearance.progressBackgroundColor = UIColor.lightGray
-        MediaAttachment.defaultAppearance.progressHeight = 2.0
-        MediaAttachment.defaultAppearance.overlayColor = UIColor(red: CGFloat(46.0/255.0), green: CGFloat(69.0/255.0), blue: CGFloat(83.0/255.0), alpha: 0.6)
+//        MediaAttachment.defaultAppearance.progressColor = UIColor.blue
+//        MediaAttachment.defaultAppearance.progressBackgroundColor = UIColor.lightGray
+//        MediaAttachment.defaultAppearance.progressHeight = 2.0
+//        MediaAttachment.defaultAppearance.overlayColor = UIColor(red: CGFloat(46.0/255.0), green: CGFloat(69.0/255.0), blue: CGFloat(83.0/255.0), alpha: 0.6)
         // Uncomment to add a border
         // MediaAttachment.defaultAppearance.overlayBorderWidth = 3.0
         // MediaAttachment.defaultAppearance.overlayBorderColor = UIColor(red: CGFloat(0.0/255.0), green: CGFloat(135.0/255.0), blue: CGFloat(190.0/255.0), alpha: 0.8)
 
         edgesForExtendedLayout = UIRectEdge()
-        navigationController?.navigationBar.isTranslucent = false
+//        navigationController?.navigationBar.isTranslucent = false
         view.addSubview(editorView)
-        view.addSubview(titleTextView)
-        view.addSubview(titlePlaceholderLabel)
-        view.addSubview(separatorView)
+//        view.addSubview(titleTextView)
+//        view.addSubview(titlePlaceholderLabel)
+//        view.addSubview(separatorView)
 
         editorView.richTextView.textContainer.lineFragmentPadding = 0
         // color setup
         if #available(iOS 13.0, *) {
             view.backgroundColor = UIColor.systemBackground
-            titleTextView.textColor = UIColor.label
+//            titleTextView.textColor = UIColor.label
             editorView.htmlTextView.textColor = UIColor.label
             editorView.richTextView.textColor = UIColor.label
             editorView.richTextView.blockquoteBackgroundColor = UIColor.secondarySystemBackground
@@ -196,7 +196,7 @@ class EditorDemoController: UIViewController {
         //Don't allow scroll while the constraints are being setup and text set
         editorView.isScrollEnabled = false
         configureConstraints()
-        registerAttachmentImageProviders()
+//        registerAttachmentImageProviders()
 
         let html: String
 
@@ -205,14 +205,14 @@ class EditorDemoController: UIViewController {
         } else {
             html = ""
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(changeFont))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(changeFont))
         editorView.setHTML(html)
         editorView.becomeFirstResponder()
     }
 
-    @objc func changeFont() {
-        editorView.richTextView.defaultFont = UIFont.preferredFont(forTextStyle: .callout)
-    }
+//    @objc func changeFont() {
+//        editorView.richTextView.defaultFont = UIFont.preferredFont(forTextStyle: .callout)
+//    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -244,17 +244,17 @@ class EditorDemoController: UIViewController {
     }
 
     // MARK: - Title and Title placeholder position methods
-    func updateTitlePosition() {
-        titleTopConstraint.constant = -(editorView.contentOffset.y + editorView.contentInset.top)
-        titlePlaceholderTopConstraint.constant = titleTextView.textContainerInset.top + titleTextView.contentInset.top
-        titlePlaceholderLeadingConstraint.constant = titleTextView.textContainerInset.left + titleTextView.contentInset.left  + titleTextView.textContainer.lineFragmentPadding
+//    func updateTitlePosition() {
+//        titleTopConstraint.constant = -(editorView.contentOffset.y + editorView.contentInset.top)
+//        titlePlaceholderTopConstraint.constant = titleTextView.textContainerInset.top + titleTextView.contentInset.top
+//        titlePlaceholderLeadingConstraint.constant = titleTextView.textContainerInset.left + titleTextView.contentInset.left  + titleTextView.textContainer.lineFragmentPadding
         
-        var contentInset = editorView.contentInset
-        contentInset.top = titleHeightConstraint.constant + separatorView.frame.height
-        editorView.contentInset = contentInset
-        
-        updateScrollInsets()
-    }
+//        let contentInset = editorView.contentInset
+//        contentInset.top = titleHeightConstraint.constant + separatorView.frame.height
+//        editorView.contentInset = contentInset
+//
+//        updateScrollInsets()
+//    }
 
     func updateScrollInsets() {
         var scrollInsets = editorView.contentInset
@@ -265,64 +265,64 @@ class EditorDemoController: UIViewController {
         editorView.scrollIndicatorInsets = scrollInsets
     }
 
-    func updateTitleHeight() {
-        let layoutMargins = view.layoutMargins
-        let insets = titleTextView.textContainerInset
+//    func updateTitleHeight() {
+//        let layoutMargins = view.layoutMargins
+//        let insets = titleTextView.textContainerInset
 
-        var titleWidth = titleTextView.bounds.width
-        if titleWidth <= 0 {
-            // Use the title text field's width if available, otherwise calculate it.
-            titleWidth = view.frame.width - (insets.left + insets.right + layoutMargins.left + layoutMargins.right)
-        }
+//        var titleWidth = titleTextView.bounds.width
+//        if titleWidth <= 0 {
+//            // Use the title text field's width if available, otherwise calculate it.
+//            titleWidth = view.frame.width - (insets.left + insets.right + layoutMargins.left + layoutMargins.right)
+//        }
 
-        let sizeThatShouldFitTheContent = titleTextView.sizeThatFits(CGSize(width: titleWidth, height: CGFloat.greatestFiniteMagnitude))
-        titleHeightConstraint.constant = max(sizeThatShouldFitTheContent.height, titleTextView.font!.lineHeight + insets.top + insets.bottom)
+//        let sizeThatShouldFitTheContent = titleTextView.sizeThatFits(CGSize(width: titleWidth, height: CGFloat.greatestFiniteMagnitude))
+//        titleHeightConstraint.constant = max(sizeThatShouldFitTheContent.height, titleTextView.font!.lineHeight + insets.top + insets.bottom)
 
-        titlePlaceholderLabel.isHidden = !titleTextView.text.isEmpty
+//        titlePlaceholderLabel.isHidden = !titleTextView.text.isEmpty
 
-        var contentInset = editorView.contentInset
-        contentInset.top = (titleHeightConstraint.constant + separatorView.frame.height)
-        editorView.contentInset = contentInset
-        editorView.contentOffset = CGPoint(x: 0, y: -contentInset.top)
-    }
+//        var contentInset = editorView.contentInset
+//        contentInset.top = (titleHeightConstraint.constant + separatorView.frame.height)
+//        editorView.contentInset = contentInset
+//        editorView.contentOffset = CGPoint(x: 0, y: -contentInset.top)
+//    }
 
     // MARK: - Configuration Methods
     override func updateViewConstraints() {
-        updateTitlePosition()
-        updateTitleHeight()
+//        updateTitlePosition()
+//        updateTitleHeight()
         super.updateViewConstraints()
     }
 
     private func configureConstraints() {
 
-        titleHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: ceil(titleTextView.font!.lineHeight))
-        titleTopConstraint = titleTextView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
-        titlePlaceholderTopConstraint = titlePlaceholderLabel.topAnchor.constraint(equalTo: titleTextView.topAnchor, constant:0)
-        titlePlaceholderLeadingConstraint = titlePlaceholderLabel.leadingAnchor.constraint(equalTo: titleTextView.leadingAnchor, constant: 0)
-        updateTitlePosition()
-        updateTitleHeight()
+//        titleHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: ceil(titleTextView.font!.lineHeight))
+//        titleTopConstraint = titleTextView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
+//        titlePlaceholderTopConstraint = titlePlaceholderLabel.topAnchor.constraint(equalTo: titleTextView.topAnchor, constant:0)
+//        titlePlaceholderLeadingConstraint = titlePlaceholderLabel.leadingAnchor.constraint(equalTo: titleTextView.leadingAnchor, constant: 0)
+//        updateTitlePosition()
+//        updateTitleHeight()
 
         let layoutGuide = view.readableContentGuide
 
-        NSLayoutConstraint.activate([
-            titleTextView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0),
-            titleTextView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
-            titleHeightConstraint,
-            titleTopConstraint
-            ])
+//        NSLayoutConstraint.activate([
+//            titleTextView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0),
+//            titleTextView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
+//            titleHeightConstraint,
+//            titleTopConstraint
+//            ])
 
-        NSLayoutConstraint.activate([
-            titlePlaceholderLeadingConstraint,
-            titlePlaceholderLabel.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
-            titlePlaceholderTopConstraint
-            ])
+//        NSLayoutConstraint.activate([
+//            titlePlaceholderLeadingConstraint,
+//            titlePlaceholderLabel.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
+//            titlePlaceholderTopConstraint
+//            ])
 
-        NSLayoutConstraint.activate([
-            separatorView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0),
-            separatorView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
-            separatorView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 0),
-            separatorView.heightAnchor.constraint(equalToConstant: separatorView.frame.height)
-            ])
+//        NSLayoutConstraint.activate([
+//            separatorView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0),
+//            separatorView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
+//            separatorView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 0),
+//            separatorView.heightAnchor.constraint(equalToConstant: separatorView.frame.height)
+//            ])
 
         NSLayoutConstraint.activate([
             editorView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
@@ -364,18 +364,18 @@ class EditorDemoController: UIViewController {
         textView.linkTextAttributes = [.foregroundColor: UIColor(red: 0x01 / 255.0, green: 0x60 / 255.0, blue: 0x87 / 255.0, alpha: 1), NSAttributedString.Key.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue)]
     }
 
-    private func registerAttachmentImageProviders() {
-        let providers: [TextViewAttachmentImageProvider] = [
-            GutenpackAttachmentRenderer(),
-            SpecialTagAttachmentRenderer(),
-            CommentAttachmentRenderer(font: Constants.defaultContentFont),
-            HTMLAttachmentRenderer(font: Constants.defaultHtmlFont),
-        ]
-
-        for provider in providers {
-            richTextView.registerAttachmentImageProvider(provider)
-        }
-    }
+//    private func registerAttachmentImageProviders() {
+//        let providers: [TextViewAttachmentImageProvider] = [
+//            GutenpackAttachmentRenderer(),
+//            SpecialTagAttachmentRenderer(),
+//            CommentAttachmentRenderer(font: Constants.defaultContentFont),
+//            HTMLAttachmentRenderer(font: Constants.defaultHtmlFont),
+//        ]
+//
+//        for provider in providers {
+//            richTextView.registerAttachmentImageProvider(provider)
+//        }
+//    }
 
     // MARK: - Helpers
 
@@ -450,11 +450,11 @@ class EditorDemoController: UIViewController {
     }
 
     override var keyCommands: [UIKeyCommand] {
-        if titleTextView.isFirstResponder {
-            return [
-                UIKeyCommand(input: "\t", modifierFlags: [], action: #selector(tabOnTitle))
-            ]
-        }
+//        if titleTextView.isFirstResponder {
+//            return [
+//                UIKeyCommand(input: "\t", modifierFlags: [], action: #selector(tabOnTitle))
+//            ]
+//        }
         
         if richTextView.isFirstResponder {
             return [ UIKeyCommand(title: NSLocalizedString("Bold", comment: "Discoverability title for bold formatting keyboard shortcut."), action:#selector(toggleBold), input:"B", modifierFlags: .command, propertyList: nil, alternates: []),
@@ -462,11 +462,11 @@ class EditorDemoController: UIViewController {
                      UIKeyCommand(title: NSLocalizedString("Strikethrough", comment:"Discoverability title for strikethrough formatting keyboard shortcut."), action:#selector(toggleStrikethrough), input:"S", modifierFlags: [.command]),
                      UIKeyCommand(title: NSLocalizedString("Underline", comment:"Discoverability title for underline formatting keyboard shortcut."), action:#selector(EditorDemoController.toggleUnderline(_:)), input:"U", modifierFlags: .command ),
                      UIKeyCommand(title: NSLocalizedString("Block Quote", comment: "Discoverability title for block quote keyboard shortcut."), action: #selector(toggleBlockquote), input:"Q", modifierFlags:[.command,.alternate]),
-                     UIKeyCommand(title: NSLocalizedString("Insert Link", comment: "Discoverability title for insert link keyboard shortcut."), action:#selector(toggleLink), input:"K", modifierFlags:.command),
-                     UIKeyCommand(title: NSLocalizedString("Insert Media", comment: "Discoverability title for insert media keyboard shortcut."), action:#selector(showImagePicker), input:"M", modifierFlags:[.command,.alternate]),
+//                     UIKeyCommand(title: NSLocalizedString("Insert Link", comment: "Discoverability title for insert link keyboard shortcut."), action:#selector(toggleLink), input:"K", modifierFlags:.command),
+//                     UIKeyCommand(title: NSLocalizedString("Insert Media", comment: "Discoverability title for insert media keyboard shortcut."), action:#selector(showImagePicker), input:"M", modifierFlags:[.command,.alternate]),
                      UIKeyCommand(title:NSLocalizedString("Bullet List", comment: "Discoverability title for bullet list keyboard shortcut."), action:#selector(toggleUnorderedList), input:"U", modifierFlags:[.command, .alternate]),
                      UIKeyCommand(title:NSLocalizedString("Numbered List", comment:"Discoverability title for numbered list keyboard shortcut."), action:#selector(toggleOrderedList), input:"O", modifierFlags:[.command, .alternate]),
-                     UIKeyCommand(title:NSLocalizedString("Toggle HTML Source ", comment: "Discoverability title for HTML keyboard shortcut."), action:#selector(toggleEditingMode), input:"H", modifierFlags:[.command, .shift])
+//                     UIKeyCommand(title:NSLocalizedString("Toggle HTML Source ", comment: "Discoverability title for HTML keyboard shortcut."), action:#selector(toggleEditingMode), input:"H", modifierFlags:[.command, .shift])
             ]
         } else if htmlTextView.isFirstResponder {
             return [UIKeyCommand(title:NSLocalizedString("Toggle HTML Source ", comment: "Discoverability title for HTML keyboard shortcut."), action:#selector(toggleEditingMode), input:"H", modifierFlags:[.command, .shift])
@@ -487,9 +487,9 @@ class EditorDemoController: UIViewController {
             htmlTextView.becomeFirstResponder()
         }
 
-        if titleTextView.resignFirstResponder() {
-            titleTextView.becomeFirstResponder()
-        }
+//        if titleTextView.resignFirstResponder() {
+//            titleTextView.becomeFirstResponder()
+//        }
 
     }
 }
@@ -504,8 +504,8 @@ extension EditorDemoController : UITextViewDelegate {
         switch textView {
         case richTextView:
             updateFormatBar()
-        case titleTextView:
-            updateTitleHeight()
+//        case titleTextView:
+//            updateTitleHeight()
         default:
             break
         }
@@ -513,8 +513,8 @@ extension EditorDemoController : UITextViewDelegate {
 
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         switch textView {
-        case titleTextView:
-            formatBar.enabled = false
+//        case titleTextView:
+//            formatBar.enabled = false
         case richTextView:
             formatBar.enabled = true
         case htmlTextView:
@@ -535,9 +535,9 @@ extension EditorDemoController : UITextViewDelegate {
         return false
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateTitlePosition()
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        updateTitlePosition()
+//    }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return true
@@ -612,20 +612,20 @@ extension EditorDemoController {
             toggleBlockquote()
         case .unorderedlist, .orderedlist:
             toggleList(fromItem: barItem)
-        case .link:
-            toggleLink()
-        case .media:
-            break
-        case .sourcecode:
-            toggleEditingMode()
+//        case .link:
+//            toggleLink()
+//        case .media:
+//            break
+//        case .sourcecode:
+//            toggleEditingMode()
         case .p, .header1, .header2, .header3, .header4, .header5, .header6:
             toggleHeader(fromItem: barItem)
-        case .more:
-            insertMoreAttachment()
+//        case .more:
+//            insertMoreAttachment()
         case .horizontalruler:
             insertHorizontalRuler()
-        case .code:
-            toggleCode()
+//        case .code:
+//            toggleCode()
         default:
             break
         }
@@ -656,9 +656,9 @@ extension EditorDemoController {
         richTextView.toggleBlockquote(range: richTextView.selectedRange)
     }
 
-    @objc func toggleCode() {
-        richTextView.toggleCode(range: richTextView.selectedRange)
-    }
+//    @objc func toggleCode() {
+//        richTextView.toggleCode(range: richTextView.selectedRange)
+//    }
 
     func insertHorizontalRuler() {
         richTextView.replaceWithHorizontalRuler(at: richTextView.selectedRange)
@@ -794,152 +794,152 @@ extension EditorDemoController {
         return nil
     }
 
-    @objc func toggleLink() {
-        var linkTitle = ""
-        var linkURL: URL? = nil
-        var linkRange = richTextView.selectedRange
-        // Let's check if the current range already has a link assigned to it.
-        if let expandedRange = richTextView.linkFullRange(forRange: richTextView.selectedRange) {
-           linkRange = expandedRange
-           linkURL = richTextView.linkURL(forRange: expandedRange)
-        }
-        let target = richTextView.linkTarget(forRange: richTextView.selectedRange)
-        linkTitle = richTextView.attributedText.attributedSubstring(from: linkRange).string
-        let allowTextEdit = !richTextView.attributedText.containsAttachments(in: linkRange)
-        showLinkDialog(forURL: linkURL, text: linkTitle, target: target, range: linkRange, allowTextEdit: allowTextEdit)
-    }
+//    @objc func toggleLink() {
+//        var linkTitle = ""
+//        var linkURL: URL? = nil
+//        var linkRange = richTextView.selectedRange
+//        // Let's check if the current range already has a link assigned to it.
+//        if let expandedRange = richTextView.linkFullRange(forRange: richTextView.selectedRange) {
+//           linkRange = expandedRange
+//           linkURL = richTextView.linkURL(forRange: expandedRange)
+//        }
+//        let target = richTextView.linkTarget(forRange: richTextView.selectedRange)
+//        linkTitle = richTextView.attributedText.attributedSubstring(from: linkRange).string
+//        let allowTextEdit = !richTextView.attributedText.containsAttachments(in: linkRange)
+//        showLinkDialog(forURL: linkURL, text: linkTitle, target: target, range: linkRange, allowTextEdit: allowTextEdit)
+//    }
 
     func insertMoreAttachment() {
         richTextView.replace(richTextView.selectedRange, withComment: Constants.moreAttachmentText)
     }
 
-    func showLinkDialog(forURL url: URL?, text: String?, target: String?, range: NSRange, allowTextEdit: Bool = true) {
-
-        let isInsertingNewLink = (url == nil)
-        var urlToUse = url
-
-        if isInsertingNewLink {
-            let pasteboard = UIPasteboard.general
-            if let pastedURL = pasteboard.value(forPasteboardType:String(kUTTypeURL)) as? URL {
-                urlToUse = pastedURL
-            }
-        }
-
-        let insertButtonTitle = isInsertingNewLink ? NSLocalizedString("Insert Link", comment:"Label action for inserting a link on the editor") : NSLocalizedString("Update Link", comment:"Label action for updating a link on the editor")
-        let removeButtonTitle = NSLocalizedString("Remove Link", comment:"Label action for removing a link from the editor");
-        let cancelButtonTitle = NSLocalizedString("Cancel", comment:"Cancel button")
-
-        let alertController = UIAlertController(title:insertButtonTitle,
-                                                message:nil,
-                                                preferredStyle:UIAlertController.Style.alert)
-        alertController.view.accessibilityIdentifier = "linkModal"
-
-        alertController.addTextField(configurationHandler: { [weak self]textField in
-            textField.clearButtonMode = UITextField.ViewMode.always;
-            textField.placeholder = NSLocalizedString("URL", comment:"URL text field placeholder");
-            textField.keyboardType = .URL
-            textField.textContentType = .URL
-            textField.text = urlToUse?.absoluteString
-
-            textField.addTarget(self,
-                action:#selector(EditorDemoController.alertTextFieldDidChange),
-            for:UIControl.Event.editingChanged)
-            
-            textField.accessibilityIdentifier = "linkModalURL"
-            })
-
-        if allowTextEdit {
-            alertController.addTextField(configurationHandler: { textField in
-                textField.clearButtonMode = UITextField.ViewMode.always
-                textField.placeholder = NSLocalizedString("Link Text", comment:"Link text field placeholder")
-                textField.isSecureTextEntry = false
-                textField.autocapitalizationType = UITextAutocapitalizationType.sentences
-                textField.autocorrectionType = UITextAutocorrectionType.default
-                textField.spellCheckingType = UITextSpellCheckingType.default
-
-                textField.text = text;
-
-                textField.accessibilityIdentifier = "linkModalText"
-
-                })
-        }
-
-        alertController.addTextField(configurationHandler: { textField in
-            textField.clearButtonMode = UITextField.ViewMode.always
-            textField.placeholder = NSLocalizedString("Target", comment:"Link text field placeholder")
-            textField.isSecureTextEntry = false
-            textField.autocapitalizationType = UITextAutocapitalizationType.sentences
-            textField.autocorrectionType = UITextAutocorrectionType.default
-            textField.spellCheckingType = UITextSpellCheckingType.default
-
-            textField.text = target;
-
-            textField.accessibilityIdentifier = "linkModalTarget"
-
-        })
-
-        let insertAction = UIAlertAction(title:insertButtonTitle,
-                                         style:UIAlertAction.Style.default,
-                                         handler:{ [weak self]action in
-
-                                            self?.richTextView.becomeFirstResponder()
-                                            guard let textFields = alertController.textFields else {
-                                                    return
-                                            }
-                                            let linkURLField = textFields[0]
-                                            let linkTextField = textFields[1]
-                                            let linkTargetField = textFields[2]
-                                            let linkURLString = linkURLField.text
-                                            var linkTitle = linkTextField.text
-                                            let target = linkTargetField.text
-
-                                            if  linkTitle == nil  || linkTitle!.isEmpty {
-                                                linkTitle = linkURLString
-                                            }
-
-                                            guard
-                                                let urlString = linkURLString,
-                                                let url = URL(string:urlString)
-                                                else {
-                                                    return
-                                            }
-                                            if allowTextEdit {
-                                                if let title = linkTitle {
-                                                    self?.richTextView.setLink(url, title: title, target: target, inRange: range)
-                                                }
-                                            } else {
-                                                self?.richTextView.setLink(url, target: target, inRange: range)
-                                            }
-                                            })
-        
-        insertAction.accessibilityLabel = "insertLinkButton"
-
-        let removeAction = UIAlertAction(title:removeButtonTitle,
-                                         style:UIAlertAction.Style.destructive,
-                                         handler:{ [weak self] action in
-                                            self?.richTextView.becomeFirstResponder()
-                                            self?.richTextView.removeLink(inRange: range)
-            })
-
-        let cancelAction = UIAlertAction(title: cancelButtonTitle,
-                                         style:UIAlertAction.Style.cancel,
-                                         handler:{ [weak self]action in
-                self?.richTextView.becomeFirstResponder()
-            })
-
-        alertController.addAction(insertAction)
-        if !isInsertingNewLink {
-            alertController.addAction(removeAction)
-        }
-            alertController.addAction(cancelAction)
-
-        // Disabled until url is entered into field
-        if let text = alertController.textFields?.first?.text {
-            insertAction.isEnabled = !text.isEmpty
-        }
-
-        present(alertController, animated:true, completion:nil)
-    }
+//    func showLinkDialog(forURL url: URL?, text: String?, target: String?, range: NSRange, allowTextEdit: Bool = true) {
+//
+//        let isInsertingNewLink = (url == nil)
+//        var urlToUse = url
+//
+//        if isInsertingNewLink {
+//            let pasteboard = UIPasteboard.general
+//            if let pastedURL = pasteboard.value(forPasteboardType:String(kUTTypeURL)) as? URL {
+//                urlToUse = pastedURL
+//            }
+//        }
+//
+//        let insertButtonTitle = isInsertingNewLink ? NSLocalizedString("Insert Link", comment:"Label action for inserting a link on the editor") : NSLocalizedString("Update Link", comment:"Label action for updating a link on the editor")
+//        let removeButtonTitle = NSLocalizedString("Remove Link", comment:"Label action for removing a link from the editor");
+//        let cancelButtonTitle = NSLocalizedString("Cancel", comment:"Cancel button")
+//
+//        let alertController = UIAlertController(title:insertButtonTitle,
+//                                                message:nil,
+//                                                preferredStyle:UIAlertController.Style.alert)
+//        alertController.view.accessibilityIdentifier = "linkModal"
+//
+//        alertController.addTextField(configurationHandler: { [weak self]textField in
+//            textField.clearButtonMode = UITextField.ViewMode.always;
+//            textField.placeholder = NSLocalizedString("URL", comment:"URL text field placeholder");
+//            textField.keyboardType = .URL
+//            textField.textContentType = .URL
+//            textField.text = urlToUse?.absoluteString
+//
+//            textField.addTarget(self,
+//                action:#selector(EditorDemoController.alertTextFieldDidChange),
+//            for:UIControl.Event.editingChanged)
+//            
+//            textField.accessibilityIdentifier = "linkModalURL"
+//            })
+//
+//        if allowTextEdit {
+//            alertController.addTextField(configurationHandler: { textField in
+//                textField.clearButtonMode = UITextField.ViewMode.always
+//                textField.placeholder = NSLocalizedString("Link Text", comment:"Link text field placeholder")
+//                textField.isSecureTextEntry = false
+//                textField.autocapitalizationType = UITextAutocapitalizationType.sentences
+//                textField.autocorrectionType = UITextAutocorrectionType.default
+//                textField.spellCheckingType = UITextSpellCheckingType.default
+//
+//                textField.text = text;
+//
+//                textField.accessibilityIdentifier = "linkModalText"
+//
+//                })
+//        }
+//
+//        alertController.addTextField(configurationHandler: { textField in
+//            textField.clearButtonMode = UITextField.ViewMode.always
+//            textField.placeholder = NSLocalizedString("Target", comment:"Link text field placeholder")
+//            textField.isSecureTextEntry = false
+//            textField.autocapitalizationType = UITextAutocapitalizationType.sentences
+//            textField.autocorrectionType = UITextAutocorrectionType.default
+//            textField.spellCheckingType = UITextSpellCheckingType.default
+//
+//            textField.text = target;
+//
+//            textField.accessibilityIdentifier = "linkModalTarget"
+//
+//        })
+//
+//        let insertAction = UIAlertAction(title:insertButtonTitle,
+//                                         style:UIAlertAction.Style.default,
+//                                         handler:{ [weak self]action in
+//
+//                                            self?.richTextView.becomeFirstResponder()
+//                                            guard let textFields = alertController.textFields else {
+//                                                    return
+//                                            }
+//                                            let linkURLField = textFields[0]
+//                                            let linkTextField = textFields[1]
+//                                            let linkTargetField = textFields[2]
+//                                            let linkURLString = linkURLField.text
+//                                            var linkTitle = linkTextField.text
+//                                            let target = linkTargetField.text
+//
+//                                            if  linkTitle == nil  || linkTitle!.isEmpty {
+//                                                linkTitle = linkURLString
+//                                            }
+//
+//                                            guard
+//                                                let urlString = linkURLString,
+//                                                let url = URL(string:urlString)
+//                                                else {
+//                                                    return
+//                                            }
+//                                            if allowTextEdit {
+//                                                if let title = linkTitle {
+//                                                    self?.richTextView.setLink(url, title: title, target: target, inRange: range)
+//                                                }
+//                                            } else {
+//                                                self?.richTextView.setLink(url, target: target, inRange: range)
+//                                            }
+//                                            })
+//        
+//        insertAction.accessibilityLabel = "insertLinkButton"
+//
+//        let removeAction = UIAlertAction(title:removeButtonTitle,
+//                                         style:UIAlertAction.Style.destructive,
+//                                         handler:{ [weak self] action in
+//                                            self?.richTextView.becomeFirstResponder()
+//                                            self?.richTextView.removeLink(inRange: range)
+//            })
+//
+//        let cancelAction = UIAlertAction(title: cancelButtonTitle,
+//                                         style:UIAlertAction.Style.cancel,
+//                                         handler:{ [weak self]action in
+//                self?.richTextView.becomeFirstResponder()
+//            })
+//
+//        alertController.addAction(insertAction)
+//        if !isInsertingNewLink {
+//            alertController.addAction(removeAction)
+//        }
+//            alertController.addAction(cancelAction)
+//
+//        // Disabled until url is entered into field
+//        if let text = alertController.textFields?.first?.text {
+//            insertAction.isEnabled = !text.isEmpty
+//        }
+//
+//        present(alertController, animated:true, completion:nil)
+//    }
 
     @objc func alertTextFieldDidChange(_ textField: UITextField) {
         guard
@@ -959,17 +959,17 @@ extension EditorDemoController {
         }
     }
 
-    @objc func showImagePicker() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary) ?? []
-        picker.delegate = self
-        picker.allowsEditing = false
-        picker.navigationBar.isTranslucent = false
-        picker.modalPresentationStyle = .currentContext
-
-        present(picker, animated: true, completion: nil)
-    }
+//    @objc func showImagePicker() {
+//        let picker = UIImagePickerController()
+//        picker.sourceType = .photoLibrary
+//        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary) ?? []
+//        picker.delegate = self
+//        picker.allowsEditing = false
+//        picker.navigationBar.isTranslucent = false
+//        picker.modalPresentationStyle = .currentContext
+//
+//        present(picker, animated: true, completion: nil)
+//    }
 
     // MARK: -
 
@@ -981,7 +981,7 @@ extension EditorDemoController {
     }
 
     func createToolbar() -> FormatBar {
-        let mediaItem = makeToolbarButton(identifier: .media)
+//        let mediaItem = makeToolbarButton(identifier: .media)
         let scrollableItems = scrollableItemsForToolbar
         let overflowItems = overflowItemsForToolbar
 
@@ -1007,7 +1007,7 @@ extension EditorDemoController {
         toolbar.autoresizingMask = [ .flexibleHeight ]
         toolbar.formatter = self
 
-        toolbar.leadingItem = mediaItem
+//        toolbar.leadingItem = mediaItem
         toolbar.setDefaultItems(scrollableItems,
                                 overflowItems: overflowItems)
 
@@ -1015,9 +1015,9 @@ extension EditorDemoController {
             self?.handleAction(for: item)
         }
 
-        toolbar.leadingItemHandler = { [weak self] item in
-            self?.showImagePicker()
-        }
+//        toolbar.leadingItemHandler = { [weak self] item in
+//            self?.showImagePicker()
+//        }
 
         return toolbar
     }
@@ -1048,7 +1048,7 @@ extension EditorDemoController {
             makeToolbarButton(identifier: .blockquote),
             makeToolbarButton(identifier: .bold),
             makeToolbarButton(identifier: .italic),
-            makeToolbarButton(identifier: .link)
+//            makeToolbarButton(identifier: .link)
         ]
     }
 
@@ -1056,54 +1056,54 @@ extension EditorDemoController {
         return [
             makeToolbarButton(identifier: .underline),
             makeToolbarButton(identifier: .strikethrough),
-            makeToolbarButton(identifier: .code),
+//            makeToolbarButton(identifier: .code),
             makeToolbarButton(identifier: .horizontalruler),
-            makeToolbarButton(identifier: .more),
-            makeToolbarButton(identifier: .sourcecode)
+//            makeToolbarButton(identifier: .more),
+//            makeToolbarButton(identifier: .sourcecode)
         ]
     }
 
 }
 
-extension EditorDemoController: UINavigationControllerDelegate
-{
-}
+//extension EditorDemoController: UINavigationControllerDelegate
+//{
+//}
 
 // MARK: - UIImagePickerControllerDelegate
 
-extension EditorDemoController: UIImagePickerControllerDelegate
-{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//extension EditorDemoController: UIImagePickerControllerDelegate
+//{
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 // Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+//let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-        dismiss(animated: true, completion: nil)
-        richTextView.becomeFirstResponder()
-        guard let mediaType =  info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as? String else {
-            return
-        }
-        let typeImage = kUTTypeImage as String
-        let typeMovie = kUTTypeMovie as String
+//        dismiss(animated: true, completion: nil)
+//        richTextView.becomeFirstResponder()
+//        guard let mediaType =  info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as? String else {
+//            return
+//        }
+//        let typeImage = kUTTypeImage as String
+//        let typeMovie = kUTTypeMovie as String
 
-        switch mediaType {
-        case typeImage:
-            guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
-                return
-            }
-
-            // Insert Image + Reclaim Focus
-            mediaInserter.insertImage(image)
-
-        case typeMovie:
-            guard let videoURL = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaURL)] as? URL else {
-                return
-            }
-            mediaInserter.insertVideo(videoURL)
-        default:
-            print("Media type not supported: \(mediaType)")
-        }
-    }
-}
+//        switch mediaType {
+//        case typeImage:
+//            guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
+//                return
+//            }
+//
+//            // Insert Image + Reclaim Focus
+////            mediaInserter.insertImage(image)
+//
+//        case typeMovie:
+//            guard let videoURL = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaURL)] as? URL else {
+//                return
+//            }
+////            mediaInserter.insertVideo(videoURL)
+//        default:
+//            print("Media type not supported: \(mediaType)")
+//        }
+//    }
+//}
 
 // MARK: - Constants
 //
@@ -1157,8 +1157,8 @@ extension FormattingIdentifier {
     var iconImage: UIImage {
 
         switch(self) {
-        case .media:
-            return UIImage.systemImage("plus.circle")
+//        case .media:
+//            return UIImage.systemImage("plus.circle")
         case .p:
             return UIImage.systemImage("textformat.size")
         case .bold:
@@ -1175,12 +1175,12 @@ extension FormattingIdentifier {
             return UIImage.systemImage("list.number")
         case .unorderedlist:
             return UIImage.systemImage("list.bullet")
-        case .link:
-            return UIImage.systemImage("link")
+//        case .link:
+//            return UIImage.systemImage("link")
         case .horizontalruler:
             return UIImage.systemImage("minus")
-        case .sourcecode:
-            return UIImage.systemImage("chevron.left.slash.chevron.right")
+//        case .sourcecode:
+//            return UIImage.systemImage("chevron.left.slash.chevron.right")
         case .more:
             return UIImage.systemImage("textformat.abc.dottedunderline")
         case .header1:
@@ -1195,8 +1195,8 @@ extension FormattingIdentifier {
             return UIImage.systemImage("textformat.size")
         case .header6:
             return UIImage.systemImage("textformat.size")
-        case .code:
-            return UIImage.systemImage("textbox")
+//        case .code:
+//            return UIImage.systemImage("textbox")
         default:
             return UIImage.systemImage("info")
         }
@@ -1204,8 +1204,8 @@ extension FormattingIdentifier {
 
     var accessibilityIdentifier: String {
         switch(self) {
-        case .media:
-            return "formatToolbarInsertMedia"
+//        case .media:
+//            return "formatToolbarInsertMedia"
         case .p:
             return "formatToolbarSelectParagraphStyle"
         case .bold:
@@ -1222,12 +1222,12 @@ extension FormattingIdentifier {
             return "formatToolbarToggleListOrdered"
         case .unorderedlist:
             return "formatToolbarToggleListUnordered"
-        case .link:
-            return "formatToolbarInsertLink"
+//        case .link:
+//            return "formatToolbarInsertLink"
         case .horizontalruler:
             return "formatToolbarInsertHorizontalRuler"
-        case .sourcecode:
-            return "formatToolbarToggleHtmlView"
+//        case .sourcecode:
+//            return "formatToolbarToggleHtmlView"
         case .more:
             return "formatToolbarInsertMore"
         case .header1:
@@ -1242,8 +1242,8 @@ extension FormattingIdentifier {
             return "formatToolbarToggleH5"
         case .header6:
             return "formatToolbarToggleH6"
-        case .code:
-            return "formatToolbarCode"
+//        case .code:
+//            return "formatToolbarCode"
         default:
             return ""
         }
@@ -1251,8 +1251,8 @@ extension FormattingIdentifier {
 
     var accessibilityLabel: String {
         switch(self) {
-        case .media:
-            return NSLocalizedString("Insert media", comment: "Accessibility label for insert media button on formatting toolbar.")
+//        case .media:
+//            return NSLocalizedString("Insert media", comment: "Accessibility label for insert media button on formatting toolbar.")
         case .p:
             return NSLocalizedString("Select paragraph style", comment: "Accessibility label for selecting paragraph style button on formatting toolbar.")
         case .bold:
@@ -1269,12 +1269,12 @@ extension FormattingIdentifier {
             return NSLocalizedString("Ordered List", comment: "Accessibility label for Ordered list button on formatting toolbar.")
         case .unorderedlist:
             return NSLocalizedString("Unordered List", comment: "Accessibility label for unordered list button on formatting toolbar.")
-        case .link:
-            return NSLocalizedString("Insert Link", comment: "Accessibility label for insert link button on formatting toolbar.")
+//        case .link:
+//            return NSLocalizedString("Insert Link", comment: "Accessibility label for insert link button on formatting toolbar.")
         case .horizontalruler:
             return NSLocalizedString("Insert Horizontal Ruler", comment: "Accessibility label for insert horizontal ruler button on formatting toolbar.")
-        case .sourcecode:
-            return NSLocalizedString("HTML", comment:"Accessibility label for HTML button on formatting toolbar.")
+//        case .sourcecode:
+//            return NSLocalizedString("HTML", comment:"Accessibility label for HTML button on formatting toolbar.")
         case .more:
             return NSLocalizedString("More", comment:"Accessibility label for the More button on formatting toolbar.")
         case .header1:
@@ -1289,8 +1289,8 @@ extension FormattingIdentifier {
             return NSLocalizedString("Heading 5", comment: "Accessibility label for selecting h5 paragraph style button on the formatting toolbar.")
         case .header6:
             return NSLocalizedString("Heading 6", comment: "Accessibility label for selecting h6 paragraph style button on the formatting toolbar.")
-        case .code:
-            return NSLocalizedString("Code", comment: "Accessibility label for selecting code style button on the formatting toolbar.")
+//        case .code:
+//            return NSLocalizedString("Code", comment: "Accessibility label for selecting code style button on the formatting toolbar.")
         default:
             return ""
         }
@@ -1351,12 +1351,12 @@ private extension TextList.Style {
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-    return input.rawValue
-}
+//fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+//    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+//}
+//
+//// Helper function inserted by Swift 4.2 migrator.
+//fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+//    return input.rawValue
+//}
 

@@ -37,7 +37,7 @@ public protocol TextViewAttachmentDelegate: AnyObject {
     ///
     /// - Returns: the requested `URL` where the image is stored, or nil if it's not yet available.
     ///
-    func textView(_ textView: TextView, urlFor imageAttachment: ImageAttachment) -> URL?
+//    func textView(_ textView: TextView, urlFor imageAttachment: ImageAttachment) -> URL?
 
     /// Called when an attachment doesn't have an available source URL to provide an image representation.
     ///
@@ -55,7 +55,7 @@ public protocol TextViewAttachmentDelegate: AnyObject {
     ///   - textView: The textView where the attachment was removed.
     ///   - attachment: The media attachment that was removed.
     ///
-    func textView(_ textView: TextView, deletedAttachment attachment: MediaAttachment)
+//    func textView(_ textView: TextView, deletedAttachment attachment: MediaAttachment)
 
     /// Called after an attachment is selected with a single tap.
     ///
@@ -79,40 +79,40 @@ public protocol TextViewAttachmentDelegate: AnyObject {
 
 // MARK: - TextViewAttachmentImageProvider
 //
-public protocol TextViewAttachmentImageProvider: AnyObject {
-
-    /// Indicates whether the current Attachment Renderer supports a given NSTextAttachment instance, or not.
-    ///
-    /// - Parameters:
-    ///     - textView: The textView that is requesting the bounds.
-    ///     - attachment: Attachment about to be rendered.
-    ///
-    /// - Returns: True when supported, false otherwise.
-    ///
-    func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool
-
-    /// Provides the Bounds required to represent a given attachment, within a specified line fragment.
-    ///
-    /// - Parameters:
-    ///     - textView: The textView that is requesting the bounds.
-    ///     - attachment: Attachment about to be rendered.
-    ///     - lineFragment: Line Fragment in which the glyph would be rendered.
-    ///
-    /// - Returns: Rect specifying the Bounds for the comment attachment
-    ///
-    func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect
-
-    /// Provides the (Optional) Image Representation of the specified size, for a given Attachment.
-    ///
-    /// - Parameters:
-    ///     - textView: The textView that is requesting the bounds.
-    ///     - attachment: Attachment about to be rendered.
-    ///     - size: Expected Image Size
-    ///
-    /// - Returns: (Optional) UIImage representation of the Comment Attachment.
-    ///
-    func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage?
-}
+//public protocol TextViewAttachmentImageProvider: AnyObject {
+//
+//    /// Indicates whether the current Attachment Renderer supports a given NSTextAttachment instance, or not.
+//    ///
+//    /// - Parameters:
+//    ///     - textView: The textView that is requesting the bounds.
+//    ///     - attachment: Attachment about to be rendered.
+//    ///
+//    /// - Returns: True when supported, false otherwise.
+//    ///
+//    func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool
+//
+//    /// Provides the Bounds required to represent a given attachment, within a specified line fragment.
+//    ///
+//    /// - Parameters:
+//    ///     - textView: The textView that is requesting the bounds.
+//    ///     - attachment: Attachment about to be rendered.
+//    ///     - lineFragment: Line Fragment in which the glyph would be rendered.
+//    ///
+//    /// - Returns: Rect specifying the Bounds for the comment attachment
+//    ///
+//    func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect
+//
+//    /// Provides the (Optional) Image Representation of the specified size, for a given Attachment.
+//    ///
+//    /// - Parameters:
+//    ///     - textView: The textView that is requesting the bounds.
+//    ///     - attachment: Attachment about to be rendered.
+//    ///     - size: Expected Image Size
+//    ///
+//    /// - Returns: (Optional) UIImage representation of the Comment Attachment.
+//    ///
+//    func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage?
+//}
 
 
 // MARK: - TextViewFormattingDelegate
@@ -138,7 +138,7 @@ public protocol TextViewPasteboardDelegate: AnyObject {
     /// Called by the TextView when it's attempting to paste a URL.
     ///
     /// - Returns: True if the paste succeeded, false if it did not.
-    func tryPastingURL(in textView: TextView) -> Bool
+//    func tryPastingURL(in textView: TextView) -> Bool
 
     /// Called by the TextView when it's attempting to paste HTML content.
     ///
@@ -169,7 +169,7 @@ open class TextView: UITextView {
 
     /// Maintains a reference to the user provided Text Attachment Image Providers
     ///
-    fileprivate var textAttachmentImageProvider = [TextViewAttachmentImageProvider]()
+//    fileprivate var textAttachmentImageProvider = [TextViewAttachmentImageProvider]()
 
     /// Formatting Delegate: to be used by the Edition's Format Bar.
     ///
@@ -178,7 +178,7 @@ open class TextView: UITextView {
     /// Pasteboard Delegate: Handles Cut, Copy, and Paste commands. Can be overridden
     /// by a subclass to customize behaviour.
     ///
-    open var pasteboardDelegate: TextViewPasteboardDelegate = AztecTextViewPasteboardDelegate()
+//    open var pasteboardDelegate: TextViewPasteboardDelegate = AztecTextViewPasteboardDelegate()
 
 
     /// If this is true the text view will notify is delegate and notification system when changes happen by calls to methods like setHTML
@@ -332,13 +332,13 @@ open class TextView: UITextView {
         }
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if let previous = previousTraitCollection, previous.hasDifferentColorAppearance(comparedTo: traitCollection) {
-                self.refreshMediaAttachments()
-            }
-        }
-    }
+//    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        if #available(iOS 13.0, *) {
+//            if let previous = previousTraitCollection, previous.hasDifferentColorAppearance(comparedTo: traitCollection) {
+//                self.refreshMediaAttachments()
+//            }
+//        }
+//    }
     /// Blockquote Blocks Background Width.
     ///
     @objc dynamic public var blockquoteBorderWidth: CGFloat {
@@ -451,40 +451,40 @@ open class TextView: UITextView {
         allowsEditingTextAttributes = true
         adjustsFontForContentSizeCategory = true
 
-        storage.attachmentsDelegate = self
+//        storage.attachmentsDelegate = self
         font = defaultFont
         linkTextAttributes = [.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue), .foregroundColor: tintColor as Any]
         typingAttributes = defaultAttributes
-        setupMenuController()
-        setupAttachmentTouchDetection()
+//        setupMenuController()
+//        setupAttachmentTouchDetection()
         setupLayoutManager()
     }
 
-    private func setupMenuController() {
-        let pasteAndMatchTitle = NSLocalizedString("Paste without Formatting", comment: "Paste without Formatting Menu Item")
-        let pasteAndMatchItem = UIMenuItem(title: pasteAndMatchTitle, action: #selector(pasteWithoutFormatting))
-        UIMenuController.shared.menuItems = [pasteAndMatchItem]
-    }
+//    private func setupMenuController() {
+//        let pasteAndMatchTitle = NSLocalizedString("Paste without Formatting", comment: "Paste without Formatting Menu Item")
+//        let pasteAndMatchItem = UIMenuItem(title: pasteAndMatchTitle, action: #selector(pasteWithoutFormatting))
+//        UIMenuController.shared.menuItems = [pasteAndMatchItem]
+//    }
 
-    fileprivate lazy var recognizerDelegate: AttachmentGestureRecognizerDelegate = {
-        return AttachmentGestureRecognizerDelegate(textView: self)
-    }()
+//    fileprivate lazy var recognizerDelegate: AttachmentGestureRecognizerDelegate = {
+//        return AttachmentGestureRecognizerDelegate(textView: self)
+//    }()
+//
+//    fileprivate lazy var attachmentGestureRecognizer: UITapGestureRecognizer = { [unowned self] in
+//        let attachmentGestureRecognizer = UITapGestureRecognizer(target: self.recognizerDelegate, action: #selector(AttachmentGestureRecognizerDelegate.richTextViewWasPressed))
+//        attachmentGestureRecognizer.cancelsTouchesInView = true
+//        attachmentGestureRecognizer.delaysTouchesBegan = true
+//        attachmentGestureRecognizer.delaysTouchesEnded = true
+//        attachmentGestureRecognizer.delegate = self.recognizerDelegate
+//        return attachmentGestureRecognizer
+//    }()
 
-    fileprivate lazy var attachmentGestureRecognizer: UITapGestureRecognizer = { [unowned self] in
-        let attachmentGestureRecognizer = UITapGestureRecognizer(target: self.recognizerDelegate, action: #selector(AttachmentGestureRecognizerDelegate.richTextViewWasPressed))
-        attachmentGestureRecognizer.cancelsTouchesInView = true
-        attachmentGestureRecognizer.delaysTouchesBegan = true
-        attachmentGestureRecognizer.delaysTouchesEnded = true
-        attachmentGestureRecognizer.delegate = self.recognizerDelegate
-        return attachmentGestureRecognizer
-    }()
-
-    private func setupAttachmentTouchDetection() {
-        for gesture in gestureRecognizers ?? [] {
-            gesture.require(toFail: attachmentGestureRecognizer)
-        }
-        addGestureRecognizer(attachmentGestureRecognizer)
-    }
+//    private func setupAttachmentTouchDetection() {
+//        for gesture in gestureRecognizers ?? [] {
+//            gesture.require(toFail: attachmentGestureRecognizer)
+//        }
+//        addGestureRecognizer(attachmentGestureRecognizer)
+//    }
 
     private func setupLayoutManager() {
         guard let aztecLayoutManager = layoutManager as? LayoutManager else {
@@ -499,36 +499,36 @@ open class TextView: UITextView {
     // MARK: - Intercept copy paste operations
 
     open override func cut(_ sender: Any?) {
-        let data = storage.attributedSubstring(from: selectedRange).archivedData()
+//        let data = storage.attributedSubstring(from: selectedRange).archivedData()
         let html = storage.getHTML(range: selectedRange)
         super.cut(sender)
 
-        storeInPasteboard(encoded: data)
+//        storeInPasteboard(encoded: data)
         storeInPasteboard(html: html)
     }
 
     open override func copy(_ sender: Any?) {
-        let data = storage.attributedSubstring(from: selectedRange).archivedData()
+//        let data = storage.attributedSubstring(from: selectedRange).archivedData()
         let html = storage.getHTML(range: selectedRange)
         super.copy(sender)
 
-        storeInPasteboard(encoded: data)
+//        storeInPasteboard(encoded: data)
         storeInPasteboard(html: html)
     }
 
-    open override func paste(_ sender: Any?) {
-        guard pasteboardDelegate.tryPasting(in: self) else {
-            super.paste(sender)
-            return
-        }
-    }
-
-    @objc open func pasteWithoutFormatting(_ sender: Any?) {
-        guard pasteboardDelegate.tryPastingString(in: self) else {
-            super.paste(sender)
-            return
-        }
-    }
+//    open override func paste(_ sender: Any?) {
+//        guard pasteboardDelegate.tryPasting(in: self) else {
+//            super.paste(sender)
+//            return
+//        }
+//    }
+//
+//    @objc open func pasteWithoutFormatting(_ sender: Any?) {
+//        guard pasteboardDelegate.tryPastingString(in: self) else {
+//            super.paste(sender)
+//            return
+//        }
+//    }
     
     // MARK: - Intercept Keystrokes
 
@@ -685,49 +685,49 @@ open class TextView: UITextView {
 
     // MARK: - Intercept keyboard operations
 
-    open override func insertText(_ text: String) {
-        
-        // For some reason the text view is allowing the attachment style to be set in
-        // typingAttributes.  That's simply not acceptable.
-        //
-        // This was causing the following issue:
-        // https://github.com/wordpress-mobile/AztecEditor-iOS/issues/462
-        //
-        typingAttributes[.attachment] = nil
-
-        guard !ensureRemovalOfParagraphAttributesWhenPressingEnterInAnEmptyParagraph(input: text) else {
-            return
-        }
-
-        /// Whenever the user is at the end of the document, while editing a [List, Blockquote, Pre], we'll need
-        /// to insert a `\n` character, so that the Layout Manager immediately renders the List's new bullet
-        /// (or Blockquote's BG).
-        ///
-        ensureInsertionOfEndOfLine(beforeInserting: text)
-
-        // Emoji Fix:
-        // Fallback to the default font, whenever the Active Font's Family doesn't match with the Default Font's family.
-        // We do this twice (before and after inserting text), in order to properly handle two scenarios:
-        //
-        // - Before: Corrects the typing attributes in the scenario in which the user moves the cursor around.
-        //   Placing the caret after an emoji might update the typing attributes, and in some scenarios, the SDK might
-        //   fallback to Courier New.
-        //
-        // - After: If the user enters an Emoji, toggling Bold / Italics breaks. This is due to a glitch in the
-        //   SDK: the font "applied" after inserting an emoji breaks with our styling mechanism.
-        //
-        restoreDefaultFontIfNeeded()
-
-        ensureRemovalOfLinkTypingAttribute(at: selectedRange)
-
-        super.insertText(text)
-
-        evaluateRemovalOfSingleLineParagraphAttributesAfterSelectionChange()
-
-        restoreDefaultFontIfNeeded()
-
-        ensureCursorRedraw(afterEditing: text)
-    }
+//    open override func insertText(_ text: String) {
+//
+//        // For some reason the text view is allowing the attachment style to be set in
+//        // typingAttributes.  That's simply not acceptable.
+//        //
+//        // This was causing the following issue:
+//        // https://github.com/wordpress-mobile/AztecEditor-iOS/issues/462
+//        //
+//        typingAttributes[.attachment] = nil
+//
+//        guard !ensureRemovalOfParagraphAttributesWhenPressingEnterInAnEmptyParagraph(input: text) else {
+//            return
+//        }
+//
+//        /// Whenever the user is at the end of the document, while editing a [List, Blockquote, Pre], we'll need
+//        /// to insert a `\n` character, so that the Layout Manager immediately renders the List's new bullet
+//        /// (or Blockquote's BG).
+//        ///
+//        ensureInsertionOfEndOfLine(beforeInserting: text)
+//
+//        // Emoji Fix:
+//        // Fallback to the default font, whenever the Active Font's Family doesn't match with the Default Font's family.
+//        // We do this twice (before and after inserting text), in order to properly handle two scenarios:
+//        //
+//        // - Before: Corrects the typing attributes in the scenario in which the user moves the cursor around.
+//        //   Placing the caret after an emoji might update the typing attributes, and in some scenarios, the SDK might
+//        //   fallback to Courier New.
+//        //
+//        // - After: If the user enters an Emoji, toggling Bold / Italics breaks. This is due to a glitch in the
+//        //   SDK: the font "applied" after inserting an emoji breaks with our styling mechanism.
+//        //
+//        restoreDefaultFontIfNeeded()
+//
+//        ensureRemovalOfLinkTypingAttribute(at: selectedRange)
+//
+//        super.insertText(text)
+//
+//        evaluateRemovalOfSingleLineParagraphAttributesAfterSelectionChange()
+//
+//        restoreDefaultFontIfNeeded()
+//
+//        ensureCursorRedraw(afterEditing: text)
+//    }
 
     open override func deleteBackward() {
         var deletionRange = selectedRange
@@ -816,7 +816,7 @@ open class TextView: UITextView {
         //          https://github.com/wordpress-mobile/WordPress-Aztec-iOS/issues/58
         //
         font = defaultFont
-        
+
         storage.setHTML(html, defaultAttributes: defaultAttributes)
         recalculateTypingAttributes()
 
@@ -825,16 +825,16 @@ open class TextView: UITextView {
     }
     
     public func replace(_ range: NSRange, withHTML html: String) {
-        
+
         let string = storage.htmlConverter.attributedString(from: html, defaultAttributes: defaultAttributes)
-        
+
         let originalString = storage.attributedSubstring(from: range)
         let finalRange = NSRange(location: range.location, length: string.length)
-        
+
         undoManager?.registerUndo(withTarget: self, handler: { [weak self] target in
             self?.undoTextReplacement(of: originalString, finalRange: finalRange)
         })
-        
+
         storage.replaceCharacters(in: range, with: string)
         selectedRange = NSRange(location: finalRange.location + finalRange.length, length: 0)
     }
@@ -842,9 +842,9 @@ open class TextView: UITextView {
 
     // MARK: - Attachment Helpers
 
-    open func registerAttachmentImageProvider(_ provider: TextViewAttachmentImageProvider) {
-        textAttachmentImageProvider.append(provider)
-    }
+//    open func registerAttachmentImageProvider(_ provider: TextViewAttachmentImageProvider) {
+//        textAttachmentImageProvider.append(provider)
+//    }
 
     // MARK: - Getting format identifiers
 
@@ -853,7 +853,7 @@ open class TextView: UITextView {
         .italic: ItalicFormatter(),
         .underline: SpanUnderlineFormatter(),
         .strikethrough: StrikethroughFormatter(),
-        .link: LinkFormatter(),
+//        .link: LinkFormatter(),
         .orderedlist: TextListFormatter(style: .ordered),
         .unorderedlist: TextListFormatter(style: .unordered),
         .blockquote: BlockquoteFormatter(),
@@ -864,8 +864,8 @@ open class TextView: UITextView {
         .header5: HeaderFormatter(headerLevel: .h5),
         .header6: HeaderFormatter(headerLevel: .h6),
         .p: HTMLParagraphFormatter(),
-        .code: CodeFormatter(),
-        .mark: MarkFormatter()
+//        .code: CodeFormatter(),
+//        .mark: MarkFormatter()
     ]
 
     /// Get a list of format identifiers spanning the specified range as a String array.
@@ -1071,11 +1071,11 @@ open class TextView: UITextView {
         forceRedrawCursorAfterDelay()
     }
 
-    open func toggleCode(range: NSRange) {
-        let formatter = CodeFormatter()
-        formatter.placeholderAttributes = self.defaultAttributes
-        toggle(formatter: formatter, atRange: range)
-    }
+//    open func toggleCode(range: NSRange) {
+//        let formatter = CodeFormatter()
+//        formatter.placeholderAttributes = self.defaultAttributes
+//        toggle(formatter: formatter, atRange: range)
+//    }
 
     /// Adds or removes a blockquote style from the specified range.
     /// Blockquotes are applied to an entire paragrah regardless of the range.
@@ -1266,19 +1266,19 @@ open class TextView: UITextView {
     ///
     /// - Parameter range: Range in which new text will be inserted.
     ///
-    private func ensureRemovalOfLinkTypingAttribute(at range: NSRange) {
-        guard typingAttributes[.link] != nil else {
-            return
-        }
-
-        guard !storage.isLocationPreceededByLink(range.location) ||
-            !storage.isLocationSuccededByLink(range.location)
-            else {
-                return
-        }
-
-        typingAttributes.removeValue(forKey: .link)
-    }
+//    private func ensureRemovalOfLinkTypingAttribute(at range: NSRange) {
+//        guard typingAttributes[.link] != nil else {
+//            return
+//        }
+//
+//        guard !storage.isLocationPreceededByLink(range.location) ||
+//            !storage.isLocationSuccededByLink(range.location)
+//            else {
+//                return
+//        }
+//
+//        typingAttributes.removeValue(forKey: .link)
+//    }
 
 
     /// Force the SDK to Redraw the cursor, asynchronously, if the edited text (inserted / deleted) requires it.
@@ -1392,26 +1392,26 @@ open class TextView: UITextView {
     ///     - target: the target for the link
     ///     - range: The NSRange to edit.
     ///
-    open func setLink(_ url: URL, title: String, target: String? = nil, inRange range: NSRange) {
-
-        let originalText = attributedText.attributedSubstring(from: range)
-        let attributedTitle = NSAttributedString(string: title)
-        let finalRange = NSRange(location: range.location, length: attributedTitle.length)
-
-        undoManager?.registerUndo(withTarget: self, handler: { [weak self] target in
-            self?.undoTextReplacement(of: originalText, finalRange: finalRange)
-        })
-
-        let formatter = LinkFormatter(target: target)
-        formatter.attributeValue = url
-
-        let attributes = formatter.apply(to: typingAttributes)
-        storage.replaceCharacters(in: range, with: NSAttributedString(string: title, attributes: attributes))
-
-        selectedRange = NSRange(location: finalRange.location + finalRange.length, length: 0)
-
-        notifyTextViewDidChange()
-    }
+//    open func setLink(_ url: URL, title: String, target: String? = nil, inRange range: NSRange) {
+//
+//        let originalText = attributedText.attributedSubstring(from: range)
+//        let attributedTitle = NSAttributedString(string: title)
+//        let finalRange = NSRange(location: range.location, length: attributedTitle.length)
+//
+//        undoManager?.registerUndo(withTarget: self, handler: { [weak self] target in
+//            self?.undoTextReplacement(of: originalText, finalRange: finalRange)
+//        })
+//
+//        let formatter = LinkFormatter(target: target)
+//        formatter.attributeValue = url
+//
+//        let attributes = formatter.apply(to: typingAttributes)
+//        storage.replaceCharacters(in: range, with: NSAttributedString(string: title, attributes: attributes))
+//
+//        selectedRange = NSRange(location: finalRange.location + finalRange.length, length: 0)
+//
+//        notifyTextViewDidChange()
+//    }
 
     /// Adds a link to the designated url on the specified range.
     ///
@@ -1420,21 +1420,21 @@ open class TextView: UITextView {
     ///     - target: the target for the link
     ///     - range: The NSRange to edit.
     ///
-    open func setLink(_ url: URL, target: String? = nil, inRange range: NSRange) {
-        let formatter = LinkFormatter(target: target)
-        formatter.attributeValue = url
-
-        apply(formatter: formatter, atRange: range, remove: false)
-    }
+//    open func setLink(_ url: URL, target: String? = nil, inRange range: NSRange) {
+//        let formatter = LinkFormatter(target: target)
+//        formatter.attributeValue = url
+//
+//        apply(formatter: formatter, atRange: range, remove: false)
+//    }
 
     /// Removes the link, if any, at the specified range
     ///
     /// - Parameter range: range that contains the link to be removed.
     ///
-    open func removeLink(inRange range: NSRange) {
-        let formatter = LinkFormatter()
-        apply(formatter: formatter, atRange: range, remove: true)
-    }
+//    open func removeLink(inRange range: NSRange) {
+//        let formatter = LinkFormatter()
+//        apply(formatter: formatter, atRange: range, remove: true)
+//    }
 
 
     // MARK: - Embeds
@@ -1463,57 +1463,57 @@ open class TextView: UITextView {
     ///
     /// - Returns: the attachment object that can be used for further calls
     ///
-    @discardableResult
-    open func replaceWithImage(at range: NSRange, sourceURL url: URL, placeHolderImage: UIImage?, identifier: String = UUID().uuidString) -> ImageAttachment {
-        let attachment = ImageAttachment(identifier: identifier, url: url)
-        attachment.delegate = storage
-        attachment.image = placeHolderImage
-        replace(at: range, with: attachment)
-        return attachment
-    }
+//    @discardableResult
+//    open func replaceWithImage(at range: NSRange, sourceURL url: URL, placeHolderImage: UIImage?, identifier: String = UUID().uuidString) -> ImageAttachment {
+//        let attachment = ImageAttachment(identifier: identifier, url: url)
+//        attachment.delegate = storage
+//        attachment.image = placeHolderImage
+//        replace(at: range, with: attachment)
+//        return attachment
+//    }
 
 
     /// Returns the MediaAttachment instance with the matching identifier
     ///
     /// - Parameter id: Identifier of the text attachment to be retrieved
     ///
-    open func attachment(withId id: String) -> MediaAttachment? {
-        return storage.attachment(withId: id)
-    }
+//    open func attachment(withId id: String) -> MediaAttachment? {
+//        return storage.attachment(withId: id)
+//    }
 
     /// Removes the attachment that matches the attachment identifier provided from the storage
     ///
     /// - Parameter attachmentID: the unique id of the attachment
     ///
-    open func remove(attachmentID: String) {
-        guard let range = storage.rangeFor(attachmentID: attachmentID) else {
-            return
-        }
-        let originalText = storage.attributedSubstring(from: range)
-        let finalRange = NSRange(location: range.location, length: 0)
-
-        undoManager?.registerUndo(withTarget: self, handler: { [weak self] target in
-            self?.undoTextReplacement(of: originalText, finalRange: finalRange)
-        })
-
-        storage.replaceCharacters(in: range, with: NSAttributedString(string: "", attributes: typingAttributes))
-        notifyTextViewDidChange()
-    }
+//    open func remove(attachmentID: String) {
+//        guard let range = storage.rangeFor(attachmentID: attachmentID) else {
+//            return
+//        }
+//        let originalText = storage.attributedSubstring(from: range)
+//        let finalRange = NSRange(location: range.location, length: 0)
+//
+//        undoManager?.registerUndo(withTarget: self, handler: { [weak self] target in
+//            self?.undoTextReplacement(of: originalText, finalRange: finalRange)
+//        })
+//
+//        storage.replaceCharacters(in: range, with: NSAttributedString(string: "", attributes: typingAttributes))
+//        notifyTextViewDidChange()
+//    }
 
     /// Removes all of the text attachments contained within the storage
     ///
-    open func removeMediaAttachments() {
-        storage.removeMediaAttachments()
-        notifyTextViewDidChange()
-    }
+//    open func removeMediaAttachments() {
+//        storage.removeMediaAttachments()
+//        notifyTextViewDidChange()
+//    }
 
     /// Forces  a Refresh of all media attachment in the text view
-    open func refreshMediaAttachments() {
-        storage.enumerateAttachmentsOfType(MediaAttachment.self) { (attachment, range, _) in
-            attachment.refresh()
-            self.refresh(attachment, overlayUpdateOnly: false)
-        }
-    }
+//    open func refreshMediaAttachments() {
+//        storage.enumerateAttachmentsOfType(MediaAttachment.self) { (attachment, range, _) in
+//            attachment.refresh()
+//            self.refresh(attachment, overlayUpdateOnly: false)
+//        }
+//    }
 
     /// Replaces a Video attachment at the specified range
     ///
@@ -1526,14 +1526,14 @@ open class TextView: UITextView {
     ///
     /// - Returns: the video attachment object that was inserted.
     ///
-    @discardableResult
-    open func replaceWithVideo(at range: NSRange, sourceURL: URL, posterURL: URL?, placeHolderImage: UIImage?, identifier: String = UUID().uuidString) -> VideoAttachment {
-        let attachment = VideoAttachment(identifier: identifier, srcURL: sourceURL, posterURL: posterURL)
-        attachment.delegate = storage
-        attachment.image = placeHolderImage
-        replace(at: range, with: attachment)
-        return attachment
-    }
+//    @discardableResult
+//    open func replaceWithVideo(at range: NSRange, sourceURL: URL, posterURL: URL?, placeHolderImage: UIImage?, identifier: String = UUID().uuidString) -> VideoAttachment {
+//        let attachment = VideoAttachment(identifier: identifier, srcURL: sourceURL, posterURL: posterURL)
+//        attachment.delegate = storage
+//        attachment.image = placeHolderImage
+//        replace(at: range, with: attachment)
+//        return attachment
+//    }
 
     /// Returns the associated NSTextAttachment, at a given point, if any.
     ///
@@ -1617,23 +1617,23 @@ open class TextView: UITextView {
 
     // MARK: - Links
 
-    open func linkInfo(for attachment: NSTextAttachment) -> (range: NSRange, url: URL)? {
-        guard let attachmentRange = textStorage.ranges(forAttachment: attachment).first,
-            let linkFullRange = self.linkFullRange(forRange: attachmentRange),
-            let linkURL = self.linkURL(for: attachment)  else {
-                return nil
-        }
-
-        return (linkFullRange, linkURL)
-    }
+//    open func linkInfo(for attachment: NSTextAttachment) -> (range: NSRange, url: URL)? {
+//        guard let attachmentRange = textStorage.ranges(forAttachment: attachment).first,
+//            let linkFullRange = self.linkFullRange(forRange: attachmentRange),
+//            let linkURL = self.linkURL(for: attachment)  else {
+//                return nil
+//        }
+//
+//        return (linkFullRange, linkURL)
+//    }
     
-    open func linkURL(for attachment: NSTextAttachment) -> URL? {
-        guard let attachmentRange = textStorage.ranges(forAttachment: attachment).first else {
-            return nil
-        }
-        
-        return linkURL(forRange: attachmentRange)
-    }
+//    open func linkURL(for attachment: NSTextAttachment) -> URL? {
+//        guard let attachmentRange = textStorage.ranges(forAttachment: attachment).first else {
+//            return nil
+//        }
+//
+//        return linkURL(forRange: attachmentRange)
+//    }
     
     /// Returns an NSURL if the specified range as attached a link attribute
     ///
@@ -1641,25 +1641,25 @@ open class TextView: UITextView {
     ///
     /// - Returns: The NSURL if available
     ///
-    open func linkURL(forRange range: NSRange) -> URL? {
-        let index = maxIndex(range.location)
-        var effectiveRange = NSRange()
-        guard index < storage.length,
-            let attr = storage.attribute(.link, at: index, effectiveRange: &effectiveRange)
-            else {
-                return nil
-        }
-
-        if let url = attr as? URL {
-            return url
-        }
-
-        if let urlString = attr as? String {
-            return URL(string:urlString)
-        }
-
-        return nil
-    }
+//    open func linkURL(forRange range: NSRange) -> URL? {
+//        let index = maxIndex(range.location)
+//        var effectiveRange = NSRange()
+//        guard index < storage.length,
+//            let attr = storage.attribute(.link, at: index, effectiveRange: &effectiveRange)
+//            else {
+//                return nil
+//        }
+//
+//        if let url = attr as? URL {
+//            return url
+//        }
+//
+//        if let urlString = attr as? String {
+//            return URL(string:urlString)
+//        }
+//
+//        return nil
+//    }
 
     /// Returns the link target value if the specified range has attached a link attribute
     ///
@@ -1667,22 +1667,22 @@ open class TextView: UITextView {
     ///
     /// - Returns: The target if available
     ///
-    open func linkTarget(forRange range: NSRange) -> String? {
-        let index = maxIndex(range.location)
-        var effectiveRange = NSRange()
-        guard index < storage.length,
-            let _ = storage.attribute(.link, at: index, longestEffectiveRange: &effectiveRange, in: storage.rangeOfEntireString),
-            let representation = storage.attribute(.linkHtmlRepresentation, at: effectiveRange.location, effectiveRange: nil) as? HTMLRepresentation,
-            case .element(let element) = representation.kind else {
-                return nil
-        }
-
-        if let target = element.attribute(ofType: .target)?.value.toString() {
-            return target
-        }
-
-        return nil
-    }
+//    open func linkTarget(forRange range: NSRange) -> String? {
+//        let index = maxIndex(range.location)
+//        var effectiveRange = NSRange()
+//        guard index < storage.length,
+//            let _ = storage.attribute(.link, at: index, longestEffectiveRange: &effectiveRange, in: storage.rangeOfEntireString),
+//            let representation = storage.attribute(.linkHtmlRepresentation, at: effectiveRange.location, effectiveRange: nil) as? HTMLRepresentation,
+//            case .element(let element) = representation.kind else {
+//                return nil
+//        }
+//
+//        if let target = element.attribute(ofType: .target)?.value.toString() {
+//            return target
+//        }
+//
+//        return nil
+//    }
 
 
     /// Returns the Link Attribute's Full Range, intersecting the specified range.
@@ -1691,17 +1691,17 @@ open class TextView: UITextView {
     ///
     /// - Returns: The full Link's Range.
     ///
-    open func linkFullRange(forRange range: NSRange) -> NSRange? {
-        let index = maxIndex(range.location)
-        var effectiveRange = NSRange()
-        guard index < storage.length,
-            storage.attribute(.link, at: index, longestEffectiveRange: &effectiveRange, in: NSMakeRange(0, storage.length)) != nil
-            else {
-                return nil
-        }
-
-        return effectiveRange
-    }
+//    open func linkFullRange(forRange range: NSRange) -> NSRange? {
+//        let index = maxIndex(range.location)
+//        var effectiveRange = NSRange()
+//        guard index < storage.length,
+//            storage.attribute(.link, at: index, longestEffectiveRange: &effectiveRange, in: NSMakeRange(0, storage.length)) != nil
+//            else {
+//                return nil
+//        }
+//
+//        return effectiveRange
+//    }
     
     // MARK: - Captions
 
@@ -2099,140 +2099,140 @@ private extension TextView {
 
 // MARK: - TextStorageImageProvider
 //
-extension TextView: TextStorageAttachmentsDelegate {
-
-    func storage(
-        _ storage: TextStorage,
-        attachment: NSTextAttachment,
-        imageFor url: URL,
-        onSuccess success: @escaping (UIImage) -> (),
-        onFailure failure: @escaping () -> ()) {
-        
-        guard let textAttachmentDelegate = textAttachmentDelegate else {
-            fatalError("This class requires a text attachment delegate to be set.")
-        }
-        
-        textAttachmentDelegate.textView(self, attachment: attachment, imageAt: url, onSuccess: success, onFailure: failure)
-    }
-
-    func storage(_ storage: TextStorage, placeholderFor attachment: NSTextAttachment) -> UIImage {
-        guard let textAttachmentDelegate = textAttachmentDelegate else {
-            fatalError("This class requires a text attachment delegate to be set.")
-        }
-
-        return textAttachmentDelegate.textView(self, placeholderFor: attachment)
-    }
-    
-    func storage(_ storage: TextStorage, urlFor imageAttachment: ImageAttachment) -> URL? {
-        guard let textAttachmentDelegate = textAttachmentDelegate else {
-            fatalError("This class requires a text attachment delegate to be set.")
-        }
-        
-        return textAttachmentDelegate.textView(self, urlFor: imageAttachment)
-    }
-
-    func storage(_ storage: TextStorage, deletedAttachment attachment: MediaAttachment) {
-        textAttachmentDelegate?.textView(self, deletedAttachment: attachment)
-    }
-
-    func storage(_ storage: TextStorage, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage? {
-        let provider = textAttachmentImageProvider.first { provider in
-            return provider.textView(self, shouldRender: attachment)
-        }
-
-        guard let firstProvider = provider else {
-            fatalError("This class requires at least one AttachmentImageProvider to be set.")
-        }
-
-        return firstProvider.textView(self, imageFor: attachment, with: size)
-    }
-
-    func storage(_ storage: TextStorage, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect {
-        let provider = textAttachmentImageProvider.first {
-            $0.textView(self, shouldRender: attachment)
-        }
-
-        guard let firstProvider = provider else {
-            fatalError("This class requires at least one AttachmentImageProvider to be set.")
-        }
-
-        return firstProvider.textView(self, boundsFor: attachment, with: lineFragment)
-    }
-}
+//extension TextView: TextStorageAttachmentsDelegate {
+//
+//    func storage(
+//        _ storage: TextStorage,
+//        attachment: NSTextAttachment,
+//        imageFor url: URL,
+//        onSuccess success: @escaping (UIImage) -> (),
+//        onFailure failure: @escaping () -> ()) {
+//
+//        guard let textAttachmentDelegate = textAttachmentDelegate else {
+//            fatalError("This class requires a text attachment delegate to be set.")
+//        }
+//
+//        textAttachmentDelegate.textView(self, attachment: attachment, imageAt: url, onSuccess: success, onFailure: failure)
+//    }
+//
+//    func storage(_ storage: TextStorage, placeholderFor attachment: NSTextAttachment) -> UIImage {
+//        guard let textAttachmentDelegate = textAttachmentDelegate else {
+//            fatalError("This class requires a text attachment delegate to be set.")
+//        }
+//
+//        return textAttachmentDelegate.textView(self, placeholderFor: attachment)
+//    }
+//
+//    func storage(_ storage: TextStorage, urlFor imageAttachment: ImageAttachment) -> URL? {
+//        guard let textAttachmentDelegate = textAttachmentDelegate else {
+//            fatalError("This class requires a text attachment delegate to be set.")
+//        }
+//
+//        return textAttachmentDelegate.textView(self, urlFor: imageAttachment)
+//    }
+//
+//    func storage(_ storage: TextStorage, deletedAttachment attachment: MediaAttachment) {
+//        textAttachmentDelegate?.textView(self, deletedAttachment: attachment)
+//    }
+//
+//    func storage(_ storage: TextStorage, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage? {
+//        let provider = textAttachmentImageProvider.first { provider in
+//            return provider.textView(self, shouldRender: attachment)
+//        }
+//
+//        guard let firstProvider = provider else {
+//            fatalError("This class requires at least one AttachmentImageProvider to be set.")
+//        }
+//
+//        return firstProvider.textView(self, imageFor: attachment, with: size)
+//    }
+//
+//    func storage(_ storage: TextStorage, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect {
+//        let provider = textAttachmentImageProvider.first {
+//            $0.textView(self, shouldRender: attachment)
+//        }
+//
+//        guard let firstProvider = provider else {
+//            fatalError("This class requires at least one AttachmentImageProvider to be set.")
+//        }
+//
+//        return firstProvider.textView(self, boundsFor: attachment, with: lineFragment)
+//    }
+//}
 
 
 // MARK: - UIGestureRecognizerDelegate
 //
-@objc class AttachmentGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
-
-    private weak var textView: TextView?
-    fileprivate var currentSelectedAttachment: MediaAttachment?
-
-    public init(textView: TextView) {
-        self.textView = textView
-    }
-
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard let textView = textView else {
-            return false
-        }
-
-        let locationInTextView = touch.location(in: textView)
-        let isAttachmentInLocation = textView.attachmentAtPoint(locationInTextView) != nil
-        if !isAttachmentInLocation {
-            if let selectedAttachment = currentSelectedAttachment {
-                textView.textAttachmentDelegate?.textView(textView, deselected: selectedAttachment, atPosition: locationInTextView)
-            }
-            currentSelectedAttachment = nil
-        }
-        return isAttachmentInLocation
-
-    }
-
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard let textView = textView else {
-            return false
-        }
-
-        let locationInTextView = gestureRecognizer.location(in: textView)
-        guard textView.attachmentAtPoint(locationInTextView) != nil else {
-            if let selectedAttachment = currentSelectedAttachment {
-                textView.textAttachmentDelegate?.textView(textView, deselected: selectedAttachment, atPosition: locationInTextView)
-            }
-            currentSelectedAttachment = nil
-            return false
-        }
-        return true
-    }
-
-    @objc func richTextViewWasPressed(_ recognizer: UIGestureRecognizer) {
-        guard let textView = textView, recognizer.state == .recognized else {
-            return
-        }
-
-        let locationInTextView = recognizer.location(in: textView)
-        guard let attachment = textView.attachmentAtPoint(locationInTextView) else {
-            return
-        }
-
-        textView.moveSelectionToPoint(locationInTextView)
-
-        if textView.isPointInsideAttachmentMargin(point: locationInTextView) {
-            if let selectedAttachment = currentSelectedAttachment {
-                textView.textAttachmentDelegate?.textView(textView, deselected: selectedAttachment, atPosition: locationInTextView)
-            }
-            currentSelectedAttachment = nil
-            return
-        }
-
-        currentSelectedAttachment = attachment as? MediaAttachment
-        textView.textAttachmentDelegate?.textView(textView, selected: attachment, atPosition: locationInTextView)
-    }
-}
+//@objc class AttachmentGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
+//
+//    private weak var textView: TextView?
+//    fileprivate var currentSelectedAttachment: MediaAttachment?
+//
+//    public init(textView: TextView) {
+//        self.textView = textView
+//    }
+//
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//        return true
+//    }
+//
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+//        guard let textView = textView else {
+//            return false
+//        }
+//
+//        let locationInTextView = touch.location(in: textView)
+//        let isAttachmentInLocation = textView.attachmentAtPoint(locationInTextView) != nil
+//        if !isAttachmentInLocation {
+//            if let selectedAttachment = currentSelectedAttachment {
+//                textView.textAttachmentDelegate?.textView(textView, deselected: selectedAttachment, atPosition: locationInTextView)
+//            }
+//            currentSelectedAttachment = nil
+//        }
+//        return isAttachmentInLocation
+//
+//    }
+//
+//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        guard let textView = textView else {
+//            return false
+//        }
+//
+//        let locationInTextView = gestureRecognizer.location(in: textView)
+//        guard textView.attachmentAtPoint(locationInTextView) != nil else {
+//            if let selectedAttachment = currentSelectedAttachment {
+//                textView.textAttachmentDelegate?.textView(textView, deselected: selectedAttachment, atPosition: locationInTextView)
+//            }
+//            currentSelectedAttachment = nil
+//            return false
+//        }
+//        return true
+//    }
+//
+//    @objc func richTextViewWasPressed(_ recognizer: UIGestureRecognizer) {
+//        guard let textView = textView, recognizer.state == .recognized else {
+//            return
+//        }
+//
+//        let locationInTextView = recognizer.location(in: textView)
+//        guard let attachment = textView.attachmentAtPoint(locationInTextView) else {
+//            return
+//        }
+//
+//        textView.moveSelectionToPoint(locationInTextView)
+//
+//        if textView.isPointInsideAttachmentMargin(point: locationInTextView) {
+//            if let selectedAttachment = currentSelectedAttachment {
+//                textView.textAttachmentDelegate?.textView(textView, deselected: selectedAttachment, atPosition: locationInTextView)
+//            }
+//            currentSelectedAttachment = nil
+//            return
+//        }
+//
+//        currentSelectedAttachment = attachment as? MediaAttachment
+//        textView.textAttachmentDelegate?.textView(textView, selected: attachment, atPosition: locationInTextView)
+//    }
+//}
 
 
 // MARK: - Undo implementation

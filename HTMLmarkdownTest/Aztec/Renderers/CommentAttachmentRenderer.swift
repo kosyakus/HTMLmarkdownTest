@@ -29,50 +29,50 @@ final public class CommentAttachmentRenderer {
 
 // MARK: - TextViewCommentsDelegate Methods
 //
-extension CommentAttachmentRenderer: TextViewAttachmentImageProvider {
-
-    public func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool {
-        return attachment is CommentAttachment
-    }
-
-    public func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-
-        // Either this is a comment attachment, or the logic is broken.
-        let commentAttachment = attachment as! CommentAttachment
-
-        guard !isGutenbergComment(commentAttachment) else {
-            return nil
-        }
-
-        let message = messageAttributedString()
-        let targetRect = boundingRect(for: message, size: size)
-
-        message.draw(in: targetRect)
-
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return result
-    }
-
-    public func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect {
-        let message = messageAttributedString()
-
-        // Either this is a comment attachment, or the logic is broken.
-        let commentAttachment = attachment as! CommentAttachment
-
-        guard !isGutenbergComment(commentAttachment) else {
-            return .zero
-        }
-
-        let size = CGSize(width: lineFragment.size.width, height: lineFragment.size.height)
-        var rect = boundingRect(for: message, size: size)
-        rect.origin.y = textFont.descender
-
-        return rect.integral
-    }
-}
+//extension CommentAttachmentRenderer: TextViewAttachmentImageProvider {
+//
+//    public func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool {
+//        return attachment is CommentAttachment
+//    }
+//
+//    public func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage? {
+//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//
+//        // Either this is a comment attachment, or the logic is broken.
+//        let commentAttachment = attachment as! CommentAttachment
+//
+//        guard !isGutenbergComment(commentAttachment) else {
+//            return nil
+//        }
+//
+//        let message = messageAttributedString()
+//        let targetRect = boundingRect(for: message, size: size)
+//
+//        message.draw(in: targetRect)
+//
+//        let result = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//
+//        return result
+//    }
+//
+//    public func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect {
+//        let message = messageAttributedString()
+//
+//        // Either this is a comment attachment, or the logic is broken.
+//        let commentAttachment = attachment as! CommentAttachment
+//
+//        guard !isGutenbergComment(commentAttachment) else {
+//            return .zero
+//        }
+//
+//        let size = CGSize(width: lineFragment.size.width, height: lineFragment.size.height)
+//        var rect = boundingRect(for: message, size: size)
+//        rect.origin.y = textFont.descender
+//
+//        return rect.integral
+//    }
+//}
 
 
 // MARK: - Private Methods

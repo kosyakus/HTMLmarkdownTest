@@ -29,44 +29,44 @@ final public class HTMLAttachmentRenderer {
 
 // MARK: - TextViewCommentsDelegate Methods
 //
-extension HTMLAttachmentRenderer: TextViewAttachmentImageProvider {
-
-    public func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool {
-        return attachment is HTMLAttachment
-    }
-
-    public func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-
-        guard let attachment = attachment as? HTMLAttachment else {
-            return nil
-        }
-        
-        let message = messageAttributedString(with: attachment)
-        let targetRect = boundingRect(for: message, size: size)
-
-        message.draw(in: targetRect)
-
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return result
-    }
-
-    public func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect {
-        guard let attachment = attachment as? HTMLAttachment else {
-            return .zero
-        }
-        
-        let message = messageAttributedString(with: attachment)
-
-        let size = CGSize(width: lineFragment.size.width, height: lineFragment.size.height)
-        var rect = boundingRect(for: message, size: size)
-        rect.origin.y = textFont.descender
-
-        return rect.integral
-    }
-}
+//extension HTMLAttachmentRenderer: TextViewAttachmentImageProvider {
+//
+//    public func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool {
+//        return attachment is HTMLAttachment
+//    }
+//
+//    public func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage? {
+//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//
+//        guard let attachment = attachment as? HTMLAttachment else {
+//            return nil
+//        }
+//        
+//        let message = messageAttributedString(with: attachment)
+//        let targetRect = boundingRect(for: message, size: size)
+//
+//        message.draw(in: targetRect)
+//
+//        let result = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//
+//        return result
+//    }
+//
+//    public func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect {
+//        guard let attachment = attachment as? HTMLAttachment else {
+//            return .zero
+//        }
+//        
+//        let message = messageAttributedString(with: attachment)
+//
+//        let size = CGSize(width: lineFragment.size.width, height: lineFragment.size.height)
+//        var rect = boundingRect(for: message, size: size)
+//        rect.origin.y = textFont.descender
+//
+//        return rect.integral
+//    }
+//}
 
 
 // MARK: - Private Methods

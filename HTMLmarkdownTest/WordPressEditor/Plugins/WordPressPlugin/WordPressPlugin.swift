@@ -17,7 +17,7 @@ open class WordPressPlugin: Plugin {
             outputCustomizer: WordPressOutputCustomizer(gutenbergContentVerifier: isGutenbergContent))
     }
 
-    open override func loaded(textView: TextView) {
-        textView.pasteboardDelegate = WordPressTextViewPasteboardDelegate()
-    }
+//    open override func loaded(textView: TextView) {
+//        textView.pasteboardDelegate = WordPressTextViewPasteboardDelegate()
+//    }
 }

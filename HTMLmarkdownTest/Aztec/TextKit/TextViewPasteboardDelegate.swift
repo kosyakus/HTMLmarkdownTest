@@ -16,8 +16,8 @@ open class AztecTextViewPasteboardDelegate: TextViewPasteboardDelegate {
     /// - Returns: True if the paste succeeds, false if it does not.
     ///
     open func tryPasting(in textView: TextView) -> Bool {
-        return tryPastingURL(in: textView)
-            || tryPastingHTML(in: textView)
+        return //tryPastingURL(in: textView)
+            tryPastingHTML(in: textView)
             || tryPastingAttributedString(in: textView)
             || tryPastingString(in: textView)
     }
@@ -26,25 +26,25 @@ open class AztecTextViewPasteboardDelegate: TextViewPasteboardDelegate {
     ///
     /// - Returns: True if the paste succeeds, false if it does not.
     ///
-    open func tryPastingURL(in textView: TextView) -> Bool {
-        guard UIPasteboard.general.hasURLs,
-            let url = UIPasteboard.general.url else {
-                return false
-        }
-
-        let selectedRange = textView.selectedRange
-
-        if selectedRange.length == 0 {
-            guard textView.shouldChangeText(in: selectedRange, with: url.absoluteString) else {
-                return true
-            }
-            textView.setLink(url, title:url.absoluteString, inRange: selectedRange)
-        } else {
-            textView.setLink(url, inRange: selectedRange)
-        }
-
-        return true
-    }
+//    open func tryPastingURL(in textView: TextView) -> Bool {
+//        guard UIPasteboard.general.hasURLs,
+//            let url = UIPasteboard.general.url else {
+//                return false
+//        }
+//
+//        let selectedRange = textView.selectedRange
+//
+//        if selectedRange.length == 0 {
+//            guard textView.shouldChangeText(in: selectedRange, with: url.absoluteString) else {
+//                return true
+//            }
+////            textView.setLink(url, title:url.absoluteString, inRange: selectedRange)
+//        } else {
+////            textView.setLink(url, inRange: selectedRange)
+//        }
+//
+//        return true
+//    }
     
     /// Tries to paste HTML from the clipboard as source, replacing the selected range.
     ///

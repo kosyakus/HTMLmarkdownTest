@@ -58,13 +58,13 @@ class TextViewAttachmentDelegateProvider: NSObject, TextViewAttachmentDelegate {
         return placeholderImage
     }
 
-    func textView(_ textView: TextView, urlFor imageAttachment: ImageAttachment) -> URL? {
-        guard let image = imageAttachment.image else {
-            return nil
-        }
-
-        return image.saveToTemporaryFile()
-    }
+//    func textView(_ textView: TextView, urlFor imageAttachment: ImageAttachment) -> URL? {
+//        guard let image = imageAttachment.image else {
+//            return nil
+//        }
+//
+//        return image.saveToTemporaryFile()
+//    }
 
     func textView(_ textView: TextView, deletedAttachment attachment: MediaAttachment) {
         print("Attachment \(attachment.identifier) removed.\n")
@@ -74,8 +74,8 @@ class TextViewAttachmentDelegateProvider: NSObject, TextViewAttachmentDelegate {
         switch attachment {
         case let attachment as HTMLAttachment:
             displayUnknownHtmlEditor(for: attachment, in: textView)
-        case let attachment as MediaAttachment:
-            selected(in: textView, textAttachment: attachment, atPosition: position)
+//        case let attachment as MediaAttachment:
+//            selected(in: textView, textAttachment: attachment, atPosition: position)
         default:
             break
         }
@@ -85,37 +85,37 @@ class TextViewAttachmentDelegateProvider: NSObject, TextViewAttachmentDelegate {
         deselected(in: textView, textAttachment: attachment, atPosition: position)
     }
 
-    fileprivate func resetMediaAttachmentOverlay(_ mediaAttachment: MediaAttachment) {
-        mediaAttachment.overlayImage = nil
-        mediaAttachment.message = nil
-    }
+//    fileprivate func resetMediaAttachmentOverlay(_ mediaAttachment: MediaAttachment) {
+//        mediaAttachment.overlayImage = nil
+//        mediaAttachment.message = nil
+//    }
 
-    func selected(in textView: TextView, textAttachment attachment: MediaAttachment, atPosition position: CGPoint) {
-        if (currentSelectedAttachment == attachment) {
-            displayActions(in: textView, forAttachment: attachment, position: position)
-        } else {
-            if let selectedAttachment = currentSelectedAttachment {
-                resetMediaAttachmentOverlay(selectedAttachment)
-                textView.refresh(selectedAttachment)
-            }
-
-            // and mark the newly tapped attachment
-            if attachment.message == nil {
-                let message = NSLocalizedString("Options", comment: "Options to show when tapping on a media object on the post/page editor.")
-                attachment.message = NSAttributedString(string: message, attributes: attachmentTextAttributes)
-            }
-            attachment.overlayImage = UIImage.init(systemName: "square.and.pencil")!.withRenderingMode(.alwaysTemplate)
-            textView.refresh(attachment)
-            currentSelectedAttachment = attachment
-        }
-    }
+//    func selected(in textView: TextView, textAttachment attachment: MediaAttachment, atPosition position: CGPoint) {
+//        if (currentSelectedAttachment == attachment) {
+//            displayActions(in: textView, forAttachment: attachment, position: position)
+//        } else {
+//            if let selectedAttachment = currentSelectedAttachment {
+//                resetMediaAttachmentOverlay(selectedAttachment)
+//                textView.refresh(selectedAttachment)
+//            }
+//
+//            // and mark the newly tapped attachment
+//            if attachment.message == nil {
+//                let message = NSLocalizedString("Options", comment: "Options to show when tapping on a media object on the post/page editor.")
+//                attachment.message = NSAttributedString(string: message, attributes: attachmentTextAttributes)
+//            }
+//            attachment.overlayImage = UIImage.init(systemName: "square.and.pencil")!.withRenderingMode(.alwaysTemplate)
+//            textView.refresh(attachment)
+//            currentSelectedAttachment = attachment
+//        }
+//    }
 
     func deselected(in textView: TextView,textAttachment attachment: NSTextAttachment, atPosition position: CGPoint) {
         currentSelectedAttachment = nil
-        if let mediaAttachment = attachment as? MediaAttachment {
-            resetMediaAttachmentOverlay(mediaAttachment)
-            textView.refresh(mediaAttachment)
-        }
+//        if let mediaAttachment = attachment as? MediaAttachment {
+//            resetMediaAttachmentOverlay(mediaAttachment)
+//            textView.refresh(mediaAttachment)
+//        }
     }
 
     func displayVideoPlayer(for videoURL: URL) {
@@ -181,102 +181,102 @@ private extension TextViewAttachmentDelegateProvider {
 
 // MARK: - Media attachments actions
 //
-extension TextViewAttachmentDelegateProvider {
-    
-    func displayActions(in textView: TextView, forAttachment attachment: MediaAttachment, position: CGPoint) {
-        let mediaID = attachment.identifier
-        let title: String = NSLocalizedString("Media Options", comment: "Title for action sheet with media options.")
-        let message: String? = nil
-        let alertController = UIAlertController(title: title, message:message, preferredStyle: .actionSheet)
-        let dismissAction = UIAlertAction(title: NSLocalizedString("Dismiss", comment: "User action to dismiss media options."),
-                                          style: .cancel,
-                                          handler: { [weak self] (action) in
-                                            self?.resetMediaAttachmentOverlay(attachment)
-                                            textView.refresh(attachment)
-        }
-        )
-        alertController.addAction(dismissAction)
-
-        let removeAction = UIAlertAction(title: NSLocalizedString("Remove Media", comment: "User action to remove media."),
-                                         style: .destructive,
-                                         handler: { (action) in
-                                            textView.remove(attachmentID: mediaID)
-        })
-        alertController.addAction(removeAction)
-
-        if let imageAttachment = attachment as? ImageAttachment {
-            let detailsAction = UIAlertAction(title:NSLocalizedString("Media Details", comment: "User action to change media details."),
-                                              style: .default,
-                                              handler: { [weak self] (action) in
-                                                self?.displayDetailsForAttachment(in: textView, imageAttachment, position: position)
-            })
-            alertController.addAction(detailsAction)
-        } else if let videoAttachment = attachment as? VideoAttachment, let videoURL = videoAttachment.mediaURL {
-            let detailsAction = UIAlertAction(title:NSLocalizedString("Play Video", comment: "User action to play video."),
-                                              style: .default,
-                                              handler: { [weak self] (action) in
-                                                self?.displayVideoPlayer(for: videoURL)
-            })
-            alertController.addAction(detailsAction)
-        }
-
-        alertController.title = title
-        alertController.message = message
-        alertController.popoverPresentationController?.sourceView = textView
-        alertController.popoverPresentationController?.sourceRect = CGRect(origin: position, size: CGSize(width: 1, height: 1))
-        alertController.popoverPresentationController?.permittedArrowDirections = .any
-        baseController.present(alertController, animated:true, completion: nil)
-    }
-
-    func displayDetailsForAttachment(in textView: TextView, _ attachment: ImageAttachment, position:CGPoint) {
-
-        let caption = textView.caption(for: attachment)
-        let detailsViewController = AttachmentDetailsViewController.controller(for: attachment, with: caption)
-
-        let linkInfo = textView.linkInfo(for: attachment)
-        let linkRange = linkInfo?.range
-        let linkUpdateRange = linkRange ?? textView.textStorage.ranges(forAttachment: attachment).first!
-
-        if let linkURL = linkInfo?.url {
-            detailsViewController.linkURL = linkURL
-        }
-
-        detailsViewController.onUpdate = { (alignment, size, srcURL, linkURL, alt, caption) in
-
-            let attachment = textView.edit(attachment) { attachment in
-                if let alt = alt {
-                    attachment.extraAttributes["alt"] = .string(alt)
-                }
-
-                attachment.alignment = alignment
-                attachment.size = size
-                attachment.updateURL(srcURL)
-            }
-
-            if let caption = caption, caption.length > 0 {
-                textView.replaceCaption(for: attachment, with: caption)
-            } else {
-                textView.removeCaption(for: attachment)
-            }
-
-            if let newLinkURL = linkURL {
-                textView.setLink(newLinkURL, inRange: linkUpdateRange)
-            } else if linkURL != nil {
-                textView.removeLink(inRange: linkUpdateRange)
-            }
-        }
-
-        let selectedRange = textView.selectedRange
-
-        detailsViewController.onDismiss = {
-            textView.becomeFirstResponder()
-            textView.selectedRange = selectedRange
-        }
-
-        let navigationController = UINavigationController(rootViewController: detailsViewController)
-        baseController.present(navigationController, animated: true, completion: nil)
-    }
-}
+//extension TextViewAttachmentDelegateProvider {
+//
+//    func displayActions(in textView: TextView, forAttachment attachment: MediaAttachment, position: CGPoint) {
+//        let mediaID = attachment.identifier
+//        let title: String = NSLocalizedString("Media Options", comment: "Title for action sheet with media options.")
+//        let message: String? = nil
+//        let alertController = UIAlertController(title: title, message:message, preferredStyle: .actionSheet)
+//        let dismissAction = UIAlertAction(title: NSLocalizedString("Dismiss", comment: "User action to dismiss media options."),
+//                                          style: .cancel,
+//                                          handler: { [weak self] (action) in
+//                                            self?.resetMediaAttachmentOverlay(attachment)
+//                                            textView.refresh(attachment)
+//        }
+//        )
+//        alertController.addAction(dismissAction)
+//
+//        let removeAction = UIAlertAction(title: NSLocalizedString("Remove Media", comment: "User action to remove media."),
+//                                         style: .destructive,
+//                                         handler: { (action) in
+//                                            textView.remove(attachmentID: mediaID)
+//        })
+//        alertController.addAction(removeAction)
+//
+//        if let imageAttachment = attachment as? ImageAttachment {
+//            let detailsAction = UIAlertAction(title:NSLocalizedString("Media Details", comment: "User action to change media details."),
+//                                              style: .default,
+//                                              handler: { [weak self] (action) in
+//                                                self?.displayDetailsForAttachment(in: textView, imageAttachment, position: position)
+//            })
+//            alertController.addAction(detailsAction)
+//        } else if let videoAttachment = attachment as? VideoAttachment, let videoURL = videoAttachment.mediaURL {
+//            let detailsAction = UIAlertAction(title:NSLocalizedString("Play Video", comment: "User action to play video."),
+//                                              style: .default,
+//                                              handler: { [weak self] (action) in
+//                                                self?.displayVideoPlayer(for: videoURL)
+//            })
+//            alertController.addAction(detailsAction)
+//        }
+//
+//        alertController.title = title
+//        alertController.message = message
+//        alertController.popoverPresentationController?.sourceView = textView
+//        alertController.popoverPresentationController?.sourceRect = CGRect(origin: position, size: CGSize(width: 1, height: 1))
+//        alertController.popoverPresentationController?.permittedArrowDirections = .any
+//        baseController.present(alertController, animated:true, completion: nil)
+//    }
+//
+//    func displayDetailsForAttachment(in textView: TextView, _ attachment: ImageAttachment, position:CGPoint) {
+//
+//        let caption = textView.caption(for: attachment)
+//        let detailsViewController = AttachmentDetailsViewController.controller(for: attachment, with: caption)
+//
+//        let linkInfo = textView.linkInfo(for: attachment)
+//        let linkRange = linkInfo?.range
+//        let linkUpdateRange = linkRange ?? textView.textStorage.ranges(forAttachment: attachment).first!
+//
+//        if let linkURL = linkInfo?.url {
+//            detailsViewController.linkURL = linkURL
+//        }
+//
+//        detailsViewController.onUpdate = { (alignment, size, srcURL, linkURL, alt, caption) in
+//
+//            let attachment = textView.edit(attachment) { attachment in
+//                if let alt = alt {
+//                    attachment.extraAttributes["alt"] = .string(alt)
+//                }
+//
+//                attachment.alignment = alignment
+//                attachment.size = size
+//                attachment.updateURL(srcURL)
+//            }
+//
+//            if let caption = caption, caption.length > 0 {
+//                textView.replaceCaption(for: attachment, with: caption)
+//            } else {
+//                textView.removeCaption(for: attachment)
+//            }
+//
+//            if let newLinkURL = linkURL {
+//                textView.setLink(newLinkURL, inRange: linkUpdateRange)
+//            } else if linkURL != nil {
+//                textView.removeLink(inRange: linkUpdateRange)
+//            }
+//        }
+//
+//        let selectedRange = textView.selectedRange
+//
+//        detailsViewController.onDismiss = {
+//            textView.becomeFirstResponder()
+//            textView.selectedRange = selectedRange
+//        }
+//
+//        let navigationController = UINavigationController(rootViewController: detailsViewController)
+//        baseController.present(navigationController, animated: true, completion: nil)
+//    }
+//}
 
 // MARK: - Unknown HTML
 //
