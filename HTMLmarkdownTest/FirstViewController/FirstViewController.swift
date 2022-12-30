@@ -17,6 +17,10 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
         super.viewDidLoad()
         textView.text = text
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textView.text = text
+    }
 
     @IBAction func buttonTapped(_ sender: Any) {
         let vc = TextViewController(wordPressMode: true)

@@ -149,6 +149,15 @@ class TextViewController: UIViewController {
         editorView.becomeFirstResponder()
         
         navigationController?.title = "My custom description"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(moveBack))
+    }
+    
+    @objc func moveBack() {
+        print(editorView.richTextView.text)
+//        let vc = FirstViewController()
+//        vc.text = editorView.richTextView.text
+        delegate?.movedBack(text: editorView.richTextView.text)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -178,17 +187,6 @@ class TextViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         optionsTablePresenter.dismiss()
-    }
-    
-    override func didMove(toParent parent: UIViewController?) {
-        super.didMove(toParent: parent)
-
-        print(editorView.richTextView.text)
-        delegate?.movedBack(text: editorView.richTextView.text)
-        if parent == nil {
-            debugPrint("Back Button pressed.")
-        }
-        
     }
     
     func updateScrollInsets() {
