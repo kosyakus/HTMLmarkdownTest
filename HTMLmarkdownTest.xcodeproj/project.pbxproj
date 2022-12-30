@@ -233,6 +233,9 @@
 		E1B316EF295C95B50030F6A3 /* AttachmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */; };
 		E1B316F4295C96630030F6A3 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */; };
 		E1B316F5295C96630030F6A3 /* OptionsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */; };
+		E1B316FC295F4E180030F6A3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316FA295F4E180030F6A3 /* FirstViewController.swift */; };
+		E1B316FD295F4E180030F6A3 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B316FB295F4E180030F6A3 /* FirstViewController.xib */; };
+		E1B316FF295F788A0030F6A3 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -464,6 +467,9 @@
 		E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentDetailsViewController.swift; sourceTree = "<group>"; };
 		E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTablePresenter.swift; sourceTree = "<group>"; };
+		E1B316FA295F4E180030F6A3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E1B316FB295F4E180030F6A3 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +504,7 @@
 			children = (
 				E1B314E8295C35940030F6A3 /* AppDelegate.swift */,
 				E1B314EA295C35940030F6A3 /* SceneDelegate.swift */,
+				E1B316F9295F4DF70030F6A3 /* FirstViewController */,
 				E1B314FC295C87900030F6A3 /* TextViewController.swift */,
 				E1B314FD295C87900030F6A3 /* TextViewController.xib */,
 				E1B31692295C921B0030F6A3 /* WordPressEditor */,
@@ -1188,6 +1195,7 @@
 		E1B316E3295C94C20030F6A3 /* AdditionalFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E1B316F6295F30EB0030F6A3 /* Extensions */,
 				E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */,
 				E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */,
 				E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */,
@@ -1213,6 +1221,23 @@
 				E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */,
 			);
 			path = OptionsTableViewController;
+			sourceTree = "<group>";
+		};
+		E1B316F6295F30EB0030F6A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E1B316F9295F4DF70030F6A3 /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E1B316FA295F4E180030F6A3 /* FirstViewController.swift */,
+				E1B316FB295F4E180030F6A3 /* FirstViewController.xib */,
+			);
+			path = FirstViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1274,6 +1299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B314FF295C87900030F6A3 /* TextViewController.xib in Resources */,
+				E1B316FD295F4E180030F6A3 /* FirstViewController.xib in Resources */,
 				E1B314F5295C35980030F6A3 /* LaunchScreen.storyboard in Resources */,
 				E1B316EE295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard in Resources */,
 				E1B31690295C919D0030F6A3 /* html_colors.json in Resources */,
@@ -1315,6 +1341,7 @@
 				E1B31682295C91890030F6A3 /* FigureElementConverter.swift in Sources */,
 				E1B314E9295C35940030F6A3 /* AppDelegate.swift in Sources */,
 				E1B31552295C8FB60030F6A3 /* HTMLParagraph.swift in Sources */,
+				E1B316FC295F4E180030F6A3 /* FirstViewController.swift in Sources */,
 				E1B316CE295C92310030F6A3 /* GutenbergAttributeEncoder.swift in Sources */,
 				E1B3167F295C91890030F6A3 /* MainAttributesConverter.swift in Sources */,
 				E1B31620295C912A0030F6A3 /* CSSAttribute.swift in Sources */,
@@ -1410,6 +1437,7 @@
 				E1B315F3295C90AF0030F6A3 /* UnsupportedHTML.swift in Sources */,
 				E1B316C6295C92310030F6A3 /* GutenpackAttachmentRenderer.swift in Sources */,
 				E1B316F4295C96630030F6A3 /* OptionsTableViewController.swift in Sources */,
+				E1B316FF295F788A0030F6A3 /* UIImage+extension.swift in Sources */,
 				E1B316C3295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift in Sources */,
 				E1B3167E295C91890030F6A3 /* ElementAttributeConverter.swift in Sources */,
 				E1B315CA295C90740030F6A3 /* UITextView+Delegate.swift in Sources */,

@@ -369,7 +369,7 @@ private extension EditorView {
         addConstraints([
             NSLayoutConstraint(item: richTextView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0),
             NSLayoutConstraint(item: richTextView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0.0),
-            NSLayoutConstraint(item: richTextView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: richTextView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -20.0),
             NSLayoutConstraint(item: richTextView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0.0)
             ])
     }

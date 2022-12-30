@@ -316,11 +316,11 @@ open class FormatBar: UIView {
         addSubview(topDivider)
         addSubview(bottomDivider)
 
-        overflowToggleItem.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(overflowToggleItem)
+//        overflowToggleItem.translatesAutoresizingMaskIntoConstraints = false
+//        addSubview(overflowToggleItem)
 
-        trailingItemContainer.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(trailingItemContainer)
+//        trailingItemContainer.translatesAutoresizingMaskIntoConstraints = false
+//        addSubview(trailingItemContainer)
         configureConstraints()
     }
 
@@ -689,8 +689,8 @@ private extension FormatBar {
 
         ///Overflow toggle item
 
-        let overflowTrailingConstraint = overflowToggleItem.trailingAnchor.constraint(equalTo: trailingAnchor)
-        overflowTrailingConstraint.priority = .defaultLow
+//        let overflowTrailingConstraint = overflowToggleItem.trailingAnchor.constraint(equalTo: trailingAnchor)
+//        overflowTrailingConstraint.priority = .defaultLow
 
         //Create the correct `overflowLeadingConstraint` for the current layout direction.
         let overflowLeadingConstraint: NSLayoutConstraint
@@ -728,19 +728,19 @@ private extension FormatBar {
             trailingItemLeadingConstraint = trailingItemContainer.leadingAnchor.constraint(greaterThanOrEqualTo: scrollableStackView.trailingAnchor)
         }
 
-        NSLayoutConstraint.activate([
-            overflowToggleItem.topAnchor.constraint(equalTo: topAnchor),
-            overflowToggleItem.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            overflowLeadingConstraint,
-            overflowTrailingConstraint
-        ])
-
-        NSLayoutConstraint.activate([
-            trailingItemContainer.topAnchor.constraint(equalTo: topAnchor),
-            trailingItemContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            trailingItemLeadingConstraint,
-            trailingItemTrailingConstraint
-        ])
+//        NSLayoutConstraint.activate([
+//            overflowToggleItem.topAnchor.constraint(equalTo: topAnchor),
+//            overflowToggleItem.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+//            overflowLeadingConstraint,
+//            overflowTrailingConstraint
+//        ])
+//
+//        NSLayoutConstraint.activate([
+//            trailingItemContainer.topAnchor.constraint(equalTo: topAnchor),
+//            trailingItemContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+//            trailingItemLeadingConstraint,
+//            trailingItemTrailingConstraint
+//        ])
 
         NSLayoutConstraint.activate([
             topDivider.leadingAnchor.constraint(equalTo: self.leadingAnchor),
