@@ -28,17 +28,6 @@ public protocol TextViewAttachmentDelegate: AnyObject {
                   onSuccess success: @escaping (UIImage) -> Void,
                   onFailure failure: @escaping () -> Void)
 
-    /// Called when an attachment is about to be added to the storage as an attachment (copy/paste), so that the
-    /// delegate can specify an URL where that attachment is available.
-    ///
-    /// - Parameters:
-    ///     - textView: The textView that is requesting the image.
-    ///     - imageAttachment: The image attachment that was added to the storage.
-    ///
-    /// - Returns: the requested `URL` where the image is stored, or nil if it's not yet available.
-    ///
-//    func textView(_ textView: TextView, urlFor imageAttachment: ImageAttachment) -> URL?
-
     /// Called when an attachment doesn't have an available source URL to provide an image representation.
     ///
     /// - Parameters:
@@ -48,14 +37,6 @@ public protocol TextViewAttachmentDelegate: AnyObject {
     /// - Returns: an UIImage to represent the attachment graphically
     ///
     func textView(_ textView: TextView, placeholderFor attachment: NSTextAttachment) -> UIImage
-
-    /// Called after a attachment is removed from the storage.
-    ///
-    /// - Parameters:
-    ///   - textView: The textView where the attachment was removed.
-    ///   - attachment: The media attachment that was removed.
-    ///
-//    func textView(_ textView: TextView, deletedAttachment attachment: MediaAttachment)
 
     /// Called after an attachment is selected with a single tap.
     ///
@@ -75,45 +56,6 @@ public protocol TextViewAttachmentDelegate: AnyObject {
     ///
     func textView(_ textView: TextView, deselected attachment: NSTextAttachment, atPosition position: CGPoint)
 }
-
-
-// MARK: - TextViewAttachmentImageProvider
-//
-//public protocol TextViewAttachmentImageProvider: AnyObject {
-//
-//    /// Indicates whether the current Attachment Renderer supports a given NSTextAttachment instance, or not.
-//    ///
-//    /// - Parameters:
-//    ///     - textView: The textView that is requesting the bounds.
-//    ///     - attachment: Attachment about to be rendered.
-//    ///
-//    /// - Returns: True when supported, false otherwise.
-//    ///
-//    func textView(_ textView: TextView, shouldRender attachment: NSTextAttachment) -> Bool
-//
-//    /// Provides the Bounds required to represent a given attachment, within a specified line fragment.
-//    ///
-//    /// - Parameters:
-//    ///     - textView: The textView that is requesting the bounds.
-//    ///     - attachment: Attachment about to be rendered.
-//    ///     - lineFragment: Line Fragment in which the glyph would be rendered.
-//    ///
-//    /// - Returns: Rect specifying the Bounds for the comment attachment
-//    ///
-//    func textView(_ textView: TextView, boundsFor attachment: NSTextAttachment, with lineFragment: CGRect) -> CGRect
-//
-//    /// Provides the (Optional) Image Representation of the specified size, for a given Attachment.
-//    ///
-//    /// - Parameters:
-//    ///     - textView: The textView that is requesting the bounds.
-//    ///     - attachment: Attachment about to be rendered.
-//    ///     - size: Expected Image Size
-//    ///
-//    /// - Returns: (Optional) UIImage representation of the Comment Attachment.
-//    ///
-//    func textView(_ textView: TextView, imageFor attachment: NSTextAttachment, with size: CGSize) -> UIImage?
-//}
-
 
 // MARK: - TextViewFormattingDelegate
 //

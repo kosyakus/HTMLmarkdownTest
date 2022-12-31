@@ -11,7 +11,7 @@ import Photos
 import UIKit
 
 protocol FirstViewControllerDelegate {
-    func movedBack(text: String)
+    func movedBack(text: NSMutableAttributedString)
 }
 
 class TextViewController: UIViewController {
@@ -87,14 +87,16 @@ class TextViewController: UIViewController {
     
     let sampleHTML: String?
     let wordPressMode: Bool
+    let attributedString: NSMutableAttributedString?
     
     private lazy var optionsTablePresenter = OptionsTablePresenter(presentingViewController: self, presentingTextView: richTextView)
     
     // MARK: - Lifecycle Methods
     
-    init(withSampleHTML sampleHTML: String? = nil, wordPressMode: Bool) {
+    init(withText: NSMutableAttributedString, wordPressMode: Bool) {
         
-        self.sampleHTML = sampleHTML
+        self.attributedString = withText
+        self.sampleHTML = ""
         self.wordPressMode = wordPressMode
         
         super.init(nibName: nil, bundle: nil)
@@ -103,6 +105,7 @@ class TextViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         sampleHTML = nil
         wordPressMode = false
+        attributedString = NSMutableAttributedString(string: "")
         
         super.init(coder: aDecoder)
     }
@@ -124,7 +127,7 @@ class TextViewController: UIViewController {
         // color setup
         if #available(iOS 13.0, *) {
             view.backgroundColor = .orange //UIColor.systemBackground
-            editorView.htmlTextView.textColor = .red //UIColor.label
+            editorView.htmlTextView.textColor = UIColor.label
             editorView.richTextView.textColor = UIColor.label
             editorView.richTextView.blockquoteBackgroundColor = UIColor.secondarySystemBackground
             editorView.richTextView.preBackgroundColor = UIColor.secondarySystemBackground
@@ -150,13 +153,11 @@ class TextViewController: UIViewController {
         
         navigationController?.title = "My custom description"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(moveBack))
+        setUpAttributedString()
     }
     
     @objc func moveBack() {
-        print(editorView.richTextView.text)
-//        let vc = FirstViewController()
-//        vc.text = editorView.richTextView.text
-        delegate?.movedBack(text: editorView.richTextView.text)
+        delegate?.movedBack(text: editorView.richTextView.storage.textStore)
         navigationController?.popViewController(animated: true)
     }
     
@@ -187,6 +188,10 @@ class TextViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         optionsTablePresenter.dismiss()
+    }
+    
+    func setUpAttributedString() {
+        editorView.richTextView.attributedText = attributedString ?? NSMutableAttributedString(string: "")
     }
     
     func updateScrollInsets() {

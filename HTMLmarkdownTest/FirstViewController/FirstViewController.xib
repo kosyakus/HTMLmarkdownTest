@@ -26,14 +26,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Здесь текст" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-cU-UcC">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-cU-UcC">
                     <rect key="frame" x="20" y="147.33333333333334" width="350" height="200.00000000000003"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="xXz-yc-Tmd"/>
                     </constraints>
-                    <color key="textColor" systemColor="labelColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Здесь текст">
+                            <attributes>
+                                <color key="NSColor" systemColor="labelColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q67-mh-dyh">

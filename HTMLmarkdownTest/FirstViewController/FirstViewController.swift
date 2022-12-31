@@ -11,24 +11,24 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
 
     @IBOutlet weak var textView: UITextView!
     
-    var text = "Some text"
+    var text: NSMutableAttributedString = NSMutableAttributedString(string: "Some text", attributes: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = text
+        textView.attributedText = text
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        textView.text = text
+        textView.attributedText = text
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        let vc = TextViewController(wordPressMode: true)
+        let vc = TextViewController(withText: text, wordPressMode: false)
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func movedBack(text: String) {
+    func movedBack(text: NSMutableAttributedString) {
         self.text = text
     }
     
