@@ -191,40 +191,6 @@
 		E1B3168D295C91890030F6A3 /* CommentAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */; };
 		E1B3168E295C91890030F6A3 /* HTMLAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */; };
 		E1B31690295C919D0030F6A3 /* html_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = E1B3168F295C919D0030F6A3 /* html_colors.json */; };
-		E1B316C1295C92310030F6A3 /* WordPressOutputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31695295C92310030F6A3 /* WordPressOutputCustomizer.swift */; };
-		E1B316C2295C92310030F6A3 /* WordPressInputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31696295C92310030F6A3 /* WordPressInputCustomizer.swift */; };
-		E1B316C3295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31698295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift */; };
-		E1B316C4295C92310030F6A3 /* GutenblockConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31699295C92310030F6A3 /* GutenblockConverter.swift */; };
-		E1B316C5295C92310030F6A3 /* CommentNode+Gutenberg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169A295C92310030F6A3 /* CommentNode+Gutenberg.swift */; };
-		E1B316C6295C92310030F6A3 /* GutenpackAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169B295C92310030F6A3 /* GutenpackAttachmentRenderer.swift */; };
-		E1B316C7295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169C295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift */; };
-		E1B316C8295C92310030F6A3 /* GutenpackConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169D295C92310030F6A3 /* GutenpackConverter.swift */; };
-		E1B316C9295C92310030F6A3 /* GutenbergAttributeDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169E295C92310030F6A3 /* GutenbergAttributeDecoder.swift */; };
-		E1B316CA295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3169F295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift */; };
-		E1B316CB295C92310030F6A3 /* GutenpackAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A0295C92310030F6A3 /* GutenpackAttachment.swift */; };
-		E1B316CC295C92310030F6A3 /* GutenbergAttributeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A1295C92310030F6A3 /* GutenbergAttributeNames.swift */; };
-		E1B316CD295C92310030F6A3 /* Gutenblock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A2295C92310030F6A3 /* Gutenblock.swift */; };
-		E1B316CE295C92310030F6A3 /* GutenbergAttributeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A3295C92310030F6A3 /* GutenbergAttributeEncoder.swift */; };
-		E1B316CF295C92310030F6A3 /* WordPressPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A4295C92310030F6A3 /* WordPressPlugin.swift */; };
-		E1B316D0295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A7295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift */; };
-		E1B316D1295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316A8295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift */; };
-		E1B316D2295C92310030F6A3 /* VideoShortcodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AA295C92310030F6A3 /* VideoShortcodeProcessor.swift */; };
-		E1B316D3295C92310030F6A3 /* AutoPProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AC295C92310030F6A3 /* AutoPProcessor.swift */; };
-		E1B316D4295C92310030F6A3 /* RemovePProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AD295C92310030F6A3 /* RemovePProcessor.swift */; };
-		E1B316D5295C92310030F6A3 /* GalleryAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316AF295C92310030F6A3 /* GalleryAttachment.swift */; };
-		E1B316D6295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B0295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift */; };
-		E1B316D7295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B1295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift */; };
-		E1B316D8295C92310030F6A3 /* GalleryElementToTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B2295C92310030F6A3 /* GalleryElementToTagConverter.swift */; };
-		E1B316D9295C92310030F6A3 /* GalleryElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B3295C92310030F6A3 /* GalleryElementConverter.swift */; };
-		E1B316DA295C92310030F6A3 /* GallerySupportedAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B4295C92310030F6A3 /* GallerySupportedAttribute.swift */; };
-		E1B316DB295C92310030F6A3 /* WordPressPasteboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B6295C92310030F6A3 /* WordPressPasteboardDelegate.swift */; };
-		E1B316DC295C92310030F6A3 /* VideoAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B8295C92310030F6A3 /* VideoAttachment+WordPress.swift */; };
-		E1B316DD295C92310030F6A3 /* MediaAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316B9295C92310030F6A3 /* MediaAttachment+WordPress.swift */; };
-		E1B316DE295C92310030F6A3 /* String+RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BA295C92310030F6A3 /* String+RegEx.swift */; };
-		E1B316DF295C92310030F6A3 /* ImageAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BB295C92310030F6A3 /* ImageAttachment+WordPress.swift */; };
-		E1B316E0295C92310030F6A3 /* EmbedURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BD295C92310030F6A3 /* EmbedURLProcessor.swift */; };
-		E1B316E1295C92310030F6A3 /* ShortcodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316BE295C92310030F6A3 /* ShortcodeProcessor.swift */; };
-		E1B316E2295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316C0295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift */; };
 		E1B316E5295C94E50030F6A3 /* MediaInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E4295C94E50030F6A3 /* MediaInserter.swift */; };
 		E1B316E7295C94ED0030F6A3 /* UIImage+SaveTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */; };
 		E1B316E9295C94FF0030F6A3 /* UnknownEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */; };
@@ -425,40 +391,6 @@
 		E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAttachmentRenderer.swift; sourceTree = "<group>"; };
 		E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLAttachmentRenderer.swift; sourceTree = "<group>"; };
 		E1B3168F295C919D0030F6A3 /* html_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = html_colors.json; sourceTree = "<group>"; };
-		E1B31695295C92310030F6A3 /* WordPressOutputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressOutputCustomizer.swift; sourceTree = "<group>"; };
-		E1B31696295C92310030F6A3 /* WordPressInputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressInputCustomizer.swift; sourceTree = "<group>"; };
-		E1B31698295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergOutputHTMLTreeProcessor.swift; sourceTree = "<group>"; };
-		E1B31699295C92310030F6A3 /* GutenblockConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenblockConverter.swift; sourceTree = "<group>"; };
-		E1B3169A295C92310030F6A3 /* CommentNode+Gutenberg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommentNode+Gutenberg.swift"; sourceTree = "<group>"; };
-		E1B3169B295C92310030F6A3 /* GutenpackAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackAttachmentRenderer.swift; sourceTree = "<group>"; };
-		E1B3169C295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackAttachmentToElementConverter.swift; sourceTree = "<group>"; };
-		E1B3169D295C92310030F6A3 /* GutenpackConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackConverter.swift; sourceTree = "<group>"; };
-		E1B3169E295C92310030F6A3 /* GutenbergAttributeDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergAttributeDecoder.swift; sourceTree = "<group>"; };
-		E1B3169F295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergInputHTMLTreeProcessor.swift; sourceTree = "<group>"; };
-		E1B316A0295C92310030F6A3 /* GutenpackAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenpackAttachment.swift; sourceTree = "<group>"; };
-		E1B316A1295C92310030F6A3 /* GutenbergAttributeNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergAttributeNames.swift; sourceTree = "<group>"; };
-		E1B316A2295C92310030F6A3 /* Gutenblock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gutenblock.swift; sourceTree = "<group>"; };
-		E1B316A3295C92310030F6A3 /* GutenbergAttributeEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutenbergAttributeEncoder.swift; sourceTree = "<group>"; };
-		E1B316A4295C92310030F6A3 /* WordPressPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressPlugin.swift; sourceTree = "<group>"; };
-		E1B316A7295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionShortcodeOutputProcessor.swift; sourceTree = "<group>"; };
-		E1B316A8295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionShortcodeInputProcessor.swift; sourceTree = "<group>"; };
-		E1B316AA295C92310030F6A3 /* VideoShortcodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortcodeProcessor.swift; sourceTree = "<group>"; };
-		E1B316AC295C92310030F6A3 /* AutoPProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoPProcessor.swift; sourceTree = "<group>"; };
-		E1B316AD295C92310030F6A3 /* RemovePProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemovePProcessor.swift; sourceTree = "<group>"; };
-		E1B316AF295C92310030F6A3 /* GalleryAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryAttachment.swift; sourceTree = "<group>"; };
-		E1B316B0295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryAttachmentToElementConverter.swift; sourceTree = "<group>"; };
-		E1B316B1295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryShortcodeInputProcessor.swift; sourceTree = "<group>"; };
-		E1B316B2295C92310030F6A3 /* GalleryElementToTagConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryElementToTagConverter.swift; sourceTree = "<group>"; };
-		E1B316B3295C92310030F6A3 /* GalleryElementConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryElementConverter.swift; sourceTree = "<group>"; };
-		E1B316B4295C92310030F6A3 /* GallerySupportedAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GallerySupportedAttribute.swift; sourceTree = "<group>"; };
-		E1B316B6295C92310030F6A3 /* WordPressPasteboardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressPasteboardDelegate.swift; sourceTree = "<group>"; };
-		E1B316B8295C92310030F6A3 /* VideoAttachment+WordPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VideoAttachment+WordPress.swift"; sourceTree = "<group>"; };
-		E1B316B9295C92310030F6A3 /* MediaAttachment+WordPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MediaAttachment+WordPress.swift"; sourceTree = "<group>"; };
-		E1B316BA295C92310030F6A3 /* String+RegEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RegEx.swift"; sourceTree = "<group>"; };
-		E1B316BB295C92310030F6A3 /* ImageAttachment+WordPress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageAttachment+WordPress.swift"; sourceTree = "<group>"; };
-		E1B316BD295C92310030F6A3 /* EmbedURLProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedURLProcessor.swift; sourceTree = "<group>"; };
-		E1B316BE295C92310030F6A3 /* ShortcodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcodeProcessor.swift; sourceTree = "<group>"; };
-		E1B316C0295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialTagAttachmentRenderer.swift; sourceTree = "<group>"; };
 		E1B316E4295C94E50030F6A3 /* MediaInserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInserter.swift; sourceTree = "<group>"; };
 		E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SaveTo.swift"; sourceTree = "<group>"; };
 		E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownEditorViewController.swift; sourceTree = "<group>"; };
@@ -1058,138 +990,8 @@
 			isa = PBXGroup;
 			children = (
 				E1B316F0295C96630030F6A3 /* ViewControllers */,
-				E1B316B7295C92310030F6A3 /* Extensions */,
-				E1B31693295C92310030F6A3 /* Plugins */,
-				E1B316BC295C92310030F6A3 /* Processors */,
-				E1B316BF295C92310030F6A3 /* Renderers */,
 			);
 			path = WordPressEditor;
-			sourceTree = "<group>";
-		};
-		E1B31693295C92310030F6A3 /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				E1B31694295C92310030F6A3 /* WordPressPlugin */,
-			);
-			path = Plugins;
-			sourceTree = "<group>";
-		};
-		E1B31694295C92310030F6A3 /* WordPressPlugin */ = {
-			isa = PBXGroup;
-			children = (
-				E1B31695295C92310030F6A3 /* WordPressOutputCustomizer.swift */,
-				E1B31696295C92310030F6A3 /* WordPressInputCustomizer.swift */,
-				E1B31697295C92310030F6A3 /* Gutenberg */,
-				E1B316A4295C92310030F6A3 /* WordPressPlugin.swift */,
-				E1B316A5295C92310030F6A3 /* Calypso */,
-			);
-			path = WordPressPlugin;
-			sourceTree = "<group>";
-		};
-		E1B31697295C92310030F6A3 /* Gutenberg */ = {
-			isa = PBXGroup;
-			children = (
-				E1B31698295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift */,
-				E1B31699295C92310030F6A3 /* GutenblockConverter.swift */,
-				E1B3169A295C92310030F6A3 /* CommentNode+Gutenberg.swift */,
-				E1B3169B295C92310030F6A3 /* GutenpackAttachmentRenderer.swift */,
-				E1B3169C295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift */,
-				E1B3169D295C92310030F6A3 /* GutenpackConverter.swift */,
-				E1B3169E295C92310030F6A3 /* GutenbergAttributeDecoder.swift */,
-				E1B3169F295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift */,
-				E1B316A0295C92310030F6A3 /* GutenpackAttachment.swift */,
-				E1B316A1295C92310030F6A3 /* GutenbergAttributeNames.swift */,
-				E1B316A2295C92310030F6A3 /* Gutenblock.swift */,
-				E1B316A3295C92310030F6A3 /* GutenbergAttributeEncoder.swift */,
-			);
-			path = Gutenberg;
-			sourceTree = "<group>";
-		};
-		E1B316A5295C92310030F6A3 /* Calypso */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316A6295C92310030F6A3 /* CaptionShortcode */,
-				E1B316A9295C92310030F6A3 /* VideoShortcode */,
-				E1B316AB295C92310030F6A3 /* AutopRemovep */,
-				E1B316AE295C92310030F6A3 /* GalleryShortcode */,
-				E1B316B5295C92310030F6A3 /* Embeds */,
-			);
-			path = Calypso;
-			sourceTree = "<group>";
-		};
-		E1B316A6295C92310030F6A3 /* CaptionShortcode */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316A7295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift */,
-				E1B316A8295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift */,
-			);
-			path = CaptionShortcode;
-			sourceTree = "<group>";
-		};
-		E1B316A9295C92310030F6A3 /* VideoShortcode */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316AA295C92310030F6A3 /* VideoShortcodeProcessor.swift */,
-			);
-			path = VideoShortcode;
-			sourceTree = "<group>";
-		};
-		E1B316AB295C92310030F6A3 /* AutopRemovep */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316AC295C92310030F6A3 /* AutoPProcessor.swift */,
-				E1B316AD295C92310030F6A3 /* RemovePProcessor.swift */,
-			);
-			path = AutopRemovep;
-			sourceTree = "<group>";
-		};
-		E1B316AE295C92310030F6A3 /* GalleryShortcode */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316AF295C92310030F6A3 /* GalleryAttachment.swift */,
-				E1B316B0295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift */,
-				E1B316B1295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift */,
-				E1B316B2295C92310030F6A3 /* GalleryElementToTagConverter.swift */,
-				E1B316B3295C92310030F6A3 /* GalleryElementConverter.swift */,
-				E1B316B4295C92310030F6A3 /* GallerySupportedAttribute.swift */,
-			);
-			path = GalleryShortcode;
-			sourceTree = "<group>";
-		};
-		E1B316B5295C92310030F6A3 /* Embeds */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316B6295C92310030F6A3 /* WordPressPasteboardDelegate.swift */,
-			);
-			path = Embeds;
-			sourceTree = "<group>";
-		};
-		E1B316B7295C92310030F6A3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316B8295C92310030F6A3 /* VideoAttachment+WordPress.swift */,
-				E1B316B9295C92310030F6A3 /* MediaAttachment+WordPress.swift */,
-				E1B316BA295C92310030F6A3 /* String+RegEx.swift */,
-				E1B316BB295C92310030F6A3 /* ImageAttachment+WordPress.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E1B316BC295C92310030F6A3 /* Processors */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316BD295C92310030F6A3 /* EmbedURLProcessor.swift */,
-				E1B316BE295C92310030F6A3 /* ShortcodeProcessor.swift */,
-			);
-			path = Processors;
-			sourceTree = "<group>";
-		};
-		E1B316BF295C92310030F6A3 /* Renderers */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316C0295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift */,
-			);
-			path = Renderers;
 			sourceTree = "<group>";
 		};
 		E1B316E3295C94C20030F6A3 /* AdditionalFiles */ = {
@@ -1322,13 +1124,9 @@
 				E1B315B1295C90740030F6A3 /* StringUTF16+RangeConversion.swift in Sources */,
 				E1B314ED295C35940030F6A3 /* EditorDemoController.swift in Sources */,
 				E1B3154F295C8FB60030F6A3 /* TextList.swift in Sources */,
-				E1B316C5295C92310030F6A3 /* CommentNode+Gutenberg.swift in Sources */,
 				E1B315C3295C90740030F6A3 /* Array+Helpers.swift in Sources */,
-				E1B316C2295C92310030F6A3 /* WordPressInputCustomizer.swift in Sources */,
-				E1B316DD295C92310030F6A3 /* MediaAttachment+WordPress.swift in Sources */,
 				E1B3152F295C8FAC0030F6A3 /* SuperscriptFormatter.swift in Sources */,
 				E1B315C5295C90740030F6A3 /* NSAttributedString+Lists.swift in Sources */,
-				E1B316E0295C92310030F6A3 /* EmbedURLProcessor.swift in Sources */,
 				E1B31538295C8FAC0030F6A3 /* TextListFormatter.swift in Sources */,
 				E1B31558295C8FB60030F6A3 /* Figure.swift in Sources */,
 				E1B3166D295C91890030F6A3 /* CLinkedListToArrayConverter.swift in Sources */,
@@ -1337,18 +1135,15 @@
 				E1B31569295C8FCF0030F6A3 /* TextStorage.swift in Sources */,
 				E1B3156B295C8FCF0030F6A3 /* ColorProvider.swift in Sources */,
 				E1B31531295C8FAC0030F6A3 /* BoldFormatter.swift in Sources */,
-				E1B316C8295C92310030F6A3 /* GutenpackConverter.swift in Sources */,
 				E1B31682295C91890030F6A3 /* FigureElementConverter.swift in Sources */,
 				E1B314E9295C35940030F6A3 /* AppDelegate.swift in Sources */,
 				E1B31552295C8FB60030F6A3 /* HTMLParagraph.swift in Sources */,
 				E1B316FC295F4E180030F6A3 /* FirstViewController.swift in Sources */,
-				E1B316CE295C92310030F6A3 /* GutenbergAttributeEncoder.swift in Sources */,
 				E1B3167F295C91890030F6A3 /* MainAttributesConverter.swift in Sources */,
 				E1B31620295C912A0030F6A3 /* CSSAttribute.swift in Sources */,
 				E1B316EB295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift in Sources */,
 				E1B3166C295C91890030F6A3 /* Converter.swift in Sources */,
 				E1B3156A295C8FCF0030F6A3 /* VideoAttachment.swift in Sources */,
-				E1B316DC295C92310030F6A3 /* VideoAttachment+WordPress.swift in Sources */,
 				E1B31551295C8FB60030F6A3 /* HTMLDiv.swift in Sources */,
 				E1B315BB295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift in Sources */,
 				E1B31672295C91890030F6A3 /* CiteStringAttributeConverter.swift in Sources */,
@@ -1375,33 +1170,24 @@
 				E1B31676295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift in Sources */,
 				E1B3167B295C91890030F6A3 /* UnderlineElementAttributeConverter.swift in Sources */,
 				E1B31633295C916B0030F6A3 /* RegexProcessor.swift in Sources */,
-				E1B316CB295C92310030F6A3 /* GutenpackAttachment.swift in Sources */,
 				E1B315F0295C90AF0030F6A3 /* ParagraphPropertyConverter.swift in Sources */,
 				E1B315D0295C90740030F6A3 /* NSAttributedString+Archive.swift in Sources */,
 				E1B31540295C8FAC0030F6A3 /* AttributeFormatter.swift in Sources */,
 				E1B315C1295C90740030F6A3 /* UIFont+Emoji.swift in Sources */,
 				E1B3166E295C91890030F6A3 /* UnderlineStringAttributeConverter.swift in Sources */,
 				E1B315C9295C90740030F6A3 /* Dictionary+AttributedStringKey.swift in Sources */,
-				E1B316D1295C92310030F6A3 /* CaptionShortcodeInputProcessor.swift in Sources */,
 				E1B315B2295C90740030F6A3 /* Character+Name.swift in Sources */,
 				E1B315D3295C90740030F6A3 /* NSTextingResult+Helpers.swift in Sources */,
-				E1B316D5295C92310030F6A3 /* GalleryAttachment.swift in Sources */,
 				E1B314EB295C35940030F6A3 /* SceneDelegate.swift in Sources */,
-				E1B316DA295C92310030F6A3 /* GallerySupportedAttribute.swift in Sources */,
 				E1B315EC295C90AF0030F6A3 /* ImageAttachmentToElementConverter.swift in Sources */,
 				E1B3156F295C8FCF0030F6A3 /* Configuration.swift in Sources */,
-				E1B316CC295C92310030F6A3 /* GutenbergAttributeNames.swift in Sources */,
 				E1B3152D295C8FAC0030F6A3 /* PreFormatter.swift in Sources */,
 				E1B3153A295C8FAC0030F6A3 /* ColorFormatter.swift in Sources */,
 				E1B316E7295C94ED0030F6A3 /* UIImage+SaveTo.swift in Sources */,
 				E1B31508295C8D7D0030F6A3 /* TextView.swift in Sources */,
 				E1B31673295C91890030F6A3 /* SubscriptStringAttributeConverter.swift in Sources */,
-				E1B316D7295C92310030F6A3 /* GalleryShortcodeInputProcessor.swift in Sources */,
 				E1B315B6295C90740030F6A3 /* UIImage+Resize.swift in Sources */,
-				E1B316D0295C92310030F6A3 /* CaptionShortcodeOutputProcessor.swift in Sources */,
-				E1B316D3295C92310030F6A3 /* AutoPProcessor.swift in Sources */,
 				E1B3161C295C912A0030F6A3 /* ItalicCSSAttributeMatcher.swift in Sources */,
-				E1B316C1295C92310030F6A3 /* WordPressOutputCustomizer.swift in Sources */,
 				E1B31683295C91890030F6A3 /* FigcaptionElementConverter.swift in Sources */,
 				E1B31635295C916B0030F6A3 /* PipelineProcessor.swift in Sources */,
 				E1B31686295C91890030F6A3 /* LIElementConverter.swift in Sources */,
@@ -1416,7 +1202,6 @@
 				E1B3167D295C91890030F6A3 /* ItalicElementAttributeConverter.swift in Sources */,
 				E1B31684295C91890030F6A3 /* VideoElementConverter.swift in Sources */,
 				E1B31585295C905A0030F6A3 /* FormatBar.swift in Sources */,
-				E1B316D6295C92310030F6A3 /* GalleryAttachmentToElementConverter.swift in Sources */,
 				E1B316EF295C95B50030F6A3 /* AttachmentDetailsViewController.swift in Sources */,
 				E1B31566295C8FCF0030F6A3 /* FontProvider.swift in Sources */,
 				E1B315BA295C90740030F6A3 /* UIStackView+Helpers.swift in Sources */,
@@ -1425,9 +1210,7 @@
 				E1B3152B295C8FAC0030F6A3 /* CodeFormatter.swift in Sources */,
 				E1B31550295C8FB60030F6A3 /* Figcaption.swift in Sources */,
 				E1B315D2295C90740030F6A3 /* UIPasteboard+Helpers.swift in Sources */,
-				E1B316C7295C92310030F6A3 /* GutenpackAttachmentToElementConverter.swift in Sources */,
 				E1B315CF295C90740030F6A3 /* NSAttributedString+Attachments.swift in Sources */,
-				E1B316E1295C92310030F6A3 /* ShortcodeProcessor.swift in Sources */,
 				E1B3153B295C8FAC0030F6A3 /* StrikethroughFormatter.swift in Sources */,
 				E1B3168A295C91890030F6A3 /* AttachmentElementConverter.swift in Sources */,
 				E1B315BF295C90740030F6A3 /* NSAttributedString+ParagraphRange.swift in Sources */,
@@ -1435,21 +1218,16 @@
 				E1B31619295C912A0030F6A3 /* UnderlineCSSAttributeMatcher.swift in Sources */,
 				E1B3153E295C8FAC0030F6A3 /* LinkFormatter.swift in Sources */,
 				E1B315F3295C90AF0030F6A3 /* UnsupportedHTML.swift in Sources */,
-				E1B316C6295C92310030F6A3 /* GutenpackAttachmentRenderer.swift in Sources */,
 				E1B316F4295C96630030F6A3 /* OptionsTableViewController.swift in Sources */,
 				E1B316FF295F788A0030F6A3 /* UIImage+extension.swift in Sources */,
-				E1B316C3295C92310030F6A3 /* GutenbergOutputHTMLTreeProcessor.swift in Sources */,
 				E1B3167E295C91890030F6A3 /* ElementAttributeConverter.swift in Sources */,
 				E1B315CA295C90740030F6A3 /* UITextView+Delegate.swift in Sources */,
 				E1B3152C295C8FAC0030F6A3 /* LiFormatter.swift in Sources */,
 				E1B31616295C912A0030F6A3 /* InNodesConverter.swift in Sources */,
 				E1B3153D295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift in Sources */,
 				E1B3167A295C91890030F6A3 /* ForegroundColorElementAttributeConverter.swift in Sources */,
-				E1B316C4295C92310030F6A3 /* GutenblockConverter.swift in Sources */,
 				E1B31615295C912A0030F6A3 /* InAttributeConverter.swift in Sources */,
 				E1B315B3295C90740030F6A3 /* Array+ShortcodeAttribute.swift in Sources */,
-				E1B316D4295C92310030F6A3 /* RemovePProcessor.swift in Sources */,
-				E1B316CD295C92310030F6A3 /* Gutenblock.swift in Sources */,
 				E1B315B4295C90740030F6A3 /* NSRange+Helpers.swift in Sources */,
 				E1B315C6295C90740030F6A3 /* UILayoutPriority+Swift4.swift in Sources */,
 				E1B31557295C8FB60030F6A3 /* Blockquote.swift in Sources */,
@@ -1457,7 +1235,6 @@
 				E1B3161D295C912A0030F6A3 /* CSSAttributeType.swift in Sources */,
 				E1B3150A295C8DC90030F6A3 /* HTMLStorage.swift in Sources */,
 				E1B3152E295C8FAC0030F6A3 /* FigureFormatter.swift in Sources */,
-				E1B316CA295C92310030F6A3 /* GutenbergInputHTMLTreeProcessor.swift in Sources */,
 				E1B31678295C91890030F6A3 /* GenericElementToTagConverter.swift in Sources */,
 				E1B315D1295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift in Sources */,
 				E1B3168D295C91890030F6A3 /* CommentAttachmentRenderer.swift in Sources */,
@@ -1471,7 +1248,6 @@
 				E1B31670295C91890030F6A3 /* BoldStringAttributeConverter.swift in Sources */,
 				E1B315CC295C90740030F6A3 /* DocumentType+Swift4.swift in Sources */,
 				E1B315EE295C90AF0030F6A3 /* AttributedStringSerializer.swift in Sources */,
-				E1B316E2295C92310030F6A3 /* SpecialTagAttachmentRenderer.swift in Sources */,
 				E1B315B9295C90740030F6A3 /* NSAttributedString+CharacterName.swift in Sources */,
 				E1B3168E295C91890030F6A3 /* HTMLAttachmentRenderer.swift in Sources */,
 				E1B315CB295C90740030F6A3 /* String+HTML.swift in Sources */,
@@ -1486,8 +1262,6 @@
 				E1B31582295C905A0030F6A3 /* FormatBarDelegate.swift in Sources */,
 				E1B31554295C8FB60030F6A3 /* HTMLPre.swift in Sources */,
 				E1B31632295C916B0030F6A3 /* ShortcodeAttributeSerializer.swift in Sources */,
-				E1B316D2295C92310030F6A3 /* VideoShortcodeProcessor.swift in Sources */,
-				E1B316D8295C92310030F6A3 /* GalleryElementToTagConverter.swift in Sources */,
 				E1B31685295C91890030F6A3 /* GenericElementConverter.swift in Sources */,
 				E1B3162F295C916B0030F6A3 /* ShortcodeAttribute.swift in Sources */,
 				E1B315C7295C90740030F6A3 /* NSAttributedStringKey+Aztec.swift in Sources */,
@@ -1498,7 +1272,6 @@
 				E1B31537295C8FAC0030F6A3 /* BoldWithShadowForHeadingFormatter.swift in Sources */,
 				E1B31583295C905A0030F6A3 /* FormatBarItem.swift in Sources */,
 				E1B315B8295C90740030F6A3 /* String+CharacterName.swift in Sources */,
-				E1B316DE295C92310030F6A3 /* String+RegEx.swift in Sources */,
 				E1B31617295C912A0030F6A3 /* InAttributesConverter.swift in Sources */,
 				E1B31675295C91890030F6A3 /* StringAttributeConverter.swift in Sources */,
 				E1B31535295C8FAC0030F6A3 /* SubscriptFormatter.swift in Sources */,
@@ -1507,23 +1280,18 @@
 				E1B31614295C912A0030F6A3 /* InNodeConverter.swift in Sources */,
 				E1B315B7295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift in Sources */,
 				E1B3153C295C8FAC0030F6A3 /* FigcaptionFormatter.swift in Sources */,
-				E1B316DB295C92310030F6A3 /* WordPressPasteboardDelegate.swift in Sources */,
 				E1B31539295C8FAC0030F6A3 /* BlockquoteFormatter.swift in Sources */,
 				E1B31541295C8FAC0030F6A3 /* FontFormatter.swift in Sources */,
 				E1B3156D295C8FCF0030F6A3 /* CommentAttachment.swift in Sources */,
 				E1B31621295C912A0030F6A3 /* AttributeType.swift in Sources */,
-				E1B316CF295C92310030F6A3 /* WordPressPlugin.swift in Sources */,
-				E1B316DF295C92310030F6A3 /* ImageAttachment+WordPress.swift in Sources */,
 				E1B315ED295C90AF0030F6A3 /* AttachmentToElementConverter.swift in Sources */,
 				E1B31681295C91890030F6A3 /* CiteElementConverter.swift in Sources */,
 				E1B31674295C91890030F6A3 /* ConditionalStringAttributeConverter.swift in Sources */,
 				E1B3150C295C8E3C0030F6A3 /* ParagraphStyle.swift in Sources */,
-				E1B316C9295C92310030F6A3 /* GutenbergAttributeDecoder.swift in Sources */,
 				E1B3168C295C91890030F6A3 /* Metrics.swift in Sources */,
 				E1B315C2295C90740030F6A3 /* Array+Attribute.swift in Sources */,
 				E1B315BE295C90740030F6A3 /* NSLayoutManager+Attachments.swift in Sources */,
 				E1B31611295C912A0030F6A3 /* HTMLSerializer.swift in Sources */,
-				E1B316D9295C92310030F6A3 /* GalleryElementConverter.swift in Sources */,
 				E1B31534295C8FAC0030F6A3 /* ItalicFormatter.swift in Sources */,
 				E1B31634295C916B0030F6A3 /* Processor.swift in Sources */,
 				E1B31671295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift in Sources */,

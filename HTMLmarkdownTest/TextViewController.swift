@@ -53,9 +53,9 @@ class TextViewController: UIViewController {
     }()
     
     private func setupRichTextView(_ textView: TextView) {
-        if wordPressMode {
-            textView.load(WordPressPlugin())
-        }
+//        if wordPressMode {
+//            textView.load(WordPressPlugin())
+//        }
         
         let accessibilityLabel = NSLocalizedString("Rich Content", comment: "Post Rich content")
         self.configureDefaultProperties(for: textView, accessibilityLabel: accessibilityLabel)
@@ -86,7 +86,7 @@ class TextViewController: UIViewController {
     
     
     let sampleHTML: String?
-    let wordPressMode: Bool
+//    let wordPressMode: Bool
     let attributedString: NSMutableAttributedString?
     
     private lazy var optionsTablePresenter = OptionsTablePresenter(presentingViewController: self, presentingTextView: richTextView)
@@ -97,14 +97,14 @@ class TextViewController: UIViewController {
         
         self.attributedString = withText
         self.sampleHTML = ""
-        self.wordPressMode = wordPressMode
+//        self.wordPressMode = wordPressMode
         
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         sampleHTML = nil
-        wordPressMode = false
+//        wordPressMode = false
         attributedString = NSMutableAttributedString(string: "")
         
         super.init(coder: aDecoder)
