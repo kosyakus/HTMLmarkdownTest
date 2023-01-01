@@ -26,7 +26,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-cU-UcC">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-cU-UcC">
                     <rect key="frame" x="20" y="147.33333333333334" width="350" height="200.00000000000003"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>

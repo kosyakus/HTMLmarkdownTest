@@ -132,10 +132,6 @@ open class TextStorage: NSTextStorage {
     fileprivate func preprocessAttachmentsForInsertion(_ attributedString: NSAttributedString) -> NSAttributedString {
         // Ref. https://github.com/wordpress-mobile/AztecEditor-iOS/issues/727:
         // If the delegate is not set, we *Explicitly* do not want to crash here.
-        //
-        guard let delegate = attachmentsDelegate else {
-            return attributedString
-        }
 
         let fullRange = NSRange(location: 0, length: attributedString.length)
         let finalString = NSMutableAttributedString(attributedString: attributedString)
@@ -156,7 +152,7 @@ open class TextStorage: NSTextStorage {
             case let attachment as RenderableAttachment:
                 attachment.delegate = self
             default:
-                guard let image = textAttachment.image else {
+                guard let _ = textAttachment.image else {
                     // We only suppot image attachments for now. All other attachment types are
                     // stripped for safety.
                     //
@@ -210,15 +206,6 @@ open class TextStorage: NSTextStorage {
         return processedString
     }
 
-    fileprivate func detectAttachmentRemoved(in range: NSRange) {
-        // Ref. https://github.com/wordpress-mobile/AztecEditor-iOS/issues/727:
-        // If the delegate is not set, we *Explicitly* do not want to crash here.
-        //
-        guard let delegate = attachmentsDelegate else {
-            return
-        }
-    }
-
     // MARK: - Overriden Methods
 
     /// Retrieves the attributes for the requested character location.
@@ -246,7 +233,6 @@ open class TextStorage: NSTextStorage {
 
         beginEditing()
 
-        detectAttachmentRemoved(in: range)
         textStore.replaceCharacters(in: range, with: str)
 
         replaceTextStoreString(range, with: str)
@@ -262,7 +248,6 @@ open class TextStorage: NSTextStorage {
 
         beginEditing()
 
-        detectAttachmentRemoved(in: range)
         textStore.replaceCharacters(in: range, with: preprocessedString)
 
         replaceTextStoreString(range, with: attrString.string)

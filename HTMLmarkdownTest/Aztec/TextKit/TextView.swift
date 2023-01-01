@@ -1270,23 +1270,7 @@ open class TextView: UITextView {
             return;
         }
         var newLocation = locationAfter
-        if isPointInsideAttachmentMargin(point: point) {
-            newLocation = index
-        }
         selectedRange = NSRange(location: newLocation, length: 0)
-    }
-
-
-    /// Check if there is an attachment at the location we are moving. If there is one check if we want to move before or after the
-    /// attachment based on the margins.
-    ///
-    /// - Parameter point: the point to check.
-    /// - Returns: true if the point fall inside an attachment margin
-    ///
-    open func isPointInsideAttachmentMargin(point: CGPoint) -> Bool {
-        let index = layoutManager.characterIndex(for: point, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-
-        return false
     }
 
     // MARK: - Captions

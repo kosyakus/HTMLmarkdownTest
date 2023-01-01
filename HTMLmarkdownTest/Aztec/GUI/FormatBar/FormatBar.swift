@@ -728,20 +728,6 @@ private extension FormatBar {
             trailingItemLeadingConstraint = trailingItemContainer.leadingAnchor.constraint(greaterThanOrEqualTo: scrollableStackView.trailingAnchor)
         }
 
-//        NSLayoutConstraint.activate([
-//            overflowToggleItem.topAnchor.constraint(equalTo: topAnchor),
-//            overflowToggleItem.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-//            overflowLeadingConstraint,
-//            overflowTrailingConstraint
-//        ])
-//
-//        NSLayoutConstraint.activate([
-//            trailingItemContainer.topAnchor.constraint(equalTo: topAnchor),
-//            trailingItemContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-//            trailingItemLeadingConstraint,
-//            trailingItemTrailingConstraint
-//        ])
-
         NSLayoutConstraint.activate([
             topDivider.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             topDivider.trailingAnchor.constraint(equalTo: self.trailingAnchor),

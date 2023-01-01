@@ -23,7 +23,7 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        let vc = TextViewController(withText: text, wordPressMode: false)
+        let vc = TextViewController(withText: text)
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }

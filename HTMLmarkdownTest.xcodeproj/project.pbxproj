@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E1B314E9295C35940030F6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314E8295C35940030F6A3 /* AppDelegate.swift */; };
 		E1B314EB295C35940030F6A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314EA295C35940030F6A3 /* SceneDelegate.swift */; };
-		E1B314ED295C35940030F6A3 /* EditorDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314EC295C35940030F6A3 /* EditorDemoController.swift */; };
 		E1B314F2295C35980030F6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B314F1295C35980030F6A3 /* Assets.xcassets */; };
 		E1B314F5295C35980030F6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */; };
 		E1B314FE295C87900030F6A3 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314FC295C87900030F6A3 /* TextViewController.swift */; };
@@ -198,7 +197,6 @@
 		E1B314E5295C35940030F6A3 /* HTMLmarkdownTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTMLmarkdownTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B314E8295C35940030F6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B314EA295C35940030F6A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1B314EC295C35940030F6A3 /* EditorDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorDemoController.swift; sourceTree = "<group>"; };
 		E1B314F1295C35980030F6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1B314F4295C35980030F6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1B314F6295C35980030F6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -419,9 +417,7 @@
 				E1B316F9295F4DF70030F6A3 /* FirstViewController */,
 				E1B314FC295C87900030F6A3 /* TextViewController.swift */,
 				E1B314FD295C87900030F6A3 /* TextViewController.xib */,
-				E1B31692295C921B0030F6A3 /* WordPressEditor */,
 				E1B31691295C91F70030F6A3 /* Aztec */,
-				E1B314EC295C35940030F6A3 /* EditorDemoController.swift */,
 				E1B314F1295C35980030F6A3 /* Assets.xcassets */,
 				E1B3168F295C919D0030F6A3 /* html_colors.json */,
 				E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */,
@@ -946,6 +942,7 @@
 		E1B31691295C91F70030F6A3 /* Aztec */ = {
 			isa = PBXGroup;
 			children = (
+				E1B316F1295C96630030F6A3 /* OptionsTableViewController */,
 				E1B31667295C91890030F6A3 /* Constants */,
 				E1B31637295C91890030F6A3 /* Converters */,
 				E1B31669295C91890030F6A3 /* Renderers */,
@@ -960,22 +957,6 @@
 				E1B31503295C8CC40030F6A3 /* EditorView */,
 			);
 			path = Aztec;
-			sourceTree = "<group>";
-		};
-		E1B31692295C921B0030F6A3 /* WordPressEditor */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316F0295C96630030F6A3 /* ViewControllers */,
-			);
-			path = WordPressEditor;
-			sourceTree = "<group>";
-		};
-		E1B316F0295C96630030F6A3 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316F1295C96630030F6A3 /* OptionsTableViewController */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E1B316F1295C96630030F6A3 /* OptionsTableViewController */ = {
@@ -1074,7 +1055,6 @@
 				E1B31530295C8FAC0030F6A3 /* HTMLDivFormatter.swift in Sources */,
 				E1B31568295C8FCF0030F6A3 /* RenderableAttachment.swift in Sources */,
 				E1B315B1295C90740030F6A3 /* StringUTF16+RangeConversion.swift in Sources */,
-				E1B314ED295C35940030F6A3 /* EditorDemoController.swift in Sources */,
 				E1B3154F295C8FB60030F6A3 /* TextList.swift in Sources */,
 				E1B315C3295C90740030F6A3 /* Array+Helpers.swift in Sources */,
 				E1B3152F295C8FAC0030F6A3 /* SuperscriptFormatter.swift in Sources */,
