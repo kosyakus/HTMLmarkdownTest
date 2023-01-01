@@ -70,9 +70,9 @@ class GenericElementConverter: ElementConverter {
         inheriting attributes: [NSAttributedString.Key: Any],
         contentSerializer serialize: ContentSerializer) -> NSAttributedString {
         
-        guard isSupportedByEditor(element) else {
-            return convert(unsupported: element, inheriting: attributes)
-        }
+//        guard isSupportedByEditor(element) else {
+//            return convert(unsupported: element, inheriting: attributes)
+//        }
         
         return convert(supported: element, inheriting: attributes, contentSerializer: serialize)
     }
@@ -91,24 +91,24 @@ class GenericElementConverter: ElementConverter {
     ///
     /// - Returns: the converted node as an `NSAttributedString`.
     ///
-    private func convert(
-        unsupported element: ElementNode,
-        inheriting attributes: [NSAttributedString.Key: Any]) -> NSAttributedString {
-        
-        let serializer = HTMLSerializer()
-        let attachment = HTMLAttachment()
-        
-        attachment.rootTagName = element.name
-        attachment.rawHTML = serializer.serialize(element)
-        
-        let content = NSMutableAttributedString(attachment: attachment, attributes: attributes)
-        
-        if element.needsClosingParagraphSeparatorIncludingDescendants() {
-            content.append(NSAttributedString(.paragraphSeparator, attributes: attributes))
-        }
-        
-        return content
-    }
+//    private func convert(
+//        unsupported element: ElementNode,
+//        inheriting attributes: [NSAttributedString.Key: Any]) -> NSAttributedString {
+//
+//        let serializer = HTMLSerializer()
+////        let attachment = HTMLAttachment()
+//
+////        attachment.rootTagName = element.name
+////        attachment.rawHTML = serializer.serialize(element)
+////
+////        let content = NSMutableAttributedString(attachment: attachment, attributes: attributes)
+//
+//        if element.needsClosingParagraphSeparatorIncludingDescendants() {
+//            content.append(NSAttributedString(.paragraphSeparator, attributes: attributes))
+//        }
+//
+//        return content
+//    }
     
     private func convert(
         supported element: ElementNode,

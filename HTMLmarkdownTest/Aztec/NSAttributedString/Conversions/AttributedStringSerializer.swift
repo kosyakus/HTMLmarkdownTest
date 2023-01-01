@@ -18,8 +18,8 @@ class AttributedStringSerializer {
         .figcaption: FigcaptionElementConverter(),
         .figure: FigureElementConverter(),
         .hr: HRElementConverter(),
-        .img: ImageElementConverter(),
-        .video: VideoElementConverter(),
+//        .img: ImageElementConverter(),
+//        .video: VideoElementConverter(),
         .li: LIElementConverter()
     ]
     

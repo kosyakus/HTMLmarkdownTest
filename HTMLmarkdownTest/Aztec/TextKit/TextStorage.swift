@@ -31,25 +31,6 @@ protocol TextStorageAttachmentsDelegate: AnyObject {
     /// - Returns: An Image placeholder to be rendered onscreen.
     ///
     func storage(_ storage: TextStorage, placeholderFor attachment: NSTextAttachment) -> UIImage
-    
-    /// Called when an image is about to be added to the storage as an attachment, so that the
-    /// delegate can specify an URL where that image is available.
-    ///
-    /// - Parameters:
-    ///     - storage: The storage that is requesting the image.
-    ///     - imageAttachment: The image that was added to the storage.
-    ///
-    /// - Returns: the requested `URL` where the image is stored, or nil if it's not yet available.
-    ///
-    func storage(_ storage: TextStorage, urlFor imageAttachment: ImageAttachment) -> URL?
-
-    /// Called when a attachment is removed from the storage.
-    ///
-    /// - Parameters:
-    ///   - textView: The textView where the attachment was removed.
-    ///   - attachment: The media attachment that was removed.
-    ///
-    func storage(_ storage: TextStorage, deletedAttachment: MediaAttachment)
 
     /// Provides the Bounds required to represent a given attachment, within a specified line fragment.
     ///
@@ -113,18 +94,6 @@ open class TextStorage: NSTextStorage {
     override open var string: String {
         return textStoreString
     }
-
-    open var mediaAttachments: [MediaAttachment] {
-        let range = NSMakeRange(0, length)
-        var attachments = [MediaAttachment]()
-        enumerateAttribute(.attachment, in: range, options: []) { (object, range, stop) in
-            if let attachment = object as? MediaAttachment {
-                attachments.append(attachment)
-            }
-        }
-
-        return attachments
-    }
     
     // MARK: - Range Methods
 
@@ -184,8 +153,6 @@ open class TextStorage: NSTextStorage {
             switch textAttachment {
             case _ as LineAttachment:
                 break
-            case let attachment as MediaAttachment:
-                attachment.delegate = self
             case let attachment as RenderableAttachment:
                 attachment.delegate = self
             default:
@@ -196,16 +163,6 @@ open class TextStorage: NSTextStorage {
                     finalString.removeAttribute(.attachment, range: range)
                     return
                 }
-
-                let replacementAttachment = ImageAttachment(identifier: NSUUID().uuidString)
-                replacementAttachment.delegate = self
-                replacementAttachment.image = image
-                replacementAttachment.size = .full
-
-                let imageURL = delegate.storage(self, urlFor: replacementAttachment)
-                replacementAttachment.updateURL(imageURL)
-
-                finalString.addAttribute(.attachment, value: replacementAttachment, range: range)
             }
         }
 
@@ -259,10 +216,6 @@ open class TextStorage: NSTextStorage {
         //
         guard let delegate = attachmentsDelegate else {
             return
-        }
-
-        textStore.enumerateAttachmentsOfType(MediaAttachment.self, range: range) { (attachment, range, stop) in
-            delegate.storage(self, deletedAttachment: attachment)
         }
     }
 
@@ -345,54 +298,6 @@ open class TextStorage: NSTextStorage {
 
     // MARK: - Attachments
 
-    /// Return the attachment, if any, corresponding to the id provided
-    ///
-    /// - Parameter id: the unique id of the attachment
-    /// - Returns: the attachment object
-    ///
-    func attachment(withId id: String) -> MediaAttachment? {
-        var foundAttachment: MediaAttachment? = nil
-        enumerateAttachmentsOfType(MediaAttachment.self) { (attachment, range, stop) in
-            if attachment.identifier == id {
-                foundAttachment = attachment
-                stop.pointee = true
-            }
-        }
-        return foundAttachment
-    }
-
-    /// Return the range of an attachment with the specified identifier if any
-    ///
-    /// - Parameter attachmentID: the id of the attachment
-    /// - Returns: the range of the attachment
-    ///
-    open func rangeFor(attachmentID: String) -> NSRange? {
-        var foundRange: NSRange?
-        enumerateAttachmentsOfType(MediaAttachment.self) { (attachment, range, stop) in
-            if attachment.identifier == attachmentID {
-                foundRange = range
-                stop.pointee = true
-            }
-        }
-        return foundRange
-    }
-
-    /// Removes all of the MediaAttachments from the storage
-    ///
-    open func removeMediaAttachments() {
-        var ranges = [NSRange]()
-        enumerateAttachmentsOfType(MediaAttachment.self) { (attachment, range, _) in
-            ranges.append(range)
-        }
-
-        var delta = 0
-        for range in ranges {
-            let corrected = NSRange(location: range.location - delta, length: range.length)
-            replaceCharacters(in: corrected, with: NSAttributedString(string: ""))
-            delta += range.length
-        }
-    }
-
     private func enumerateRenderableAttachments(in text: NSAttributedString, range: NSRange? = nil, block: ((RenderableAttachment, NSRange, UnsafeMutablePointer<ObjCBool>) -> Void)) {
         let range = range ?? NSMakeRange(0, length)
         text.enumerateAttribute(.attachment, in: range, options: []) { (object, range, stop) in
@@ -429,14 +334,9 @@ open class TextStorage: NSTextStorage {
     }
     
     private func setupAttachmentDelegates() {
-        textStore.enumerateAttachmentsOfType(MediaAttachment.self) { [weak self] (attachment, _, _) in
-            attachment.delegate = self
-        }
-        
         enumerateRenderableAttachments(in: textStore, block: { [weak self] (attachment, _, _) in
             attachment.delegate = self
         })
-                
     }
 }
 
@@ -479,33 +379,6 @@ private extension TextStorage {
     private func fixFontAttribute(in attrs: [NSAttributedString.Key: Any], headerLevel: Header.HeaderType) ->  [NSAttributedString.Key: Any] {
         let formatter = HeaderFormatter(headerLevel: headerLevel)
         return formatter.apply(to: attrs)
-    }
-}
-
-
-// MARK: - TextStorage: MediaAttachmentDelegate Methods
-//
-extension TextStorage: MediaAttachmentDelegate {
-
-    func mediaAttachmentPlaceholder(for attachment: MediaAttachment) -> UIImage {
-        guard let delegate = attachmentsDelegate else {
-            fatalError()
-        }
-
-        return delegate.storage(self, placeholderFor: attachment)
-    }
-
-    func mediaAttachment(
-        _ mediaAttachment: MediaAttachment,
-        imageFor url: URL,
-        onSuccess success: @escaping (UIImage) -> (),
-        onFailure failure: @escaping () -> ())
-    {
-        guard let delegate = attachmentsDelegate else {
-            fatalError()
-        }
-
-        delegate.storage(self, attachment: mediaAttachment, imageFor: url, onSuccess: success, onFailure: failure)
     }
 }
 

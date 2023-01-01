@@ -54,16 +54,12 @@
 		E1B31556295C8FB60030F6A3 /* HTMLLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154C295C8FB60030F6A3 /* HTMLLi.swift */; };
 		E1B31557295C8FB60030F6A3 /* Blockquote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154D295C8FB60030F6A3 /* Blockquote.swift */; };
 		E1B31558295C8FB60030F6A3 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3154E295C8FB60030F6A3 /* Figure.swift */; };
-		E1B31565295C8FCF0030F6A3 /* MediaAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31559295C8FCE0030F6A3 /* MediaAttachment.swift */; };
 		E1B31566295C8FCF0030F6A3 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155A295C8FCE0030F6A3 /* FontProvider.swift */; };
-		E1B31567295C8FCF0030F6A3 /* HTMLAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155B295C8FCE0030F6A3 /* HTMLAttachment.swift */; };
 		E1B31568295C8FCF0030F6A3 /* RenderableAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155C295C8FCE0030F6A3 /* RenderableAttachment.swift */; };
 		E1B31569295C8FCF0030F6A3 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155D295C8FCE0030F6A3 /* TextStorage.swift */; };
-		E1B3156A295C8FCF0030F6A3 /* VideoAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155E295C8FCE0030F6A3 /* VideoAttachment.swift */; };
 		E1B3156B295C8FCF0030F6A3 /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3155F295C8FCE0030F6A3 /* ColorProvider.swift */; };
 		E1B3156C295C8FCF0030F6A3 /* LineAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31560295C8FCE0030F6A3 /* LineAttachment.swift */; };
 		E1B3156D295C8FCF0030F6A3 /* CommentAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31561295C8FCE0030F6A3 /* CommentAttachment.swift */; };
-		E1B3156E295C8FCF0030F6A3 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31562295C8FCE0030F6A3 /* ImageAttachment.swift */; };
 		E1B3156F295C8FCF0030F6A3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31563295C8FCE0030F6A3 /* Configuration.swift */; };
 		E1B31570295C8FCF0030F6A3 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31564295C8FCE0030F6A3 /* LayoutManager.swift */; };
 		E1B31576295C90250030F6A3 /* PluginOutputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B31572295C90250030F6A3 /* PluginOutputCustomizer.swift */; };
@@ -191,12 +187,6 @@
 		E1B3168D295C91890030F6A3 /* CommentAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */; };
 		E1B3168E295C91890030F6A3 /* HTMLAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */; };
 		E1B31690295C919D0030F6A3 /* html_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = E1B3168F295C919D0030F6A3 /* html_colors.json */; };
-		E1B316E5295C94E50030F6A3 /* MediaInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E4295C94E50030F6A3 /* MediaInserter.swift */; };
-		E1B316E7295C94ED0030F6A3 /* UIImage+SaveTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */; };
-		E1B316E9295C94FF0030F6A3 /* UnknownEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */; };
-		E1B316EB295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */; };
-		E1B316EE295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */; };
-		E1B316EF295C95B50030F6A3 /* AttachmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */; };
 		E1B316F4295C96630030F6A3 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */; };
 		E1B316F5295C96630030F6A3 /* OptionsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */; };
 		E1B316FC295F4E180030F6A3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316FA295F4E180030F6A3 /* FirstViewController.swift */; };
@@ -254,16 +244,12 @@
 		E1B3154C295C8FB60030F6A3 /* HTMLLi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLLi.swift; sourceTree = "<group>"; };
 		E1B3154D295C8FB60030F6A3 /* Blockquote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockquote.swift; sourceTree = "<group>"; };
 		E1B3154E295C8FB60030F6A3 /* Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
-		E1B31559295C8FCE0030F6A3 /* MediaAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaAttachment.swift; sourceTree = "<group>"; };
 		E1B3155A295C8FCE0030F6A3 /* FontProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
-		E1B3155B295C8FCE0030F6A3 /* HTMLAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLAttachment.swift; sourceTree = "<group>"; };
 		E1B3155C295C8FCE0030F6A3 /* RenderableAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderableAttachment.swift; sourceTree = "<group>"; };
 		E1B3155D295C8FCE0030F6A3 /* TextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
-		E1B3155E295C8FCE0030F6A3 /* VideoAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAttachment.swift; sourceTree = "<group>"; };
 		E1B3155F295C8FCE0030F6A3 /* ColorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
 		E1B31560295C8FCE0030F6A3 /* LineAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineAttachment.swift; sourceTree = "<group>"; };
 		E1B31561295C8FCE0030F6A3 /* CommentAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAttachment.swift; sourceTree = "<group>"; };
-		E1B31562295C8FCE0030F6A3 /* ImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
 		E1B31563295C8FCE0030F6A3 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		E1B31564295C8FCE0030F6A3 /* LayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
 		E1B31572295C90250030F6A3 /* PluginOutputCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginOutputCustomizer.swift; sourceTree = "<group>"; };
@@ -391,12 +377,6 @@
 		E1B3166A295C91890030F6A3 /* CommentAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAttachmentRenderer.swift; sourceTree = "<group>"; };
 		E1B3166B295C91890030F6A3 /* HTMLAttachmentRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLAttachmentRenderer.swift; sourceTree = "<group>"; };
 		E1B3168F295C919D0030F6A3 /* html_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = html_colors.json; sourceTree = "<group>"; };
-		E1B316E4295C94E50030F6A3 /* MediaInserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInserter.swift; sourceTree = "<group>"; };
-		E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SaveTo.swift"; sourceTree = "<group>"; };
-		E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownEditorViewController.swift; sourceTree = "<group>"; };
-		E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewAttachmentDelegateProvider.swift; sourceTree = "<group>"; };
-		E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AttachmentDetailsViewController.storyboard; sourceTree = "<group>"; };
-		E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentDetailsViewController.swift; sourceTree = "<group>"; };
 		E1B316F2295C96630030F6A3 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTablePresenter.swift; sourceTree = "<group>"; };
 		E1B316FA295F4E180030F6A3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -442,7 +422,6 @@
 				E1B31692295C921B0030F6A3 /* WordPressEditor */,
 				E1B31691295C91F70030F6A3 /* Aztec */,
 				E1B314EC295C35940030F6A3 /* EditorDemoController.swift */,
-				E1B316E3295C94C20030F6A3 /* AdditionalFiles */,
 				E1B314F1295C35980030F6A3 /* Assets.xcassets */,
 				E1B3168F295C919D0030F6A3 /* html_colors.json */,
 				E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */,
@@ -471,14 +450,10 @@
 				E1B31561295C8FCE0030F6A3 /* CommentAttachment.swift */,
 				E1B31563295C8FCE0030F6A3 /* Configuration.swift */,
 				E1B3155A295C8FCE0030F6A3 /* FontProvider.swift */,
-				E1B3155B295C8FCE0030F6A3 /* HTMLAttachment.swift */,
-				E1B31562295C8FCE0030F6A3 /* ImageAttachment.swift */,
 				E1B31564295C8FCE0030F6A3 /* LayoutManager.swift */,
 				E1B31560295C8FCE0030F6A3 /* LineAttachment.swift */,
-				E1B31559295C8FCE0030F6A3 /* MediaAttachment.swift */,
 				E1B3155C295C8FCE0030F6A3 /* RenderableAttachment.swift */,
 				E1B3155D295C8FCE0030F6A3 /* TextStorage.swift */,
-				E1B3155E295C8FCE0030F6A3 /* VideoAttachment.swift */,
 			);
 			path = TextKit;
 			sourceTree = "<group>";
@@ -621,6 +596,7 @@
 				E1B315AB295C90740030F6A3 /* UIPasteboard+Helpers.swift */,
 				E1B315AC295C90740030F6A3 /* NSTextingResult+Helpers.swift */,
 				E1B315AD295C90740030F6A3 /* UIFont+Traits.swift */,
+				E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -994,20 +970,6 @@
 			path = WordPressEditor;
 			sourceTree = "<group>";
 		};
-		E1B316E3295C94C20030F6A3 /* AdditionalFiles */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316F6295F30EB0030F6A3 /* Extensions */,
-				E1B316EC295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard */,
-				E1B316ED295C95B50030F6A3 /* AttachmentDetailsViewController.swift */,
-				E1B316EA295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift */,
-				E1B316E8295C94FF0030F6A3 /* UnknownEditorViewController.swift */,
-				E1B316E6295C94ED0030F6A3 /* UIImage+SaveTo.swift */,
-				E1B316E4295C94E50030F6A3 /* MediaInserter.swift */,
-			);
-			path = AdditionalFiles;
-			sourceTree = "<group>";
-		};
 		E1B316F0295C96630030F6A3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1023,14 +985,6 @@
 				E1B316F3295C96630030F6A3 /* OptionsTablePresenter.swift */,
 			);
 			path = OptionsTableViewController;
-			sourceTree = "<group>";
-		};
-		E1B316F6295F30EB0030F6A3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E1B316F9295F4DF70030F6A3 /* FirstViewController */ = {
@@ -1103,7 +1057,6 @@
 				E1B314FF295C87900030F6A3 /* TextViewController.xib in Resources */,
 				E1B316FD295F4E180030F6A3 /* FirstViewController.xib in Resources */,
 				E1B314F5295C35980030F6A3 /* LaunchScreen.storyboard in Resources */,
-				E1B316EE295C95B50030F6A3 /* AttachmentDetailsViewController.storyboard in Resources */,
 				E1B31690295C919D0030F6A3 /* html_colors.json in Resources */,
 				E1B314F2295C35980030F6A3 /* Assets.xcassets in Resources */,
 			);
@@ -1117,7 +1070,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B31679295C91890030F6A3 /* ElementToStringConverter.swift in Sources */,
-				E1B31565295C8FCF0030F6A3 /* MediaAttachment.swift in Sources */,
 				E1B315BD295C90740030F6A3 /* NSBundle+AztecBundle.swift in Sources */,
 				E1B31530295C8FAC0030F6A3 /* HTMLDivFormatter.swift in Sources */,
 				E1B31568295C8FCF0030F6A3 /* RenderableAttachment.swift in Sources */,
@@ -1141,9 +1093,7 @@
 				E1B316FC295F4E180030F6A3 /* FirstViewController.swift in Sources */,
 				E1B3167F295C91890030F6A3 /* MainAttributesConverter.swift in Sources */,
 				E1B31620295C912A0030F6A3 /* CSSAttribute.swift in Sources */,
-				E1B316EB295C956F0030F6A3 /* TextViewAttachmentDelegateProvider.swift in Sources */,
 				E1B3166C295C91890030F6A3 /* Converter.swift in Sources */,
-				E1B3156A295C8FCF0030F6A3 /* VideoAttachment.swift in Sources */,
 				E1B31551295C8FB60030F6A3 /* HTMLDiv.swift in Sources */,
 				E1B315BB295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift in Sources */,
 				E1B31672295C91890030F6A3 /* CiteStringAttributeConverter.swift in Sources */,
@@ -1164,8 +1114,6 @@
 				E1B315C8295C90740030F6A3 /* UITextView+Undoable.swift in Sources */,
 				E1B315B5295C90740030F6A3 /* NSMutableAttributedString+ReplaceOcurrences.swift in Sources */,
 				E1B31581295C905A0030F6A3 /* Assets.swift in Sources */,
-				E1B31567295C8FCF0030F6A3 /* HTMLAttachment.swift in Sources */,
-				E1B3156E295C8FCF0030F6A3 /* ImageAttachment.swift in Sources */,
 				E1B315F1295C90AF0030F6A3 /* AttributedStringParser.swift in Sources */,
 				E1B31676295C91890030F6A3 /* ConditionalItalicStringAttributeConverter.swift in Sources */,
 				E1B3167B295C91890030F6A3 /* UnderlineElementAttributeConverter.swift in Sources */,
@@ -1183,7 +1131,6 @@
 				E1B3156F295C8FCF0030F6A3 /* Configuration.swift in Sources */,
 				E1B3152D295C8FAC0030F6A3 /* PreFormatter.swift in Sources */,
 				E1B3153A295C8FAC0030F6A3 /* ColorFormatter.swift in Sources */,
-				E1B316E7295C94ED0030F6A3 /* UIImage+SaveTo.swift in Sources */,
 				E1B31508295C8D7D0030F6A3 /* TextView.swift in Sources */,
 				E1B31673295C91890030F6A3 /* SubscriptStringAttributeConverter.swift in Sources */,
 				E1B315B6295C90740030F6A3 /* UIImage+Resize.swift in Sources */,
@@ -1202,7 +1149,6 @@
 				E1B3167D295C91890030F6A3 /* ItalicElementAttributeConverter.swift in Sources */,
 				E1B31684295C91890030F6A3 /* VideoElementConverter.swift in Sources */,
 				E1B31585295C905A0030F6A3 /* FormatBar.swift in Sources */,
-				E1B316EF295C95B50030F6A3 /* AttachmentDetailsViewController.swift in Sources */,
 				E1B31566295C8FCF0030F6A3 /* FontProvider.swift in Sources */,
 				E1B315BA295C90740030F6A3 /* UIStackView+Helpers.swift in Sources */,
 				E1B31688295C91890030F6A3 /* BRElementConverter.swift in Sources */,
@@ -1239,12 +1185,10 @@
 				E1B315D1295C90740030F6A3 /* NSAttributedStringKey+Conversion.swift in Sources */,
 				E1B3168D295C91890030F6A3 /* CommentAttachmentRenderer.swift in Sources */,
 				E1B315E9295C90AF0030F6A3 /* LineAttachmentToElementConverter.swift in Sources */,
-				E1B316E5295C94E50030F6A3 /* MediaInserter.swift in Sources */,
 				E1B314FE295C87900030F6A3 /* TextViewController.swift in Sources */,
 				E1B315BC295C90740030F6A3 /* NSAttributedString+Analyzers.swift in Sources */,
 				E1B3161F295C912A0030F6A3 /* TextNode.swift in Sources */,
 				E1B31618295C912A0030F6A3 /* CSSAttributeMatcher.swift in Sources */,
-				E1B316E9295C94FF0030F6A3 /* UnknownEditorViewController.swift in Sources */,
 				E1B31670295C91890030F6A3 /* BoldStringAttributeConverter.swift in Sources */,
 				E1B315CC295C90740030F6A3 /* DocumentType+Swift4.swift in Sources */,
 				E1B315EE295C90AF0030F6A3 /* AttributedStringSerializer.swift in Sources */,

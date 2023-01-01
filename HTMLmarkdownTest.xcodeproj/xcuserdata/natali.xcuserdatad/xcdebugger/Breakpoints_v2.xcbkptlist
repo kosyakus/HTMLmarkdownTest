@@ -30,8 +30,8 @@
             filePath = "HTMLmarkdownTest/Aztec/TextKit/TextStorage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "TextStorage"
             landmarkType = "3">
          </BreakpointContent>
@@ -39,15 +39,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C10B6AD2-0DC5-470F-9AEE-98FBC53FD725"
+            uuid = "2CDF02AF-86E5-4ECF-AC45-32DFB2884F7D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HTMLmarkdownTest/Aztec/TextKit/TextView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "storage"
             landmarkType = "24">
          </BreakpointContent>

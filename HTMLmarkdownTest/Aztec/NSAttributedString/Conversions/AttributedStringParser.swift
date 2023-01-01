@@ -35,10 +35,10 @@ class AttributedStringParser {
     
     private let attachmentConverters: [BaseAttachmentToElementConverter] = [
         CommentAttachmentToElementConverter(),
-        HTMLAttachmentToElementConverter(),
-        ImageAttachmentToElementConverter(),
+//        HTMLAttachmentToElementConverter(),
+//        ImageAttachmentToElementConverter(),
         LineAttachmentToElementConverter(),
-        VideoAttachmentToElementConverter(),
+//        VideoAttachmentToElementConverter(),
     ]
     
     // MARK: - Internal Data Structures

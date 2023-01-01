@@ -21,30 +21,6 @@ open class AztecTextViewPasteboardDelegate: TextViewPasteboardDelegate {
             || tryPastingAttributedString(in: textView)
             || tryPastingString(in: textView)
     }
-
-    /// Tries to paste a URL from the clipboard as a link applied to the selected range.
-    ///
-    /// - Returns: True if the paste succeeds, false if it does not.
-    ///
-//    open func tryPastingURL(in textView: TextView) -> Bool {
-//        guard UIPasteboard.general.hasURLs,
-//            let url = UIPasteboard.general.url else {
-//                return false
-//        }
-//
-//        let selectedRange = textView.selectedRange
-//
-//        if selectedRange.length == 0 {
-//            guard textView.shouldChangeText(in: selectedRange, with: url.absoluteString) else {
-//                return true
-//            }
-////            textView.setLink(url, title:url.absoluteString, inRange: selectedRange)
-//        } else {
-////            textView.setLink(url, inRange: selectedRange)
-//        }
-//
-//        return true
-//    }
     
     /// Tries to paste HTML from the clipboard as source, replacing the selected range.
     ///
@@ -72,7 +48,6 @@ open class AztecTextViewPasteboardDelegate: TextViewPasteboardDelegate {
         guard let string = UIPasteboard.general.attributedString() else {
             return false
         }
-        string.loadLazyAttachments()
         let selectedRange = textView.selectedRange
 
         guard textView.shouldChangeText(in: selectedRange, with: string.string) else {
@@ -147,7 +122,6 @@ open class AztecTextViewPasteboardDelegate: TextViewPasteboardDelegate {
         }
 
         newString.addAttributes(textView.typingAttributes, range: string.rangeOfEntireString)
-        newString.loadLazyAttachments()
 
         textView.storage.replaceCharacters(in: selectedRange, with: newString)
         textView.notifyTextViewDidChange()

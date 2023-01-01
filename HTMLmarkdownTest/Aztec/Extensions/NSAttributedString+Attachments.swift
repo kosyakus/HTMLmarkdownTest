@@ -44,22 +44,22 @@ extension NSAttributedString
 
     /// Loads any NSTextAttachment's lazy file reference, into a UIImage instance, in memory.
     ///
-    func loadLazyAttachments() {
-        enumerateAttachmentsOfType(NSTextAttachment.self) { (attachment, _, _) in
-            guard let data = attachment.fileWrapper?.regularFileContents else {
-                return
-            }
-
-            if let mediaAttachment = attachment as? MediaAttachment {
-                mediaAttachment.refreshIdentifier()
-            }
-
-            let scale = UIScreen.main.scale
-            let image = UIImage(data: data, scale: scale)
-            attachment.fileWrapper = nil
-            attachment.image = image
-        }
-    }
+//    func loadLazyAttachments() {
+//        enumerateAttachmentsOfType(NSTextAttachment.self) { (attachment, _, _) in
+//            guard let data = attachment.fileWrapper?.regularFileContents else {
+//                return
+//            }
+//
+//            if let mediaAttachment = attachment as? MediaAttachment {
+//                mediaAttachment.refreshIdentifier()
+//            }
+//
+//            let scale = UIScreen.main.scale
+//            let image = UIImage(data: data, scale: scale)
+//            attachment.fileWrapper = nil
+//            attachment.image = image
+//        }
+//    }
 
     /// Enumerates all of the available NSTextAttachment's of the specified kind, in a given range.
     /// For each one of those elements, the specified block will be called.
