@@ -11,7 +11,7 @@ class FirstViewController: UIViewController, FirstViewControllerDelegate {
 
     @IBOutlet weak var textView: UITextView!
     
-    var text: NSMutableAttributedString = NSMutableAttributedString(string: "Some text", attributes: nil)
+    var text: NSMutableAttributedString = NSMutableAttributedString(string: "Добавьте описание о себе", attributes: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()

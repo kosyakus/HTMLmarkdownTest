@@ -83,7 +83,7 @@ class TextViewController: UIViewController {
     
     
     let sampleHTML: String?
-    let attributedString: NSMutableAttributedString?
+    var attributedString: NSMutableAttributedString?
     
     private lazy var optionsTablePresenter = OptionsTablePresenter(presentingViewController: self, presentingTextView: richTextView)
     
@@ -134,14 +134,14 @@ class TextViewController: UIViewController {
         editorView.isScrollEnabled = false
         configureConstraints()
         
-        let html: String
-        
-        if let sampleHTML = sampleHTML {
-            html = sampleHTML
-        } else {
-            html = ""
-        }
-        editorView.setHTML(html)
+//        let html: String
+//
+//        if let sampleHTML = sampleHTML {
+//            html = sampleHTML
+//        } else {
+//            html = ""
+//        }
+//        editorView.setHTML(getSampleHTML(fromHTMLFileNamed: "content"))
         editorView.becomeFirstResponder()
         
         navigationController?.title = "My custom description"
@@ -184,7 +184,25 @@ class TextViewController: UIViewController {
     }
     
     func setUpAttributedString() {
-        editorView.richTextView.attributedText = attributedString ?? NSMutableAttributedString(string: "")
+        if attributedString == NSMutableAttributedString(string: "Добавьте описание о себе") {
+            editorView.setHTML(getSampleHTML(fromHTMLFileNamed: "content"))
+        } else {
+            editorView.richTextView.attributedText = attributedString ?? NSMutableAttributedString(string: "")
+        }
+//        editorView.richTextView.attributedText = attributedString ?? NSMutableAttributedString(string: "")
+    }
+    
+    func getSampleHTML(fromHTMLFileNamed fileName: String) -> String {
+        let htmlFilePath = Bundle.main.path(forResource: fileName, ofType: "html")!
+        let fileContents: String
+        
+        do {
+            fileContents = try String(contentsOfFile: htmlFilePath)
+        } catch {
+            fatalError("Could not load the sample HTML.  Check the file exists in the target and that it has the correct name.")
+        }
+        
+        return fileContents
     }
     
     func updateScrollInsets() {

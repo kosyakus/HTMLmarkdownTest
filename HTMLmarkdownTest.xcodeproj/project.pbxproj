@@ -191,6 +191,7 @@
 		E1B316FC295F4E180030F6A3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316FA295F4E180030F6A3 /* FirstViewController.swift */; };
 		E1B316FD295F4E180030F6A3 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B316FB295F4E180030F6A3 /* FirstViewController.xib */; };
 		E1B316FF295F788A0030F6A3 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */; };
+		E1B3189F296748A10030F6A3 /* content.html in Resources */ = {isa = PBXBuildFile; fileRef = E1B3189E296748A10030F6A3 /* content.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -380,6 +381,7 @@
 		E1B316FA295F4E180030F6A3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E1B316FB295F4E180030F6A3 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
 		E1B316FE295F788A0030F6A3 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		E1B3189E296748A10030F6A3 /* content.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = content.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +424,7 @@
 				E1B3168F295C919D0030F6A3 /* html_colors.json */,
 				E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */,
 				E1B314F6295C35980030F6A3 /* Info.plist */,
+				E1B3189E296748A10030F6A3 /* content.html */,
 			);
 			path = HTMLmarkdownTest;
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 			files = (
 				E1B314FF295C87900030F6A3 /* TextViewController.xib in Resources */,
 				E1B316FD295F4E180030F6A3 /* FirstViewController.xib in Resources */,
+				E1B3189F296748A10030F6A3 /* content.html in Resources */,
 				E1B314F5295C35980030F6A3 /* LaunchScreen.storyboard in Resources */,
 				E1B31690295C919D0030F6A3 /* html_colors.json in Resources */,
 				E1B314F2295C35980030F6A3 /* Assets.xcassets in Resources */,
