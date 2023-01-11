@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E112C7DB296DF8B400CFBA34 /* HTMLEntityDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112C7D7296DF8B400CFBA34 /* HTMLEntityDecoder.swift */; };
+		E112C7DC296DF8B400CFBA34 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112C7D8296DF8B400CFBA34 /* Tokenizer.swift */; };
+		E112C7DD296DF8B400CFBA34 /* MarkdownGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112C7D9296DF8B400CFBA34 /* MarkdownGenerator.swift */; };
+		E112C7DE296DF8B400CFBA34 /* HTMLParserMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112C7DA296DF8B400CFBA34 /* HTMLParserMarkdown.swift */; };
+		E112C7E0296DFB0D00CFBA34 /* AttributedString+htmlConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112C7DF296DFB0D00CFBA34 /* AttributedString+htmlConverter.swift */; };
 		E1B314E9295C35940030F6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314E8295C35940030F6A3 /* AppDelegate.swift */; };
 		E1B314EB295C35940030F6A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B314EA295C35940030F6A3 /* SceneDelegate.swift */; };
 		E1B314F2295C35980030F6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B314F1295C35980030F6A3 /* Assets.xcassets */; };
@@ -195,6 +200,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E112C7D7296DF8B400CFBA34 /* HTMLEntityDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLEntityDecoder.swift; sourceTree = "<group>"; };
+		E112C7D8296DF8B400CFBA34 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		E112C7D9296DF8B400CFBA34 /* MarkdownGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownGenerator.swift; sourceTree = "<group>"; };
+		E112C7DA296DF8B400CFBA34 /* HTMLParserMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParserMarkdown.swift; sourceTree = "<group>"; };
+		E112C7DF296DFB0D00CFBA34 /* AttributedString+htmlConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributedString+htmlConverter.swift"; sourceTree = "<group>"; };
 		E1B314E5295C35940030F6A3 /* HTMLmarkdownTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTMLmarkdownTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B314E8295C35940030F6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B314EA295C35940030F6A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -395,6 +405,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E112C7D6296DF8B400CFBA34 /* HTML2Markdown */ = {
+			isa = PBXGroup;
+			children = (
+				E112C7D7296DF8B400CFBA34 /* HTMLEntityDecoder.swift */,
+				E112C7D8296DF8B400CFBA34 /* Tokenizer.swift */,
+				E112C7D9296DF8B400CFBA34 /* MarkdownGenerator.swift */,
+				E112C7DA296DF8B400CFBA34 /* HTMLParserMarkdown.swift */,
+			);
+			path = HTML2Markdown;
+			sourceTree = "<group>";
+		};
 		E1B314DC295C35940030F6A3 = {
 			isa = PBXGroup;
 			children = (
@@ -419,7 +440,9 @@
 				E1B316F9295F4DF70030F6A3 /* FirstViewController */,
 				E1B314FC295C87900030F6A3 /* TextViewController.swift */,
 				E1B314FD295C87900030F6A3 /* TextViewController.xib */,
+				E112C7DF296DFB0D00CFBA34 /* AttributedString+htmlConverter.swift */,
 				E1B31691295C91F70030F6A3 /* Aztec */,
+				E112C7D6296DF8B400CFBA34 /* HTML2Markdown */,
 				E1B314F1295C35980030F6A3 /* Assets.xcassets */,
 				E1B3168F295C919D0030F6A3 /* html_colors.json */,
 				E1B314F3295C35980030F6A3 /* LaunchScreen.storyboard */,
@@ -1068,6 +1091,7 @@
 				E1B3166D295C91890030F6A3 /* CLinkedListToArrayConverter.swift in Sources */,
 				E1B315EB295C90AF0030F6A3 /* HTMLAttachmentToElementConverter.swift in Sources */,
 				E1B31630295C916B0030F6A3 /* HTMLProcessor.swift in Sources */,
+				E112C7E0296DFB0D00CFBA34 /* AttributedString+htmlConverter.swift in Sources */,
 				E1B31569295C8FCF0030F6A3 /* TextStorage.swift in Sources */,
 				E1B3156B295C8FCF0030F6A3 /* ColorProvider.swift in Sources */,
 				E1B31531295C8FAC0030F6A3 /* BoldFormatter.swift in Sources */,
@@ -1081,6 +1105,7 @@
 				E1B31551295C8FB60030F6A3 /* HTMLDiv.swift in Sources */,
 				E1B315BB295C90740030F6A3 /* NSAttributedString+ReplaceOcurrences.swift in Sources */,
 				E1B31672295C91890030F6A3 /* CiteStringAttributeConverter.swift in Sources */,
+				E112C7DC296DF8B400CFBA34 /* Tokenizer.swift in Sources */,
 				E1B31570295C8FCF0030F6A3 /* LayoutManager.swift in Sources */,
 				E1B31680295C91890030F6A3 /* ImageElementConverter.swift in Sources */,
 				E1B31556295C8FB60030F6A3 /* HTMLLi.swift in Sources */,
@@ -1152,6 +1177,7 @@
 				E1B316FF295F788A0030F6A3 /* UIImage+extension.swift in Sources */,
 				E1B3167E295C91890030F6A3 /* ElementAttributeConverter.swift in Sources */,
 				E1B315CA295C90740030F6A3 /* UITextView+Delegate.swift in Sources */,
+				E112C7DB296DF8B400CFBA34 /* HTMLEntityDecoder.swift in Sources */,
 				E1B3152C295C8FAC0030F6A3 /* LiFormatter.swift in Sources */,
 				E1B31616295C912A0030F6A3 /* InNodesConverter.swift in Sources */,
 				E1B3153D295C8FAC0030F6A3 /* HTMLParagraphFormatter.swift in Sources */,
@@ -1204,6 +1230,7 @@
 				E1B31675295C91890030F6A3 /* StringAttributeConverter.swift in Sources */,
 				E1B31535295C8FAC0030F6A3 /* SubscriptFormatter.swift in Sources */,
 				E1B31578295C90250030F6A3 /* PluginManager.swift in Sources */,
+				E112C7DD296DF8B400CFBA34 /* MarkdownGenerator.swift in Sources */,
 				E1B3168B295C91890030F6A3 /* ElementConverter.swift in Sources */,
 				E1B31614295C912A0030F6A3 /* InNodeConverter.swift in Sources */,
 				E1B315B7295C90740030F6A3 /* NSMutableAttributedString+ReplaceAttributes.swift in Sources */,
@@ -1225,6 +1252,7 @@
 				E1B31671295C91890030F6A3 /* SuperscriptStringAttributeConverter.swift in Sources */,
 				E1B31532295C8FAC0030F6A3 /* MarkFormatter.swift in Sources */,
 				E1B31577295C90250030F6A3 /* PluginInputCustomizer.swift in Sources */,
+				E112C7DE296DF8B400CFBA34 /* HTMLParserMarkdown.swift in Sources */,
 				E1B315EF295C90AF0030F6A3 /* HTMLConverter.swift in Sources */,
 				E1B31636295C916B0030F6A3 /* ShortcodeAttributeParser.swift in Sources */,
 				E1B31505295C8CE30030F6A3 /* EditorView.swift in Sources */,

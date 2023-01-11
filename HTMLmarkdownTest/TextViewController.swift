@@ -82,7 +82,6 @@ class TextViewController: UIViewController {
     }
     
     
-    let sampleHTML: String?
     var attributedString: NSMutableAttributedString?
     
     private lazy var optionsTablePresenter = OptionsTablePresenter(presentingViewController: self, presentingTextView: richTextView)
@@ -92,13 +91,10 @@ class TextViewController: UIViewController {
     init(withText: NSMutableAttributedString) {
         
         self.attributedString = withText
-        self.sampleHTML = ""
-        
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        sampleHTML = nil
         attributedString = NSMutableAttributedString(string: "")
         
         super.init(coder: aDecoder)
@@ -186,10 +182,10 @@ class TextViewController: UIViewController {
     func setUpAttributedString() {
         if attributedString == NSMutableAttributedString(string: "Добавьте описание о себе") {
             editorView.setHTML(getSampleHTML(fromHTMLFileNamed: "content"))
+            getMarkdownFromHTML()
         } else {
             editorView.richTextView.attributedText = attributedString ?? NSMutableAttributedString(string: "")
         }
-//        editorView.richTextView.attributedText = attributedString ?? NSMutableAttributedString(string: "")
     }
     
     func getSampleHTML(fromHTMLFileNamed fileName: String) -> String {
@@ -203,6 +199,39 @@ class TextViewController: UIViewController {
         }
         
         return fileContents
+    }
+    
+    func getMarkdownFromHTML() {
+        
+        let text1 = editorView.richTextView.storage.textStore /// аттрибутед стринг с полными параметрами разметок
+        let text2 = editorView.richTextView.text /// голый текст без разметок
+        let text3 = editorView.richTextView.attributedText
+        let text5 = editorView.getHTML()
+//        let text4 = editorView.richTextView.
+        let text6 = editorView.htmlStorage.string
+        let text7 = editorView.richTextView.pluginManager.process(outputHTML: text5)
+        let text8 = String(editorView.htmlStorage.foundationString)
+        
+        print("text5: \(text5)")
+        print("text6: \(text6)")
+        print("text7: \(text7)")
+        print("text8: \(text8)")
+        
+        do {
+            let dom = try HTMLParserMarkdown().parse(html: text6)
+            let markdown = dom.toMarkdown(options: .unorderedListBullets)
+            print(markdown)
+        } catch {
+            // parsing error
+        }
+        
+        do {
+            let dom = try HTMLParserMarkdown().parse(html: text8)
+            let markdown = dom.toMarkdown(options: .unorderedListBullets)
+            print(markdown)
+        } catch {
+            // parsing error
+        }
     }
     
     func updateScrollInsets() {
